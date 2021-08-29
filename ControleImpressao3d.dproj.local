@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/08/28 22:36:48.249,=D:\DelphiProjects\Unit1.pas</Transaction>
+    <Transaction>2021/08/28 22:39:54.516,D:\DelphiProjects\Controle-Impressao3d\uSeletor.pas=D:\DelphiProjects\Unit1.pas</Transaction>
+    <Transaction>2021/08/28 22:39:54.516,D:\DelphiProjects\Controle-Impressao3d\uSeletor.dfm=D:\DelphiProjects\Unit1.dfm</Transaction>
+    <Transaction>2021/08/28 22:40:13.673,D:\DelphiProjects\Controle-Impressao3d\ControleImpressao3d.dproj=D:\DelphiProjects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
