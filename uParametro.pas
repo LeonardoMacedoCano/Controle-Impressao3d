@@ -22,6 +22,9 @@ type
     dsCategoria: TDataSource;
     qryCategoria: TFDQuery;
     dgCategoria: TDBGrid;
+    dsTipoFilamento: TDataSource;
+    fdTipoFilamento: TFDQuery;
+    dgTipoFilamento: TDBGrid;
   private
     { Private declarations }
   public
