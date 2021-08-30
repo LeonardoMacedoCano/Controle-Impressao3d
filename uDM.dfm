@@ -1,10 +1,12 @@
-object DataModule1: TDataModule1
+object dm: Tdm
   OldCreateOrder = False
-  Height = 311
-  Width = 465
+  Height = 177
+  Width = 231
   object FDConnection: TFDConnection
     Params.Strings = (
-      'ConnectionDef=dbImpressao3d')
+      'Database=D:\DelphiProjects\Controle-Impressao3d\dbImpressao3d.db'
+      'LockingMode=Normal'
+      'DriverID=SQLite')
     TxOptions.DisconnectAction = xdRollback
     Connected = True
     Left = 40
@@ -18,18 +20,11 @@ object DataModule1: TDataModule1
   end
   object FDGUIxWaitCursor1: TFDGUIxWaitCursor
     Provider = 'Forms'
-    Left = 232
-    Top = 24
+    Left = 32
+    Top = 88
   end
   object FDPhysFBDriverLink1: TFDPhysFBDriverLink
-    Left = 344
-    Top = 24
-  end
-  object fdImpressao: TFDQuery
-    Connection = FDConnection
-    SQL.Strings = (
-      'select * from impressao')
-    Left = 40
-    Top = 96
+    Left = 128
+    Top = 88
   end
 end

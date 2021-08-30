@@ -12,12 +12,11 @@ uses
   FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet;
 
 type
-  TDataModule1 = class(TDataModule)
+  Tdm = class(TDataModule)
     FDConnection: TFDConnection;
     FDTransaction1: TFDTransaction;
     FDGUIxWaitCursor1: TFDGUIxWaitCursor;
     FDPhysFBDriverLink1: TFDPhysFBDriverLink;
-    fdImpressao: TFDQuery;
   private
     { Private declarations }
   public
@@ -25,7 +24,7 @@ type
   end;
 
 var
-  DataModule1: TDataModule1;
+  dm: Tdm;
 
 implementation
 
