@@ -31,6 +31,8 @@ type
     edtCustoEnergiaKWH: TEdit;
     lblConsumoEnder3KWH: TLabel;
     edtConsumoEnder3KWH: TEdit;
+    lblCustoManutencao: TLabel;
+    edtCustoManutencao: TEdit;
   private
     { Private declarations }
   public
