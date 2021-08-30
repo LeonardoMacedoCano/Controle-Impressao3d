@@ -1,3 +1,5 @@
+-- Versão 2
+#
 INSERT INTO parametrogeral (parametro, descricao)
 VALUES('CustoEnergiaKWH', 'Custo Energia (kw/h)')
 #
@@ -9,3 +11,5 @@ VALUES('CustoManutencao', 'Custo Manutenção (%)')
 #
 INSERT INTO parametrogeral (parametro, descricao)
 VALUES('ValorTopoManutencao', 'Valor Topo Manutenção')
+#
+-- Fim
