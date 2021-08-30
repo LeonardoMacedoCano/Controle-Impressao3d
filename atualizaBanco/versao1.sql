@@ -17,4 +17,10 @@ CREATE TABLE tipofilamento (
     diametro  DOUBLE  DEFAULT (1.75) 
 )
 #
+CREATE TABLE categoria (
+    id        INTEGER PRIMARY KEY AUTOINCREMENT
+                      NOT NULL,
+    descricao STRING  NOT NULL
+)
+#
 -- Fim
