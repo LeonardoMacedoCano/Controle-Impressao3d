@@ -32,12 +32,26 @@ object frmParametro: TfrmParametro
         Height = 13
         Caption = 'Custo Energia (kw/h)'
       end
+      object lblConsumoEnder3KWH: TLabel
+        Left = 8
+        Top = 59
+        Width = 118
+        Height = 13
+        Caption = 'Consumo Ender 3 (kw/h)'
+      end
       object edtCustoEnergiaKWH: TEdit
         Left = 132
         Top = 29
         Width = 100
         Height = 21
         TabOrder = 0
+      end
+      object edtConsumoEnder3KWH: TEdit
+        Left = 132
+        Top = 56
+        Width = 100
+        Height = 21
+        TabOrder = 1
       end
     end
     object tsTipoFilamento: TTabSheet

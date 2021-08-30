@@ -29,6 +29,8 @@ type
     dsGeral: TDataSource;
     lblCustoEnergiaKWH: TLabel;
     edtCustoEnergiaKWH: TEdit;
+    lblConsumoEnder3KWH: TLabel;
+    edtConsumoEnder3KWH: TEdit;
   private
     { Private declarations }
   public
