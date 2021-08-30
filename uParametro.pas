@@ -19,6 +19,9 @@ type
     pnlBottom: TPanel;
     btnSalvar: TButton;
     btnCancelar: TButton;
+    dsCategoria: TDataSource;
+    qryCategoria: TFDQuery;
+    dgCategoria: TDBGrid;
   private
     { Private declarations }
   public

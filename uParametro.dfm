@@ -31,6 +31,36 @@ object frmParametro: TfrmParametro
     object tsCategoria: TTabSheet
       Caption = 'Categoria'
       ImageIndex = 2
+      object dgCategoria: TDBGrid
+        Left = 0
+        Top = 0
+        Width = 387
+        Height = 414
+        Align = alClient
+        DataSource = dsCategoria
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'id'
+            ReadOnly = True
+            Title.Caption = 'C'#243'digo'
+            Width = 50
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'descricao'
+            Title.Caption = 'Descri'#231#227'o'
+            Width = 320
+            Visible = True
+          end>
+      end
     end
   end
   object pnlBottom: TPanel
@@ -56,5 +86,18 @@ object frmParametro: TfrmParametro
       Caption = 'Cancelar'
       TabOrder = 0
     end
+  end
+  object dsCategoria: TDataSource
+    DataSet = qryCategoria
+    Left = 320
+    Top = 2
+  end
+  object qryCategoria: TFDQuery
+    Active = True
+    Connection = dm.FDConnection
+    SQL.Strings = (
+      'select * from categoria')
+    Left = 351
+    Top = 2
   end
 end
