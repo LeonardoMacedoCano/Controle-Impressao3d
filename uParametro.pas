@@ -33,6 +33,8 @@ type
     edtConsumoEnder3KWH: TEdit;
     lblCustoManutencao: TLabel;
     edtCustoManutencao: TEdit;
+    lblValorTopoManutencao: TLabel;
+    edtValorTopoManutencao: TEdit;
   private
     { Private declarations }
   public

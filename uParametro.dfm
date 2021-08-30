@@ -46,6 +46,13 @@ object frmParametro: TfrmParametro
         Height = 13
         Caption = 'Custo Manuten'#231#227'o (%)'
       end
+      object lblValorTopoManutencao: TLabel
+        Left = 13
+        Top = 113
+        Width = 113
+        Height = 13
+        Caption = 'Valor Topo Manuten'#231#227'o'
+      end
       object edtCustoEnergiaKWH: TEdit
         Left = 132
         Top = 29
@@ -66,6 +73,13 @@ object frmParametro: TfrmParametro
         Width = 100
         Height = 21
         TabOrder = 2
+      end
+      object edtValorTopoManutencao: TEdit
+        Left = 132
+        Top = 110
+        Width = 100
+        Height = 21
+        TabOrder = 3
       end
     end
     object tsTipoFilamento: TTabSheet
