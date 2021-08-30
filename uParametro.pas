@@ -25,6 +25,10 @@ type
     dsTipoFilamento: TDataSource;
     fdTipoFilamento: TFDQuery;
     dgTipoFilamento: TDBGrid;
+    fdGeral: TFDQuery;
+    dsGeral: TDataSource;
+    lblCustoEnergiaKWH: TLabel;
+    edtCustoEnergiaKWH: TEdit;
   private
     { Private declarations }
   public

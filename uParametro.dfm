@@ -18,11 +18,27 @@ object frmParametro: TfrmParametro
     Top = 0
     Width = 395
     Height = 442
-    ActivePage = tsTipoFilamento
+    ActivePage = tsGeral
     Align = alClient
     TabOrder = 0
     object tsGeral: TTabSheet
       Caption = 'Geral'
+      ExplicitLeft = 0
+      ExplicitTop = 22
+      object lblCustoEnergiaKWH: TLabel
+        Left = 25
+        Top = 32
+        Width = 101
+        Height = 13
+        Caption = 'Custo Energia (kw/h)'
+      end
+      object edtCustoEnergiaKWH: TEdit
+        Left = 132
+        Top = 29
+        Width = 100
+        Height = 21
+        TabOrder = 0
+      end
     end
     object tsTipoFilamento: TTabSheet
       Caption = 'Tipo Filamento'
@@ -156,5 +172,17 @@ object frmParametro: TfrmParametro
       'select * from tipofilamento')
     Left = 263
     Top = 2
+  end
+  object fdGeral: TFDQuery
+    Connection = dm.FDConnection
+    SQL.Strings = (
+      'select * from parametrogeral')
+    Left = 167
+    Top = 3
+  end
+  object dsGeral: TDataSource
+    DataSet = fdGeral
+    Left = 136
+    Top = 3
   end
 end
