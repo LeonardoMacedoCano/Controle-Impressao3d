@@ -1,8 +1,9 @@
 object frmParametro: TfrmParametro
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Par'#226'metros'
-  ClientHeight = 483
+  ClientHeight = 411
   ClientWidth = 395
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,20 +12,21 @@ object frmParametro: TfrmParametro
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   PixelsPerInch = 96
   TextHeight = 13
   object PageControl: TPageControl
     Left = 0
     Top = 0
     Width = 395
-    Height = 442
+    Height = 370
     ActivePage = tsGeral
     Align = alClient
     TabOrder = 0
+    ExplicitHeight = 237
     object tsGeral: TTabSheet
       Caption = 'Geral'
-      ExplicitLeft = 0
-      ExplicitTop = 22
+      ExplicitHeight = 209
       object lblCustoEnergiaKWH: TLabel
         Left = 25
         Top = 32
@@ -85,11 +87,15 @@ object frmParametro: TfrmParametro
     object tsTipoFilamento: TTabSheet
       Caption = 'Tipo Filamento'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 414
       object dgTipoFilamento: TDBGrid
         Left = 0
         Top = 0
         Width = 387
-        Height = 414
+        Height = 209
         Align = alClient
         DataSource = dsTipoFilamento
         TabOrder = 0
@@ -133,11 +139,15 @@ object frmParametro: TfrmParametro
     object tsCategoria: TTabSheet
       Caption = 'Categoria'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 414
       object dgCategoria: TDBGrid
         Left = 0
         Top = 0
         Width = 387
-        Height = 414
+        Height = 209
         Align = alClient
         DataSource = dsCategoria
         TabOrder = 0
@@ -167,24 +177,30 @@ object frmParametro: TfrmParametro
   end
   object pnlBottom: TPanel
     Left = 0
-    Top = 442
+    Top = 370
     Width = 395
     Height = 41
     Align = alBottom
     TabOrder = 1
+    ExplicitTop = 237
+    DesignSize = (
+      395
+      41)
     object btnSalvar: TButton
       Left = 296
       Top = 5
       Width = 95
       Height = 30
+      Anchors = [akRight, akBottom]
       Caption = 'Salvar'
       TabOrder = 1
     end
     object btnCancelar: TButton
       Left = 4
-      Top = 5
+      Top = 6
       Width = 95
       Height = 30
+      Anchors = [akLeft, akBottom]
       Caption = 'Cancelar'
       TabOrder = 0
     end
