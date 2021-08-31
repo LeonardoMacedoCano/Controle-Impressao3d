@@ -13,6 +13,7 @@ type
     pnlBottom: TPanel;
     btnConfiguracao: TSpeedButton;
     btnArquivo: TSpeedButton;
+    Image1: TImage;
     procedure btnConfiguracaoClick(Sender: TObject);
   private
     procedure abrirTelaParametro;
