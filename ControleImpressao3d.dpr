@@ -3,7 +3,7 @@ program ControleImpressao3d;
 uses
   Vcl.Forms,
   uSeletor in 'uSeletor.pas' {frmSeletor},
-  uDM in 'uDM.pas' {DataModule1: TDataModule},
+  uDM in 'uDM.pas' {dm: TDataModule},
   uParametro in 'uParametro.pas' {frmParametro};
 
 {$R *.res}
@@ -12,7 +12,7 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmSeletor, frmSeletor);
-  Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(Tdm, dm);
   Application.CreateForm(TfrmParametro, frmParametro);
   Application.Run;
 end.
