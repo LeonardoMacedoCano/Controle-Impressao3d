@@ -13,6 +13,7 @@ object frmParametro: TfrmParametro
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object PageControl: TPageControl
@@ -23,10 +24,8 @@ object frmParametro: TfrmParametro
     ActivePage = tsGeral
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 237
     object tsGeral: TTabSheet
       Caption = 'Geral'
-      ExplicitHeight = 209
       object lblCustoEnergiaKWH: TLabel
         Left = 25
         Top = 32
@@ -87,15 +86,11 @@ object frmParametro: TfrmParametro
     object tsTipoFilamento: TTabSheet
       Caption = 'Tipo Filamento'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 414
       object dgTipoFilamento: TDBGrid
         Left = 0
         Top = 0
         Width = 387
-        Height = 209
+        Height = 342
         Align = alClient
         DataSource = dsTipoFilamento
         TabOrder = 0
@@ -139,15 +134,11 @@ object frmParametro: TfrmParametro
     object tsCategoria: TTabSheet
       Caption = 'Categoria'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 414
       object dgCategoria: TDBGrid
         Left = 0
         Top = 0
         Width = 387
-        Height = 209
+        Height = 342
         Align = alClient
         DataSource = dsCategoria
         TabOrder = 0
@@ -182,7 +173,6 @@ object frmParametro: TfrmParametro
     Height = 41
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 237
     DesignSize = (
       395
       41)
@@ -211,7 +201,6 @@ object frmParametro: TfrmParametro
     Top = 2
   end
   object qryCategoria: TFDQuery
-    Active = True
     Connection = dm.FDConnection
     SQL.Strings = (
       'select * from categoria')
@@ -219,19 +208,18 @@ object frmParametro: TfrmParametro
     Top = 2
   end
   object dsTipoFilamento: TDataSource
-    DataSet = fdTipoFilamento
+    DataSet = qryTipoFilamento
     Left = 232
     Top = 2
   end
-  object fdTipoFilamento: TFDQuery
-    Active = True
+  object qryTipoFilamento: TFDQuery
     Connection = dm.FDConnection
     SQL.Strings = (
       'select * from tipofilamento')
     Left = 263
     Top = 2
   end
-  object fdGeral: TFDQuery
+  object qryGeral: TFDQuery
     Connection = dm.FDConnection
     SQL.Strings = (
       'select * from parametrogeral')
@@ -239,7 +227,7 @@ object frmParametro: TfrmParametro
     Top = 3
   end
   object dsGeral: TDataSource
-    DataSet = fdGeral
+    DataSet = qryGeral
     Left = 136
     Top = 3
   end

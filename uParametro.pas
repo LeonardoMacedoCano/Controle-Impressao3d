@@ -23,9 +23,9 @@ type
     qryCategoria: TFDQuery;
     dgCategoria: TDBGrid;
     dsTipoFilamento: TDataSource;
-    fdTipoFilamento: TFDQuery;
+    qryTipoFilamento: TFDQuery;
     dgTipoFilamento: TDBGrid;
-    fdGeral: TFDQuery;
+    qryGeral: TFDQuery;
     dsGeral: TDataSource;
     lblCustoEnergiaKWH: TLabel;
     edtCustoEnergiaKWH: TEdit;
@@ -35,8 +35,9 @@ type
     edtCustoManutencao: TEdit;
     lblValorTopoManutencao: TLabel;
     edtValorTopoManutencao: TEdit;
+    procedure FormCreate(Sender: TObject);
   private
-    { Private declarations }
+    procedure activeQuerys;
   public
     { Public declarations }
   end;
@@ -49,5 +50,17 @@ implementation
 uses uDm;
 
 {$R *.dfm}
+
+procedure TfrmParametro.activeQuerys;
+begin
+  qryGeral.Active         := True;
+  qryTipoFilamento.Active := True;
+  qryCategoria.Active     := True;
+end;
+
+procedure TfrmParametro.FormCreate(Sender: TObject);
+begin
+  activeQuerys;
+end;
 
 end.
