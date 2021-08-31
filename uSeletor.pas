@@ -32,8 +32,12 @@ uses uParametro;
 
 procedure TfrmSeletor.abrirTelaParametro;
 begin
-  frmParametro := TfrmParametro.Create(nil);
-  frmParametro.Show;
+  try
+    frmParametro := TfrmParametro.Create(nil);
+    frmParametro.ShowModal;
+  finally
+    frmParametro.Free;
+  end;
 end;
 
 procedure TfrmSeletor.btnConfiguracaoClick(Sender: TObject);
