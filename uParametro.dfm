@@ -23,6 +23,7 @@ object frmParametro: TfrmParametro
     Height = 370
     ActivePage = tsGeral
     Align = alClient
+    PopupMenu = PopupMenu
     TabOrder = 0
     object tsGeral: TTabSheet
       Caption = 'Geral'
@@ -93,6 +94,7 @@ object frmParametro: TfrmParametro
         Height = 342
         Align = alClient
         DataSource = dsTipoFilamento
+        PopupMenu = PopupMenu
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
@@ -230,5 +232,20 @@ object frmParametro: TfrmParametro
     DataSet = qryGeral
     Left = 136
     Top = 3
+  end
+  object PopupMenu: TPopupMenu
+    Left = 316
+    Top = 48
+    object Adicionar1: TMenuItem
+      Action = actAdicionar
+    end
+  end
+  object ActionList: TActionList
+    Left = 351
+    Top = 48
+    object actAdicionar: TAction
+      Caption = 'Adicionar'
+      OnExecute = actAdicionarExecute
+    end
   end
 end

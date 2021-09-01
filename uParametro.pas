@@ -8,7 +8,8 @@ uses
   Vcl.DBCtrls, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls;
+  FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls, Vcl.Menus,
+  System.Actions, Vcl.ActnList;
 
 type
   TfrmParametro = class(TForm)
@@ -35,7 +36,12 @@ type
     edtCustoManutencao: TEdit;
     lblValorTopoManutencao: TLabel;
     edtValorTopoManutencao: TEdit;
+    PopupMenu: TPopupMenu;
+    ActionList: TActionList;
+    actAdicionar: TAction;
+    Adicionar1: TMenuItem;
     procedure FormCreate(Sender: TObject);
+    procedure actAdicionarExecute(Sender: TObject);
   private
     procedure activeQuerys;
   public
@@ -47,9 +53,28 @@ var
 
 implementation
 
-uses uDm;
+uses uDm, uTipoFilamento;
 
 {$R *.dfm}
+
+procedure TfrmParametro.actAdicionarExecute(Sender: TObject);
+begin
+  if PageControl.ActivePage = tsTipoFilamento then
+  begin
+    frmTipoFilamento.dsMain.DataSet := dsTipoFilamento.DataSet;
+    dsTipoFilamento.DataSet.Append;
+
+    if frmTipoFilamento.ShowModal = mrOk then
+    begin
+      dsTipoFilamento.DataSet.Active := False;
+      dsTipoFilamento.DataSet.Active := True;
+    end;
+  end
+  else if PageControl.ActivePage = tsCategoria then
+  begin
+    // to do
+  end;
+end;
 
 procedure TfrmParametro.activeQuerys;
 begin
