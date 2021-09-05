@@ -33,6 +33,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
     procedure btnEditarClick(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -56,6 +57,11 @@ end;
 procedure TfrmPadrao.btnNovoClick(Sender: TObject);
 begin
   dsMain.DataSet.Append;
+end;
+
+procedure TfrmPadrao.btnSalvarClick(Sender: TObject);
+begin
+  dsMain.DataSet.Post;
 end;
 
 procedure TfrmPadrao.FormCreate(Sender: TObject);
