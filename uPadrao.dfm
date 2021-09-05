@@ -34,6 +34,7 @@ object frmPadrao: TfrmPadrao
       Top = 0
       Caption = 'btnEditar'
       ImageIndex = 1
+      OnClick = btnEditarClick
     end
     object btnSalvar: TToolButton
       Left = 110

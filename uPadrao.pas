@@ -32,6 +32,7 @@ type
     qryMain: TFDQuery;
     procedure FormCreate(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
+    procedure btnEditarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -46,6 +47,11 @@ implementation
 uses uDm;
 
 {$R *.dfm}
+
+procedure TfrmPadrao.btnEditarClick(Sender: TObject);
+begin
+  dsMain.DataSet.Edit;
+end;
 
 procedure TfrmPadrao.btnNovoClick(Sender: TObject);
 begin
