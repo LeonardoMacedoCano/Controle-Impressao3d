@@ -1,8 +1,10 @@
 object frmPadrao: TfrmPadrao
   Left = 0
   Top = 0
-  ClientHeight = 415
-  ClientWidth = 551
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  ClientHeight = 425
+  ClientWidth = 550
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -10,18 +12,20 @@ object frmPadrao: TfrmPadrao
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object ToolBar: TToolBar
     Left = 0
     Top = 0
-    Width = 551
+    Width = 550
     Height = 54
     ButtonHeight = 54
     ButtonWidth = 55
     Images = imgToolBar
     TabOrder = 0
+    ExplicitWidth = 551
     object btnNovo: TToolButton
       Left = 0
       Top = 0
@@ -113,12 +117,14 @@ object frmPadrao: TfrmPadrao
   object pnlMain: TPanel
     Left = 0
     Top = 54
-    Width = 551
-    Height = 361
+    Width = 550
+    Height = 371
     Align = alClient
     Color = 10658466
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 551
+    ExplicitHeight = 361
   end
   object imgToolBar: TImageList
     Height = 48
