@@ -30,7 +30,6 @@ type
     pnlMain: TPanel;
     dsMain: TDataSource;
     qryMain: TFDQuery;
-    procedure FormCreate(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
     procedure btnEditarClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
@@ -129,11 +128,6 @@ end;
 procedure TfrmPadrao.dsMainStateChange(Sender: TObject);
 begin
   atualizarBtnToolbarMain;
-end;
-
-procedure TfrmPadrao.FormCreate(Sender: TObject);
-begin
-  dsMain.DataSet.Active := True;
 end;
 
 function TfrmPadrao.isModoEdicaoDsMain: Boolean;
