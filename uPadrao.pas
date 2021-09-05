@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.ToolWin,
-  System.ImageList, Vcl.ImgList, Vcl.BaseImageCollection, Vcl.ImageCollection;
+  System.ImageList, Vcl.ImgList, Vcl.BaseImageCollection, Vcl.ImageCollection,
+  Vcl.ExtCtrls;
 
 type
   TfrmPadrao = class(TForm)
@@ -23,6 +24,7 @@ type
     Espacamento4: TToolButton;
     btnConsultar: TToolButton;
     btnExcluir: TToolButton;
+    pnlMain: TPanel;
   private
     { Private declarations }
   public
