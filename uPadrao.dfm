@@ -10,6 +10,7 @@ object frmPadrao: TfrmPadrao
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object ToolBar: TToolBar
@@ -3700,6 +3701,9 @@ object frmPadrao: TfrmPadrao
     Top = 64
   end
   object qryMain: TFDQuery
+    Connection = dm.FDConnection
+    SQL.Strings = (
+      'select * from impressao')
     Left = 463
     Top = 64
   end

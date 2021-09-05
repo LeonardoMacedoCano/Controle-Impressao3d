@@ -30,6 +30,7 @@ type
     pnlMain: TPanel;
     dsMain: TDataSource;
     qryMain: TFDQuery;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,6 +42,13 @@ var
 
 implementation
 
+uses uDm;
+
 {$R *.dfm}
+
+procedure TfrmPadrao.FormCreate(Sender: TObject);
+begin
+  dsMain.DataSet.Active := True;
+end;
 
 end.
