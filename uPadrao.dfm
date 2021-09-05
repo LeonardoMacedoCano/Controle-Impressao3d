@@ -3694,4 +3694,13 @@ object frmPadrao: TfrmPadrao
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000000000000000000000000000
       000000000000}
   end
+  object dsMain: TDataSource
+    DataSet = qryMain
+    Left = 424
+    Top = 64
+  end
+  object qryMain: TFDQuery
+    Left = 463
+    Top = 64
+  end
 end
