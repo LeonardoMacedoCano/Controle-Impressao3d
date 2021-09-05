@@ -34,6 +34,7 @@ type
     procedure btnNovoClick(Sender: TObject);
     procedure btnEditarClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,11 +44,22 @@ type
 var
   frmPadrao: TfrmPadrao;
 
+const
+  msgConfirmarCancelamento = 'Tem certeza que deseja cancelar?';
+
 implementation
 
 uses uDm;
 
 {$R *.dfm}
+
+procedure TfrmPadrao.btnCancelarClick(Sender: TObject);
+begin
+  if msgPadraoConfirmacao(msgConfirmarCancelamento) then
+  begin
+    dsMain.DataSet.Cancel;
+  end;
+end;
 
 procedure TfrmPadrao.btnEditarClick(Sender: TObject);
 begin

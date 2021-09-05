@@ -48,6 +48,7 @@ object frmPadrao: TfrmPadrao
       Top = 0
       Caption = 'btnCancelar'
       ImageIndex = 3
+      OnClick = btnCancelarClick
     end
     object Espacamento1: TToolButton
       Left = 220
