@@ -31,6 +31,7 @@ type
     dsMain: TDataSource;
     qryMain: TFDQuery;
     procedure FormCreate(Sender: TObject);
+    procedure btnNovoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,6 +46,11 @@ implementation
 uses uDm;
 
 {$R *.dfm}
+
+procedure TfrmPadrao.btnNovoClick(Sender: TObject);
+begin
+  dsMain.DataSet.Append;
+end;
 
 procedure TfrmPadrao.FormCreate(Sender: TObject);
 begin
