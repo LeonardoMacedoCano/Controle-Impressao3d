@@ -107,6 +107,7 @@ object frmPadrao: TfrmPadrao
       Top = 0
       Caption = 'btnExcluir'
       ImageIndex = 7
+      OnClick = btnExcluirClick
     end
   end
   object pnlMain: TPanel

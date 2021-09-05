@@ -37,6 +37,7 @@ type
     procedure btnCancelarClick(Sender: TObject);
     procedure btnAnteriorClick(Sender: TObject);
     procedure btnProximoClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,6 +49,7 @@ var
 
 const
   msgConfirmarCancelamento = 'Tem certeza que deseja cancelar?';
+  msgConfirmarExclucao     = 'Tem certeza que deseja excluir esse registro?';
 
 implementation
 
@@ -71,6 +73,14 @@ end;
 procedure TfrmPadrao.btnEditarClick(Sender: TObject);
 begin
   dsMain.DataSet.Edit;
+end;
+
+procedure TfrmPadrao.btnExcluirClick(Sender: TObject);
+begin
+  if not (dsMain.DataSet.IsEmpty) and msgPadraoConfirmacao(msgConfirmarExclucao) then
+  begin
+    dsMain.DataSet.Delete;
+  end;
 end;
 
 procedure TfrmPadrao.btnNovoClick(Sender: TObject);
