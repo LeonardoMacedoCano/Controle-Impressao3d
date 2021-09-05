@@ -35,6 +35,8 @@ type
     procedure btnEditarClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
+    procedure btnAnteriorClick(Sender: TObject);
+    procedure btnProximoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -53,6 +55,11 @@ uses uDm;
 
 {$R *.dfm}
 
+procedure TfrmPadrao.btnAnteriorClick(Sender: TObject);
+begin
+  dsMain.DataSet.Prior;
+end;
+
 procedure TfrmPadrao.btnCancelarClick(Sender: TObject);
 begin
   if msgPadraoConfirmacao(msgConfirmarCancelamento) then
@@ -69,6 +76,11 @@ end;
 procedure TfrmPadrao.btnNovoClick(Sender: TObject);
 begin
   dsMain.DataSet.Append;
+end;
+
+procedure TfrmPadrao.btnProximoClick(Sender: TObject);
+begin
+  dsMain.DataSet.Next;
 end;
 
 procedure TfrmPadrao.btnSalvarClick(Sender: TObject);

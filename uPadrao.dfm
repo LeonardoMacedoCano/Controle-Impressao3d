@@ -71,12 +71,14 @@ object frmPadrao: TfrmPadrao
       Top = 0
       Caption = 'btnAnterior'
       ImageIndex = 4
+      OnClick = btnAnteriorClick
     end
     object btnProximo: TToolButton
       Left = 330
       Top = 0
       Caption = 'btnProximo'
       ImageIndex = 5
+      OnClick = btnProximoClick
     end
     object Espacamento3: TToolButton
       Left = 385
