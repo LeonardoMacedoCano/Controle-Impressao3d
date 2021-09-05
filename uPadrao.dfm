@@ -3713,8 +3713,6 @@ object frmPadrao: TfrmPadrao
   end
   object qryMain: TFDQuery
     Connection = dm.FDConnection
-    SQL.Strings = (
-      'select * from impressao')
     Left = 463
     Top = 64
   end
