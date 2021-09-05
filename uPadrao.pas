@@ -37,7 +37,7 @@ type
   private
     { Private declarations }
   public
-    { Public declarations }
+    function msgPadraoConfirmacao(msg: String): Boolean;
   end;
 
 var
@@ -67,6 +67,11 @@ end;
 procedure TfrmPadrao.FormCreate(Sender: TObject);
 begin
   dsMain.DataSet.Active := True;
+end;
+
+function TfrmPadrao.msgPadraoConfirmacao(msg: String): Boolean;
+begin
+  Result := MessageDlg(msg, mtConfirmation, [mbYes, mbNo],0) = mrYes;
 end;
 
 end.
