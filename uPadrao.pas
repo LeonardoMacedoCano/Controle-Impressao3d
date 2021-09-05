@@ -10,6 +10,19 @@ uses
 type
   TfrmPadrao = class(TForm)
     imgToolBar: TImageList;
+    ToolBar: TToolBar;
+    btnNovo: TToolButton;
+    btnEditar: TToolButton;
+    btnSalvar: TToolButton;
+    btnCancelar: TToolButton;
+    Espacamento1: TToolButton;
+    Espacamento2: TToolButton;
+    btnAnterior: TToolButton;
+    btnProximo: TToolButton;
+    Espacamento3: TToolButton;
+    Espacamento4: TToolButton;
+    btnConsultar: TToolButton;
+    btnExcluir: TToolButton;
   private
     { Private declarations }
   public

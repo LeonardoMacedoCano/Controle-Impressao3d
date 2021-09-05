@@ -1,7 +1,7 @@
 object frmPadrao: TfrmPadrao
   Left = 0
   Top = 0
-  ClientHeight = 372
+  ClientHeight = 415
   ClientWidth = 551
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -12,11 +12,102 @@ object frmPadrao: TfrmPadrao
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
+  object ToolBar: TToolBar
+    Left = 0
+    Top = 0
+    Width = 551
+    Height = 54
+    ButtonHeight = 54
+    ButtonWidth = 55
+    Images = imgToolBar
+    TabOrder = 0
+    ExplicitWidth = 512
+    object btnNovo: TToolButton
+      Left = 0
+      Top = 0
+      Caption = 'btnNovo'
+      ImageIndex = 0
+    end
+    object btnEditar: TToolButton
+      Left = 55
+      Top = 0
+      Caption = 'btnEditar'
+      ImageIndex = 1
+    end
+    object btnSalvar: TToolButton
+      Left = 110
+      Top = 0
+      Caption = 'btnSalvar'
+      ImageIndex = 2
+    end
+    object btnCancelar: TToolButton
+      Left = 165
+      Top = 0
+      Caption = 'btnCancelar'
+      ImageIndex = 3
+    end
+    object Espacamento1: TToolButton
+      Left = 220
+      Top = 0
+      Width = 50
+      Caption = 'Espacamento1'
+      ImageIndex = 4
+      Style = tbsSeparator
+    end
+    object Espacamento2: TToolButton
+      Left = 270
+      Top = 0
+      Width = 5
+      Caption = 'Espacamento2'
+      ImageIndex = 5
+      Style = tbsSeparator
+    end
+    object btnAnterior: TToolButton
+      Left = 275
+      Top = 0
+      Caption = 'btnAnterior'
+      ImageIndex = 4
+    end
+    object btnProximo: TToolButton
+      Left = 330
+      Top = 0
+      Caption = 'btnProximo'
+      ImageIndex = 5
+    end
+    object Espacamento3: TToolButton
+      Left = 385
+      Top = 0
+      Width = 50
+      Caption = 'Espacamento3'
+      ImageIndex = 6
+      Style = tbsSeparator
+    end
+    object Espacamento4: TToolButton
+      Left = 435
+      Top = 0
+      Width = 5
+      Caption = 'Espacamento4'
+      ImageIndex = 7
+      Style = tbsSeparator
+    end
+    object btnConsultar: TToolButton
+      Left = 440
+      Top = 0
+      Caption = 'btnConsultar'
+      ImageIndex = 6
+    end
+    object btnExcluir: TToolButton
+      Left = 495
+      Top = 0
+      Caption = 'btnExcluir'
+      ImageIndex = 7
+    end
+  end
   object imgToolBar: TImageList
     Height = 48
     ImageType = itMask
     Width = 48
-    Left = 416
+    Left = 512
     Top = 64
     Bitmap = {
       494C010108002000040030003000FFFFFFFFFF00FFFFFFFFFFFFFFFF424D3600
