@@ -38,8 +38,12 @@ type
     procedure btnAnteriorClick(Sender: TObject);
     procedure btnProximoClick(Sender: TObject);
     procedure btnExcluirClick(Sender: TObject);
+    procedure dsMainStateChange(Sender: TObject);
+    procedure dsMainDataChange(Sender: TObject; Field: TField);
   private
-    { Private declarations }
+    function isModoEdicaoDsMain: Boolean;
+    procedure atualizarBtnToolbarMain;
+    procedure atualizarSetasToolbarMain;
   public
     function msgPadraoConfirmacao(msg: String): Boolean;
   end;
@@ -56,6 +60,22 @@ implementation
 uses uDm;
 
 {$R *.dfm}
+
+procedure TfrmPadrao.atualizarBtnToolbarMain;
+begin
+  btnSalvar.Enabled    := isModoEdicaoDsMain;
+  btnCancelar.Enabled  := isModoEdicaoDsMain;
+  btnNovo.Enabled      := not isModoEdicaoDsMain;
+  btnEditar.Enabled    := not isModoEdicaoDsMain;
+  btnConsultar.Enabled := not isModoEdicaoDsMain;
+  btnExcluir.Enabled   := not isModoEdicaoDsMain;
+end;
+
+procedure TfrmPadrao.atualizarSetasToolbarMain;
+begin
+  btnAnterior.Enabled := not (dsMain.DataSet.Bof);
+  btnProximo.Enabled  := not (dsMain.DataSet.Eof);
+end;
 
 procedure TfrmPadrao.btnAnteriorClick(Sender: TObject);
 begin
@@ -98,9 +118,27 @@ begin
   dsMain.DataSet.Post;
 end;
 
+procedure TfrmPadrao.dsMainDataChange(Sender: TObject; Field: TField);
+begin
+  if not (dsMain.State in dsEditModes) then
+  begin
+    atualizarSetasToolbarMain;
+  end;
+end;
+
+procedure TfrmPadrao.dsMainStateChange(Sender: TObject);
+begin
+  atualizarBtnToolbarMain;
+end;
+
 procedure TfrmPadrao.FormCreate(Sender: TObject);
 begin
   dsMain.DataSet.Active := True;
+end;
+
+function TfrmPadrao.isModoEdicaoDsMain: Boolean;
+begin
+  Result := (dsMain.State in dsEditModes);
 end;
 
 function TfrmPadrao.msgPadraoConfirmacao(msg: String): Boolean;

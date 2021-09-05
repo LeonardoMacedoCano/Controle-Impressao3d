@@ -119,10 +119,6 @@ object frmPadrao: TfrmPadrao
     Color = 10658466
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = 312
-    ExplicitTop = 208
-    ExplicitWidth = 185
-    ExplicitHeight = 41
   end
   object imgToolBar: TImageList
     Height = 48
@@ -3704,6 +3700,8 @@ object frmPadrao: TfrmPadrao
   end
   object dsMain: TDataSource
     DataSet = qryMain
+    OnStateChange = dsMainStateChange
+    OnDataChange = dsMainDataChange
     Left = 424
     Top = 64
   end
