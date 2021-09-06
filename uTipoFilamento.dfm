@@ -4,13 +4,9 @@ inherited frmTipoFilamento: TfrmTipoFilamento
   ExplicitHeight = 240
   PixelsPerInch = 96
   TextHeight = 13
-  inherited ToolBar: TToolBar
-    ExplicitWidth = 550
-  end
   inherited pnlMain: TPanel
     Height = 157
     ExplicitTop = 53
-    ExplicitWidth = 550
     ExplicitHeight = 182
     object Label1: TLabel
       Left = 58
@@ -54,6 +50,7 @@ inherited frmTipoFilamento: TfrmTipoFilamento
       Height = 21
       DataField = 'id'
       DataSource = dsMain
+      Enabled = False
       TabOrder = 0
     end
     object edtDescricao: TDBEdit
@@ -65,7 +62,7 @@ inherited frmTipoFilamento: TfrmTipoFilamento
       DataSource = dsMain
       TabOrder = 1
     end
-    object DBEdit1: TDBEdit
+    object edtValor: TDBEdit
       Left = 97
       Top = 94
       Width = 50
@@ -74,7 +71,7 @@ inherited frmTipoFilamento: TfrmTipoFilamento
       DataSource = dsMain
       TabOrder = 2
     end
-    object DBEdit2: TDBEdit
+    object edtDensidade: TDBEdit
       Left = 271
       Top = 94
       Width = 50
@@ -83,7 +80,7 @@ inherited frmTipoFilamento: TfrmTipoFilamento
       DataSource = dsMain
       TabOrder = 3
     end
-    object DBEdit3: TDBEdit
+    object edtDiametro: TDBEdit
       Left = 435
       Top = 94
       Width = 50
