@@ -1,13 +1,13 @@
 inherited frmTipoFilamento: TfrmTipoFilamento
   Caption = 'Tipo Filamento'
   ClientHeight = 211
+  OnClose = FormClose
   ExplicitHeight = 240
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
     Height = 157
-    ExplicitTop = 53
-    ExplicitHeight = 182
+    ExplicitHeight = 157
     object Label1: TLabel
       Left = 58
       Top = 43

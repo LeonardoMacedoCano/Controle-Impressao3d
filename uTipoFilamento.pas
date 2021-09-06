@@ -24,6 +24,7 @@ type
     Label4: TLabel;
     Label5: TLabel;
     procedure btnSalvarClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     procedure verificarCamposObrigatorios;
   public
@@ -42,6 +43,14 @@ begin
   verificarCamposObrigatorios;
 
   inherited;
+end;
+
+procedure TfrmTipoFilamento.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  inherited;
+
+  ModalResult := mrOk;
 end;
 
 procedure TfrmTipoFilamento.verificarCamposObrigatorios;
