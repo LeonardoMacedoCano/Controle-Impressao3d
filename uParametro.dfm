@@ -87,10 +87,6 @@ object frmParametro: TfrmParametro
     object tsTipoFilamento: TTabSheet
       Caption = 'Tipo Filamento'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object dgTipoFilamento: TDBGrid
         Left = 0
         Top = 0
@@ -118,7 +114,7 @@ object frmParametro: TfrmParametro
             Expanded = False
             FieldName = 'descricao'
             Title.Caption = 'Descri'#231#227'o'
-            Width = 215
+            Width = 150
             Visible = True
           end
           item
@@ -132,7 +128,14 @@ object frmParametro: TfrmParametro
             Expanded = False
             FieldName = 'densidade'
             Title.Caption = 'Densidade'
-            Width = 50
+            Width = 55
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'diametro'
+            Title.Caption = 'Di'#226'metro'
+            Width = 55
             Visible = True
           end>
       end
@@ -140,10 +143,6 @@ object frmParametro: TfrmParametro
     object tsCategoria: TTabSheet
       Caption = 'Categoria'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object dgCategoria: TDBGrid
         Left = 0
         Top = 0
