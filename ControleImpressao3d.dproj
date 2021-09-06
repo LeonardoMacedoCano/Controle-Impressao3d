@@ -111,12 +111,12 @@
             <Form>frmParametro</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="uTipoFilamento.pas">
-            <Form>frmTipoFilamento</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="uPadrao.pas">
             <Form>frmPadrao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="uTipoFilamento.pas">
+            <Form>frmTipoFilamento</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
