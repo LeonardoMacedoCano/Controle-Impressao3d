@@ -46,6 +46,7 @@ type
   public
     function msgPadraoConfirmacao(msg: String): Boolean;
     function somenteNumero(snum : String): String;
+    procedure verificarCampoNuloOuVazio(campo: TField; msgErro: string);
   end;
 
 var
@@ -152,6 +153,15 @@ begin
     begin
       Result := Result + snum[i];
     end;
+  end;
+end;
+
+procedure TfrmPadrao.verificarCampoNuloOuVazio(campo: TField; msgErro: string);
+begin
+  if (campo.IsNull) or
+     (Trim(campo.AsString) = EmptyStr) then
+  begin
+    raise Exception.Create(msgErro);
   end;
 end;
 
