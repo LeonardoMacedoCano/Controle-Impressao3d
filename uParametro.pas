@@ -66,16 +66,19 @@ procedure TfrmParametro.abrirTelaModal(tela: TForm; dsTela, dsParametro: TDataSe
 begin
   dsTela := dsParametro;
 
-  case acao of
-    maAdicionar: dsParametro.Append;
-    maEditar: dsParametro.Edit;
-    maExcluir: dsParametro.Delete;
-  end;
-
-  if tela.ShowModal = mrOk then
+  if (dsTela <> nil) then
   begin
-    dsParametro.Active := False;
-    dsParametro.Active := True;
+    case acao of
+      maAdicionar: dsParametro.Append;
+      maEditar: dsParametro.Edit;
+      maExcluir: dsParametro.Delete;
+    end;
+
+    if tela.ShowModal = mrOk then
+    begin
+      dsParametro.Active := False;
+      dsParametro.Active := True;
+    end;
   end;
 end;
 

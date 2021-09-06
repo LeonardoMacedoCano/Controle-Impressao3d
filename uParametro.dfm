@@ -87,6 +87,10 @@ object frmParametro: TfrmParametro
     object tsTipoFilamento: TTabSheet
       Caption = 'Tipo Filamento'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object dgTipoFilamento: TDBGrid
         Left = 0
         Top = 0
