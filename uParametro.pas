@@ -12,6 +12,10 @@ uses
   System.Actions, Vcl.ActnList;
 
 type
+  TModalAction = (maAdicionar,
+                  maEditar,
+                  maExcluir);
+
   TfrmParametro = class(TForm)
     PageControl: TPageControl;
     tsGeral: TTabSheet;
@@ -44,6 +48,7 @@ type
     procedure actAdicionarExecute(Sender: TObject);
   private
     procedure activeQuerys;
+    procedure abrirTelaModal(tela: TForm; dsTela, dsParametro: TDataSet; acao: TModalAction);
   public
     { Public declarations }
   end;
@@ -57,18 +62,28 @@ uses uDm, uTipoFilamento;
 
 {$R *.dfm}
 
+procedure TfrmParametro.abrirTelaModal(tela: TForm; dsTela, dsParametro: TDataSet; acao: TModalAction);
+begin
+  dsTela := dsParametro;
+
+  case acao of
+    maAdicionar: dsParametro.Append;
+    maEditar: dsParametro.Edit;
+    maExcluir: dsParametro.Delete;
+  end;
+
+  if tela.ShowModal = mrOk then
+  begin
+    dsParametro.Active := False;
+    dsParametro.Active := True;
+  end;
+end;
+
 procedure TfrmParametro.actAdicionarExecute(Sender: TObject);
 begin
   if PageControl.ActivePage = tsTipoFilamento then
   begin
-    frmTipoFilamento.dsMain.DataSet := dsTipoFilamento.DataSet;
-    dsTipoFilamento.DataSet.Append;
-
-    if frmTipoFilamento.ShowModal = mrOk then
-    begin
-      dsTipoFilamento.DataSet.Active := False;
-      dsTipoFilamento.DataSet.Active := True;
-    end;
+    abrirTelaModal(frmTipoFilamento, frmTipoFilamento.dsMain.DataSet, dsTipoFilamento.DataSet, maAdicionar);
   end
   else if PageControl.ActivePage = tsCategoria then
   begin
