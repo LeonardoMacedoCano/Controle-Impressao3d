@@ -9,7 +9,7 @@ uses
   Vcl.ExtCtrls, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client;
+  FireDAC.Comp.Client, System.UITypes;
 
 type
   TfrmPadrao = class(TForm)
@@ -148,7 +148,7 @@ begin
 
   for i := 1 to Length(snum) do
   begin
-    if snum[i] in ['0'..'9'] then
+    if CharInSet(snum[i],['0'..'9']) then
     begin
       Result := Result + snum[i];
     end;
