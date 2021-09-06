@@ -6,7 +6,8 @@ uses
   uDM in 'uDM.pas' {dm: TDataModule},
   uParametro in 'uParametro.pas' {frmParametro},
   uPadrao in 'uPadrao.pas' {frmPadrao},
-  uTipoFilamento in 'uTipoFilamento.pas' {frmTipoFilamento};
+  uTipoFilamento in 'uTipoFilamento.pas' {frmTipoFilamento},
+  uCategoria in 'uCategoria.pas' {frmCategoria};
 
 {$R *.res}
 
@@ -18,5 +19,6 @@ begin
   Application.CreateForm(TfrmParametro, frmParametro);
   Application.CreateForm(TfrmPadrao, frmPadrao);
   Application.CreateForm(TfrmTipoFilamento, frmTipoFilamento);
+  Application.CreateForm(TfrmCategoria, frmCategoria);
   Application.Run;
 end.
