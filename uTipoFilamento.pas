@@ -23,8 +23,9 @@ type
     edtDiametro: TDBEdit;
     Label4: TLabel;
     Label5: TLabel;
+    procedure btnSalvarClick(Sender: TObject);
   private
-    { Private declarations }
+    procedure verificarCamposObrigatorios;
   public
     { Public declarations }
   end;
@@ -35,5 +36,20 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmTipoFilamento.btnSalvarClick(Sender: TObject);
+begin
+  verificarCamposObrigatorios;
+
+  inherited;
+end;
+
+procedure TfrmTipoFilamento.verificarCamposObrigatorios;
+begin
+  verificarCampoNuloOuVazio(edtDescricao.Field, 'Preencha a Descrição do filamento!');
+  verificarCampoNuloOuVazio(edtValor.Field,     'Preencha o Valor do quilo do filamento!');
+  verificarCampoNuloOuVazio(edtDensidade.Field, 'Preencha a Densidade do filamento!');
+  verificarCampoNuloOuVazio(edtDiametro.Field,  'Preencha o Diâmetro do filamento!');
+end;
 
 end.
