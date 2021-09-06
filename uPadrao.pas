@@ -47,6 +47,7 @@ type
     function msgPadraoConfirmacao(msg: String): Boolean;
     function somenteNumero(snum : String): String;
     procedure verificarCampoNuloOuVazio(campo: TField; msgErro: string);
+    procedure atualizarDataSet(ds: TDataSet);
   end;
 
 var
@@ -70,6 +71,12 @@ begin
   btnEditar.Enabled    := not isModoEdicaoDsMain;
   btnConsultar.Enabled := not isModoEdicaoDsMain;
   btnExcluir.Enabled   := not isModoEdicaoDsMain;
+end;
+
+procedure TfrmPadrao.atualizarDataSet(ds: TDataSet);
+begin
+  ds.Active := False;
+  ds.Active := True;
 end;
 
 procedure TfrmPadrao.atualizarSetasToolbarMain;
