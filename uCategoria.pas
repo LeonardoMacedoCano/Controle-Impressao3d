@@ -8,13 +8,19 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, System.ImageList,
-  Vcl.ImgList, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.ToolWin;
+  Vcl.ImgList, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.ToolWin, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.DBCtrls;
 
 type
   TfrmCategoria = class(TfrmPadrao)
+    edtCodigo: TDBEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    edtDescricao: TDBEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btnSalvarClick(Sender: TObject);
   private
-    { Private declarations }
+    procedure verificarCamposObrigatorios;
   public
     { Public declarations }
   end;
@@ -26,11 +32,23 @@ implementation
 
 {$R *.dfm}
 
+procedure TfrmCategoria.btnSalvarClick(Sender: TObject);
+begin
+  verificarCamposObrigatorios;
+
+  inherited;
+end;
+
 procedure TfrmCategoria.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   inherited;
 
   ModalResult := mrOk;
+end;
+
+procedure TfrmCategoria.verificarCamposObrigatorios;
+begin
+  verificarCampoNuloOuVazio(edtDescricao.Field, 'Preencha a Descrição da Categoria!');
 end;
 
 end.
