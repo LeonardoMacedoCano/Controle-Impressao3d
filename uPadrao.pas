@@ -45,6 +45,7 @@ type
     procedure atualizarSetasToolbarMain;
   public
     function msgPadraoConfirmacao(msg: String): Boolean;
+    function somenteNumero(snum : String): String;
   end;
 
 var
@@ -138,6 +139,20 @@ end;
 function TfrmPadrao.msgPadraoConfirmacao(msg: String): Boolean;
 begin
   Result := MessageDlg(msg, mtConfirmation, [mbYes, mbNo],0) = mrYes;
+end;
+
+function TfrmPadrao.somenteNumero(snum: String): String;
+var i: Integer;
+begin
+  Result := '';
+
+  for i := 1 to Length(snum) do
+  begin
+    if snum[i] in ['0'..'9'] then
+    begin
+      Result := Result + snum[i];
+    end;
+  end;
 end;
 
 end.

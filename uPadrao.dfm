@@ -24,7 +24,6 @@ object frmPadrao: TfrmPadrao
     ButtonWidth = 55
     Images = imgToolBar
     TabOrder = 0
-    ExplicitWidth = 551
     object btnNovo: TToolButton
       Left = 0
       Top = 0
@@ -122,8 +121,6 @@ object frmPadrao: TfrmPadrao
     Color = 10658466
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 551
-    ExplicitHeight = 361
   end
   object imgToolBar: TImageList
     Height = 48
