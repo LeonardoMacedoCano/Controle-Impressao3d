@@ -3,7 +3,7 @@ object frmParametro: TfrmParametro
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Par'#226'metros'
-  ClientHeight = 411
+  ClientHeight = 305
   ClientWidth = 395
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -20,78 +20,123 @@ object frmParametro: TfrmParametro
     Left = 0
     Top = 0
     Width = 395
-    Height = 370
+    Height = 305
     ActivePage = tsGeral
     Align = alClient
     PopupMenu = PopupMenu
     TabOrder = 0
+    ExplicitHeight = 370
     object tsGeral: TTabSheet
       Caption = 'Geral'
-      object lblCustoEnergiaKWH: TLabel
-        Left = 25
-        Top = 32
-        Width = 101
-        Height = 13
-        Caption = 'Custo Energia (kw/h)'
-      end
-      object lblConsumoEnder3KWH: TLabel
-        Left = 8
-        Top = 59
-        Width = 118
-        Height = 13
-        Caption = 'Consumo Ender 3 (kw/h)'
-      end
-      object lblCustoManutencao: TLabel
-        Left = 14
-        Top = 86
-        Width = 112
-        Height = 13
-        Caption = 'Custo Manuten'#231#227'o (%)'
-      end
-      object lblValorTopoManutencao: TLabel
-        Left = 13
-        Top = 113
-        Width = 113
-        Height = 13
-        Caption = 'Valor Topo Manuten'#231#227'o'
-      end
-      object edtCustoEnergiaKWH: TEdit
-        Left = 132
-        Top = 29
-        Width = 100
-        Height = 21
+      ExplicitHeight = 342
+      object pnlGeral: TPanel
+        Left = 0
+        Top = 0
+        Width = 387
+        Height = 277
+        Align = alClient
+        Color = 10658466
+        ParentBackground = False
         TabOrder = 0
-      end
-      object edtConsumoEnder3KWH: TEdit
-        Left = 132
-        Top = 56
-        Width = 100
-        Height = 21
-        TabOrder = 1
-      end
-      object edtCustoManutencao: TEdit
-        Left = 132
-        Top = 83
-        Width = 100
-        Height = 21
-        TabOrder = 2
-      end
-      object edtValorTopoManutencao: TEdit
-        Left = 132
-        Top = 110
-        Width = 100
-        Height = 21
-        TabOrder = 3
+        ExplicitTop = 64
+        ExplicitHeight = 271
+        object lblConsumoEnder3KWH: TLabel
+          Left = 16
+          Top = 91
+          Width = 118
+          Height = 13
+          Caption = 'Consumo Ender 3 (kw/h)'
+        end
+        object lblCustoEnergiaKWH: TLabel
+          Left = 33
+          Top = 64
+          Width = 101
+          Height = 13
+          Caption = 'Custo Energia (kw/h)'
+        end
+        object lblCustoManutencao: TLabel
+          Left = 22
+          Top = 118
+          Width = 112
+          Height = 13
+          Caption = 'Custo Manuten'#231#227'o (%)'
+        end
+        object lblValorTopoManutencao: TLabel
+          Left = 21
+          Top = 145
+          Width = 113
+          Height = 13
+          Caption = 'Valor Topo Manuten'#231#227'o'
+        end
+        object edtConsumoEnder3KWH: TEdit
+          Left = 140
+          Top = 88
+          Width = 100
+          Height = 21
+          TabOrder = 0
+        end
+        object edtCustoEnergiaKWH: TEdit
+          Left = 140
+          Top = 61
+          Width = 100
+          Height = 21
+          TabOrder = 1
+        end
+        object edtCustoManutencao: TEdit
+          Left = 140
+          Top = 115
+          Width = 100
+          Height = 21
+          TabOrder = 2
+        end
+        object edtValorTopoManutencao: TEdit
+          Left = 140
+          Top = 142
+          Width = 100
+          Height = 21
+          TabOrder = 3
+        end
+        object pnlBottom: TPanel
+          Left = 1
+          Top = 238
+          Width = 385
+          Height = 38
+          Align = alBottom
+          TabOrder = 4
+          ExplicitTop = 296
+          object btnCancelar: TButton
+            Left = 1
+            Top = 1
+            Width = 100
+            Height = 36
+            Align = alLeft
+            Caption = 'Cancelar'
+            TabOrder = 0
+            ExplicitHeight = 39
+          end
+          object btnSalvar: TButton
+            Left = 284
+            Top = 1
+            Width = 100
+            Height = 36
+            Align = alRight
+            Caption = 'Salvar'
+            TabOrder = 1
+            ExplicitLeft = 354
+            ExplicitHeight = 39
+          end
+        end
       end
     end
     object tsTipoFilamento: TTabSheet
       Caption = 'Tipo Filamento'
       ImageIndex = 1
+      ExplicitHeight = 342
       object dgTipoFilamento: TDBGrid
         Left = 0
         Top = 0
         Width = 387
-        Height = 342
+        Height = 277
         Align = alClient
         DataSource = dsTipoFilamento
         PopupMenu = PopupMenu
@@ -143,11 +188,12 @@ object frmParametro: TfrmParametro
     object tsCategoria: TTabSheet
       Caption = 'Categoria'
       ImageIndex = 2
+      ExplicitHeight = 342
       object dgCategoria: TDBGrid
         Left = 0
         Top = 0
         Width = 387
-        Height = 342
+        Height = 277
         Align = alClient
         DataSource = dsCategoria
         TabOrder = 0
@@ -173,35 +219,6 @@ object frmParametro: TfrmParametro
             Visible = True
           end>
       end
-    end
-  end
-  object pnlBottom: TPanel
-    Left = 0
-    Top = 370
-    Width = 395
-    Height = 41
-    Align = alBottom
-    TabOrder = 1
-    DesignSize = (
-      395
-      41)
-    object btnSalvar: TButton
-      Left = 296
-      Top = 5
-      Width = 95
-      Height = 30
-      Anchors = [akRight, akBottom]
-      Caption = 'Salvar'
-      TabOrder = 1
-    end
-    object btnCancelar: TButton
-      Left = 4
-      Top = 6
-      Width = 95
-      Height = 30
-      Anchors = [akLeft, akBottom]
-      Caption = 'Cancelar'
-      TabOrder = 0
     end
   end
   object dsCategoria: TDataSource

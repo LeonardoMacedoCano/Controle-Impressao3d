@@ -17,7 +17,7 @@ type
     tsGeral: TTabSheet;
     tsTipoFilamento: TTabSheet;
     tsCategoria: TTabSheet;
-    pnlBottom: TPanel;
+    pnlGeral: TPanel;
     btnSalvar: TButton;
     btnCancelar: TButton;
     dsCategoria: TDataSource;
@@ -44,6 +44,7 @@ type
     Editar1: TMenuItem;
     actExcluir: TAction;
     Excluir1: TMenuItem;
+    pnlBottom: TPanel;
     procedure FormCreate(Sender: TObject);
     procedure actAdicionarExecute(Sender: TObject);
     procedure actEditarExecute(Sender: TObject);
