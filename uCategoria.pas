@@ -18,11 +18,8 @@ type
     Label2: TLabel;
     edtDescricao: TDBEdit;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure btnSalvarClick(Sender: TObject);
   private
-    procedure verificarCamposObrigatorios;
   public
-    { Public declarations }
   end;
 
 var
@@ -32,23 +29,11 @@ implementation
 
 {$R *.dfm}
 
-procedure TfrmCategoria.btnSalvarClick(Sender: TObject);
-begin
-  verificarCamposObrigatorios;
-
-  inherited;
-end;
-
 procedure TfrmCategoria.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   inherited;
 
   ModalResult := mrOk;
-end;
-
-procedure TfrmCategoria.verificarCamposObrigatorios;
-begin
-  verificarCampoNuloOuVazio(edtDescricao.Field, 'Preencha a Descrição da Categoria!');
 end;
 
 end.

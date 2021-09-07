@@ -7,6 +7,7 @@ inherited frmCategoria: TfrmCategoria
   TextHeight = 13
   inherited pnlMain: TPanel
     Height = 125
+    ExplicitHeight = 125
     object Label1: TLabel
       Left = 58
       Top = 43
