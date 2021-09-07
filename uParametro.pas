@@ -40,8 +40,11 @@ type
     ActionList: TActionList;
     actAdicionar: TAction;
     Adicionar1: TMenuItem;
+    actEditar: TAction;
+    Editar1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure actAdicionarExecute(Sender: TObject);
+    procedure actEditarExecute(Sender: TObject);
   private
     procedure activeQuerys;
     procedure abrirTelaModal(tela: TForm; dsParametro: TDataSet);
@@ -80,6 +83,24 @@ begin
   begin
     frmCategoria.dsMain.DataSet := dsCategoria.DataSet;
     dsCategoria.DataSet.Append;
+
+    abrirTelaModal(frmCategoria, dsCategoria.DataSet);
+  end;
+end;
+
+procedure TfrmParametro.actEditarExecute(Sender: TObject);
+begin
+  if PageControl.ActivePage = tsTipoFilamento then
+  begin
+    frmTipoFilamento.dsMain.DataSet := dsTipoFilamento.DataSet;
+    dsTipoFilamento.DataSet.Edit;
+
+    abrirTelaModal(frmTipoFilamento, dsTipoFilamento.DataSet);
+  end
+  else if PageControl.ActivePage = tsCategoria then
+  begin
+    frmCategoria.dsMain.DataSet := dsCategoria.DataSet;
+    dsCategoria.DataSet.Edit;
 
     abrirTelaModal(frmCategoria, dsCategoria.DataSet);
   end;

@@ -246,6 +246,9 @@ object frmParametro: TfrmParametro
     object Adicionar1: TMenuItem
       Action = actAdicionar
     end
+    object Editar1: TMenuItem
+      Action = actEditar
+    end
   end
   object ActionList: TActionList
     Left = 351
@@ -253,6 +256,10 @@ object frmParametro: TfrmParametro
     object actAdicionar: TAction
       Caption = 'Adicionar'
       OnExecute = actAdicionarExecute
+    end
+    object actEditar: TAction
+      Caption = 'Editar'
+      OnExecute = actEditarExecute
     end
   end
 end
