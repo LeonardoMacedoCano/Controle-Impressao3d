@@ -69,6 +69,8 @@ begin
   btnCancelar.Enabled  := isModoEdicaoDsMain;
   btnNovo.Enabled      := not isModoEdicaoDsMain;
   btnEditar.Enabled    := not isModoEdicaoDsMain;
+  btnAnterior.Enabled  := not isModoEdicaoDsMain;
+  btnProximo.Enabled   := not isModoEdicaoDsMain;
   btnConsultar.Enabled := not isModoEdicaoDsMain;
   btnExcluir.Enabled   := not isModoEdicaoDsMain;
 end;
