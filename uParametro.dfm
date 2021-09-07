@@ -249,6 +249,9 @@ object frmParametro: TfrmParametro
     object Editar1: TMenuItem
       Action = actEditar
     end
+    object Excluir1: TMenuItem
+      Action = actExcluir
+    end
   end
   object ActionList: TActionList
     Left = 351
@@ -260,6 +263,10 @@ object frmParametro: TfrmParametro
     object actEditar: TAction
       Caption = 'Editar'
       OnExecute = actEditarExecute
+    end
+    object actExcluir: TAction
+      Caption = 'Excluir'
+      OnExecute = actExcluirExecute
     end
   end
 end

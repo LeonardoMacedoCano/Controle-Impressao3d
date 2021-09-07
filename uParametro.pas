@@ -9,7 +9,7 @@ uses
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
   FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls, Vcl.Menus,
-  System.Actions, Vcl.ActnList;
+  System.Actions, Vcl.ActnList, uPadrao;
 
 type
   TfrmParametro = class(TForm)
@@ -42,9 +42,12 @@ type
     Adicionar1: TMenuItem;
     actEditar: TAction;
     Editar1: TMenuItem;
+    actExcluir: TAction;
+    Excluir1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure actAdicionarExecute(Sender: TObject);
     procedure actEditarExecute(Sender: TObject);
+    procedure actExcluirExecute(Sender: TObject);
   private
     procedure activeQuerys;
     procedure abrirTelaModal(tela: TForm; dsParametro: TDataSet);
@@ -103,6 +106,30 @@ begin
     dsCategoria.DataSet.Edit;
 
     abrirTelaModal(frmCategoria, dsCategoria.DataSet);
+  end;
+end;
+
+procedure TfrmParametro.actExcluirExecute(Sender: TObject);
+begin
+  if PageControl.ActivePage = tsTipoFilamento then
+  begin
+    if not (dsTipoFilamento.DataSet.IsEmpty) and frmPadrao.msgPadraoConfirmacao(msgConfirmarExclucao) then
+    begin
+      frmTipoFilamento.dsMain.DataSet := dsTipoFilamento.DataSet;
+      dsTipoFilamento.DataSet.Delete;
+
+      abrirTelaModal(frmTipoFilamento, dsTipoFilamento.DataSet);
+    end;
+  end
+  else if PageControl.ActivePage = tsCategoria then
+  begin
+    if not (dsCategoria.DataSet.IsEmpty) and frmPadrao.msgPadraoConfirmacao(msgConfirmarExclucao) then
+    begin
+      frmCategoria.dsMain.DataSet := dsCategoria.DataSet;
+      dsCategoria.DataSet.Delete;
+
+      abrirTelaModal(frmCategoria, dsCategoria.DataSet);
+    end;
   end;
 end;
 
