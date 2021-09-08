@@ -71,28 +71,28 @@ object frmParametro: TfrmParametro
           Height = 13
           Caption = 'Valor Topo Manuten'#231#227'o'
         end
-        object edtConsumoEnder3KWH: TEdit
+        object Param_ConsumoEnder3KWH: TEdit
           Left = 196
           Top = 99
           Width = 100
           Height = 21
           TabOrder = 0
         end
-        object edtCustoEnergiaKWH: TEdit
+        object Param_CustoEnergiaKWH: TEdit
           Left = 196
           Top = 72
           Width = 100
           Height = 21
           TabOrder = 1
         end
-        object edtCustoManutencao: TEdit
+        object Param_CustoManutencao: TEdit
           Left = 196
           Top = 126
           Width = 100
           Height = 21
           TabOrder = 2
         end
-        object edtValorTopoManutencao: TEdit
+        object Param_ValorTopoManutencao: TEdit
           Left = 196
           Top = 153
           Width = 100
@@ -116,6 +116,7 @@ object frmParametro: TfrmParametro
             Align = alLeft
             Caption = 'Cancelar'
             TabOrder = 0
+            OnClick = btnCancelarClick
           end
           object btnSalvar: TButton
             Left = 294
@@ -125,6 +126,7 @@ object frmParametro: TfrmParametro
             Align = alRight
             Caption = 'Salvar'
             TabOrder = 1
+            OnClick = btnSalvarClick
             ExplicitLeft = 284
           end
         end

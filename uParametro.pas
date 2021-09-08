@@ -29,13 +29,13 @@ type
     qryGeral: TFDQuery;
     dsGeral: TDataSource;
     lblCustoEnergiaKWH: TLabel;
-    edtCustoEnergiaKWH: TEdit;
+    Param_CustoEnergiaKWH: TEdit;
     lblConsumoEnder3KWH: TLabel;
-    edtConsumoEnder3KWH: TEdit;
+    Param_ConsumoEnder3KWH: TEdit;
     lblCustoManutencao: TLabel;
-    edtCustoManutencao: TEdit;
+    Param_CustoManutencao: TEdit;
     lblValorTopoManutencao: TLabel;
-    edtValorTopoManutencao: TEdit;
+    Param_ValorTopoManutencao: TEdit;
     PopupMenu: TPopupMenu;
     ActionList: TActionList;
     actAdicionar: TAction;
@@ -49,9 +49,12 @@ type
     procedure actAdicionarExecute(Sender: TObject);
     procedure actEditarExecute(Sender: TObject);
     procedure actExcluirExecute(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
   private
     procedure activeQuerys;
     procedure abrirTelaModal(tela: TForm; dsParametro: TDataSet);
+    procedure atualizarParametrosGeral(salvarParam: Boolean);
   public
     { Public declarations }
   end;
@@ -141,11 +144,56 @@ begin
   qryCategoria.Active     := True;
 end;
 
+procedure TfrmParametro.atualizarParametrosGeral(salvarParam: Boolean);
+var
+  i: Integer;
+begin
+  qryGeral.First;
+
+  while not (qryGeral.Eof) do
+  begin
+    for i := Self.ComponentCount -1 downto 0 do
+    begin
+      if (Self.Components[i] is TEdit) and
+         (Self.Components[i].Name = 'Param_' + qryGeral.FieldByName('Parametro').AsString) then
+      begin
+        if salvarParam then
+        begin
+          qryGeral.Edit;
+          qryGeral.FieldByName('Valor').AsString := (Self.Components[i] as TEdit).Text;
+          qryGeral.Post;
+        end
+        else
+        begin
+          (Self.Components[i] as TEdit).Text := qryGeral.FieldByName('Valor').AsString;
+        end;
+      end;
+    end;
+
+    qryGeral.Next;
+  end;
+end;
+
+procedure TfrmParametro.btnCancelarClick(Sender: TObject);
+begin
+  if frmPadrao.msgPadraoConfirmacao(msgConfirmarCancelamento) then
+  begin
+    atualizarParametrosGeral(False);
+  end;
+end;
+
+procedure TfrmParametro.btnSalvarClick(Sender: TObject);
+begin
+  atualizarParametrosGeral(True);
+end;
+
 procedure TfrmParametro.FormCreate(Sender: TObject);
 begin
   activeQuerys;
 
   PageControl.ActivePage := tsGeral;
+
+  atualizarParametrosGeral(False);
 end;
 
 end.
