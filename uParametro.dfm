@@ -76,14 +76,14 @@ object frmParametro: TfrmParametro
           Top = 99
           Width = 100
           Height = 21
-          TabOrder = 0
+          TabOrder = 1
         end
         object Param_CustoEnergiaKWH: TEdit
           Left = 196
           Top = 72
           Width = 100
           Height = 21
-          TabOrder = 1
+          TabOrder = 0
         end
         object Param_CustoManutencao: TEdit
           Left = 196
