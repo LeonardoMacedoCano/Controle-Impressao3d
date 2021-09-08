@@ -144,6 +144,8 @@ end;
 procedure TfrmParametro.FormCreate(Sender: TObject);
 begin
   activeQuerys;
+
+  PageControl.ActivePage := tsGeral;
 end;
 
 end.
