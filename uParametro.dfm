@@ -2,9 +2,10 @@ object frmParametro: TfrmParametro
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Par'#226'metros'
-  ClientHeight = 305
-  ClientWidth = 395
+  ClientHeight = 315
+  ClientWidth = 405
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,91 +20,94 @@ object frmParametro: TfrmParametro
   object PageControl: TPageControl
     Left = 0
     Top = 0
-    Width = 395
-    Height = 305
+    Width = 405
+    Height = 315
     ActivePage = tsGeral
     Align = alClient
     PopupMenu = PopupMenu
     TabOrder = 0
-    ExplicitHeight = 370
+    ExplicitWidth = 395
+    ExplicitHeight = 305
     object tsGeral: TTabSheet
       Caption = 'Geral'
-      ExplicitHeight = 342
+      ExplicitWidth = 387
+      ExplicitHeight = 277
       object pnlGeral: TPanel
         Left = 0
         Top = 0
-        Width = 387
-        Height = 277
+        Width = 397
+        Height = 287
         Align = alClient
         Color = 10658466
         ParentBackground = False
         TabOrder = 0
-        ExplicitTop = 64
-        ExplicitHeight = 271
+        ExplicitWidth = 387
+        ExplicitHeight = 277
         object lblConsumoEnder3KWH: TLabel
-          Left = 16
-          Top = 91
+          Left = 72
+          Top = 102
           Width = 118
           Height = 13
           Caption = 'Consumo Ender 3 (kw/h)'
         end
         object lblCustoEnergiaKWH: TLabel
-          Left = 33
-          Top = 64
+          Left = 89
+          Top = 75
           Width = 101
           Height = 13
           Caption = 'Custo Energia (kw/h)'
         end
         object lblCustoManutencao: TLabel
-          Left = 22
-          Top = 118
+          Left = 78
+          Top = 129
           Width = 112
           Height = 13
           Caption = 'Custo Manuten'#231#227'o (%)'
         end
         object lblValorTopoManutencao: TLabel
-          Left = 21
-          Top = 145
+          Left = 77
+          Top = 156
           Width = 113
           Height = 13
           Caption = 'Valor Topo Manuten'#231#227'o'
         end
         object edtConsumoEnder3KWH: TEdit
-          Left = 140
-          Top = 88
+          Left = 196
+          Top = 99
           Width = 100
           Height = 21
           TabOrder = 0
         end
         object edtCustoEnergiaKWH: TEdit
-          Left = 140
-          Top = 61
+          Left = 196
+          Top = 72
           Width = 100
           Height = 21
           TabOrder = 1
         end
         object edtCustoManutencao: TEdit
-          Left = 140
-          Top = 115
+          Left = 196
+          Top = 126
           Width = 100
           Height = 21
           TabOrder = 2
         end
         object edtValorTopoManutencao: TEdit
-          Left = 140
-          Top = 142
+          Left = 196
+          Top = 153
           Width = 100
           Height = 21
           TabOrder = 3
         end
         object pnlBottom: TPanel
           Left = 1
-          Top = 238
-          Width = 385
+          Top = 248
+          Width = 395
           Height = 38
           Align = alBottom
           TabOrder = 4
-          ExplicitTop = 296
+          ExplicitTop = 238
+          ExplicitWidth = 385
           object btnCancelar: TButton
             Left = 1
             Top = 1
@@ -112,18 +116,16 @@ object frmParametro: TfrmParametro
             Align = alLeft
             Caption = 'Cancelar'
             TabOrder = 0
-            ExplicitHeight = 39
           end
           object btnSalvar: TButton
-            Left = 284
+            Left = 294
             Top = 1
             Width = 100
             Height = 36
             Align = alRight
             Caption = 'Salvar'
             TabOrder = 1
-            ExplicitLeft = 354
-            ExplicitHeight = 39
+            ExplicitLeft = 284
           end
         end
       end
@@ -131,12 +133,13 @@ object frmParametro: TfrmParametro
     object tsTipoFilamento: TTabSheet
       Caption = 'Tipo Filamento'
       ImageIndex = 1
-      ExplicitHeight = 342
+      ExplicitWidth = 387
+      ExplicitHeight = 277
       object dgTipoFilamento: TDBGrid
         Left = 0
         Top = 0
-        Width = 387
-        Height = 277
+        Width = 397
+        Height = 287
         Align = alClient
         DataSource = dsTipoFilamento
         PopupMenu = PopupMenu
@@ -152,7 +155,7 @@ object frmParametro: TfrmParametro
             FieldName = 'id'
             ReadOnly = True
             Title.Caption = 'C'#243'digo'
-            Width = 50
+            Width = 40
             Visible = True
           end
           item
@@ -180,7 +183,7 @@ object frmParametro: TfrmParametro
             Expanded = False
             FieldName = 'diametro'
             Title.Caption = 'Di'#226'metro'
-            Width = 55
+            Width = 50
             Visible = True
           end>
       end
@@ -188,12 +191,13 @@ object frmParametro: TfrmParametro
     object tsCategoria: TTabSheet
       Caption = 'Categoria'
       ImageIndex = 2
-      ExplicitHeight = 342
+      ExplicitWidth = 387
+      ExplicitHeight = 277
       object dgCategoria: TDBGrid
         Left = 0
         Top = 0
-        Width = 387
-        Height = 277
+        Width = 397
+        Height = 287
         Align = alClient
         DataSource = dsCategoria
         TabOrder = 0
@@ -215,7 +219,7 @@ object frmParametro: TfrmParametro
             Expanded = False
             FieldName = 'descricao'
             Title.Caption = 'Descri'#231#227'o'
-            Width = 320
+            Width = 290
             Visible = True
           end>
       end
