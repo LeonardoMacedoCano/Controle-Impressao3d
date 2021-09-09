@@ -24,6 +24,7 @@ type
     dsMain: TDataSource;
     procedure edtFiltroKeyPress(Sender: TObject; var Key: Char);
     procedure btnFiltrarClick(Sender: TObject);
+    procedure cbNomeColunaChange(Sender: TObject);
   private
     FFiltro: string;
     FIdSelecionado: Variant;
@@ -31,6 +32,7 @@ type
     FTipoColuna: TFieldType;
     function campoSomenteNumeros: Boolean;
     function novoFiltro(var Filtro_Descr: String): String;
+    function getTipoColuna: TFieldType;
   public
     property NomeColuna : string read FNomeColuna write FNomeColuna;
     property Filtro : string read FFiltro write FFiltro;
@@ -60,6 +62,12 @@ begin
             (TipoColuna = ftFloat) or
             (TipoColuna = ftCurrency) or
             (TipoColuna = ftAutoInc);
+end;
+
+procedure TfrmPesquisaPadrao.cbNomeColunaChange(Sender: TObject);
+begin
+  FNomeColuna := cbNomeColuna.Text;
+  FTipoColuna := getTipoColuna;
 end;
 
 procedure TfrmPesquisaPadrao.edtFiltroKeyPress(Sender: TObject; var Key: Char);
@@ -100,6 +108,20 @@ begin
   else
   begin
     raise Exception.Create('Campos insuficientes para adicionar um novo filtro!');
+  end;
+end;
+
+function TfrmPesquisaPadrao.getTipoColuna: TFieldType;
+var i: integer;
+begin
+  Result := ftUnknown;
+
+  for i := 0 to dsMain.DataSet.FieldCount -1 do
+  begin
+    if dsMain.DataSet.Fields[i].FieldName = FNomeColuna then
+    begin
+      Result := dsMain.DataSet.Fields[i].DataType;
+    end;
   end;
 end;
 

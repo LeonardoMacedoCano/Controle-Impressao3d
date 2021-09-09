@@ -116,6 +116,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Height = 21
       TabOrder = 0
       Text = 'cbNomeColuna'
+      OnChange = cbNomeColunaChange
     end
     object cbTipoFiltro: TComboBox
       Left = 159
