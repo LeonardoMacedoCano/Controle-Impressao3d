@@ -157,8 +157,6 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Align = alBottom
       ItemHeight = 13
       TabOrder = 4
-      ExplicitTop = 47
-      ExplicitWidth = 573
     end
   end
   object DBGrid: TDBGrid
@@ -167,11 +165,22 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
     Width = 574
     Height = 247
     Align = alClient
+    DataSource = dsMain
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+  end
+  object qryMain: TFDQuery
+    Connection = dm.FDConnection
+    Left = 496
+    Top = 51
+  end
+  object dsMain: TDataSource
+    DataSet = qryMain
+    Left = 536
+    Top = 50
   end
 end
