@@ -25,6 +25,8 @@ type
     procedure edtFiltroKeyPress(Sender: TObject; var Key: Char);
     procedure btnFiltrarClick(Sender: TObject);
     procedure cbNomeColunaChange(Sender: TObject);
+    procedure alimentarCBNomeColuna;
+    procedure FormShow(Sender: TObject);
   private
     FFiltro: string;
     FIdSelecionado: Variant;
@@ -49,6 +51,25 @@ implementation
 {$R *.dfm}
 
 { TfrmPesquisaPadrao }
+
+procedure TfrmPesquisaPadrao.alimentarCBNomeColuna;
+var i: integer;
+begin
+  cbNomeColuna.Clear;
+
+  for i := 0 to dsMain.DataSet.FieldCount -1 do
+  begin
+    if dsMain.DataSet.Fields[i].FieldName <> EmptyStr then
+    begin
+      cbNomeColuna.Items.Add(dsMain.DataSet.Fields[i].FieldName);
+    end;
+  end;
+
+  cbNomeColuna.ItemIndex := 0;
+
+  FNomeColuna := cbNomeColuna.Text;
+  FTipoColuna := getTipoColuna;
+end;
 
 procedure TfrmPesquisaPadrao.btnFiltrarClick(Sender: TObject);
 begin
@@ -109,6 +130,11 @@ begin
   begin
     raise Exception.Create('Campos insuficientes para adicionar um novo filtro!');
   end;
+end;
+
+procedure TfrmPesquisaPadrao.FormShow(Sender: TObject);
+begin
+  alimentarCBNomeColuna;
 end;
 
 function TfrmPesquisaPadrao.getTipoColuna: TFieldType;
