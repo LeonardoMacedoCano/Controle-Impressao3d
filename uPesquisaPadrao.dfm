@@ -149,6 +149,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Anchors = [akLeft, akTop, akRight]
       Caption = 'Filtrar'
       TabOrder = 3
+      OnClick = btnFiltrarClick
     end
     object listBoxFiltros: TListBox
       Left = 1

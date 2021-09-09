@@ -23,17 +23,20 @@ type
     qryMain: TFDQuery;
     dsMain: TDataSource;
     procedure edtFiltroKeyPress(Sender: TObject; var Key: Char);
+    procedure btnFiltrarClick(Sender: TObject);
   private
     FFiltro: string;
     FIdSelecionado: Variant;
     FNomeColuna: string;
     FTipoColuna: TFieldType;
     function campoSomenteNumeros: Boolean;
+    function novoFiltro(var Filtro_Descr: String): String;
   public
     property NomeColuna : string read FNomeColuna write FNomeColuna;
     property Filtro : string read FFiltro write FFiltro;
     property TipoColuna : TFieldType read FTipoColuna write FTipoColuna;
     property IdSelecionado : Variant read FIdSelecionado write FIdSelecionado;
+    procedure filtrar;
   end;
 
 var
@@ -44,6 +47,11 @@ implementation
 {$R *.dfm}
 
 { TfrmPesquisaPadrao }
+
+procedure TfrmPesquisaPadrao.btnFiltrarClick(Sender: TObject);
+begin
+  filtrar;
+end;
 
 function TfrmPesquisaPadrao.campoSomenteNumeros: Boolean;
 begin
@@ -63,6 +71,61 @@ begin
       key := #0;
     end;
   end;
+end;
+
+procedure TfrmPesquisaPadrao.filtrar;
+var Filtro_Descr: String;
+begin
+  if (cbNomeColuna.Text <> EmptyStr) and
+     (cbTipoFiltro.Text <> EmptyStr) and
+     (edtFiltro.Text    <> EmptyStr) then
+  begin
+    if Filtro <> EmptyStr then
+    begin
+      Filtro := Filtro + ' and ' + novoFiltro(Filtro_Descr);
+    end
+    else
+    begin
+      Filtro := novoFiltro(Filtro_Descr);
+    end;
+
+    qryMain.Close;
+    qryMain.Filtered := False;
+    qryMain.Filter   := Filtro;
+    qryMain.Filtered := True;
+    qryMain.Open;
+
+    listBoxFiltros.Items.Add(Filtro_Descr);
+  end
+  else
+  begin
+    raise Exception.Create('Campos insuficientes para adicionar um novo filtro!');
+  end;
+end;
+
+function TfrmPesquisaPadrao.novoFiltro(var Filtro_Descr: String): String;
+begin
+    Result := cbNomeColuna.Text;
+
+  case cbTipoFiltro.ItemIndex of
+    0: begin //Igual
+      Result := Result + ' = ''' + edtFiltro.text + '''';
+    end;
+    1:begin //Inicia com
+      Result := Result + ' like ''' + edtFiltro.text + '%''';
+    end;
+    2:begin //Termina com
+      Result := Result + ' like ''%' + edtFiltro.text + '''';
+    end;
+    3:begin //Contem
+      Result := Result + ' like ''%' + edtFiltro.text + '%''';
+    end;
+    4:begin //Diferente
+      Result := Result + ' <> ''' + edtFiltro.text + '''';
+    end;
+  end;
+
+  Filtro_Descr := cbNomeColuna.Text + ' ' + cbTipoFiltro.Text + ' ' + edtFiltro.text;
 end;
 
 end.
