@@ -176,6 +176,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnDblClick = DBGridDblClick
   end
   object qryMain: TFDQuery
     Connection = dm.FDConnection

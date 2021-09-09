@@ -27,6 +27,7 @@ type
     procedure cbNomeColunaChange(Sender: TObject);
     procedure alimentarCBNomeColuna;
     procedure FormShow(Sender: TObject);
+    procedure DBGridDblClick(Sender: TObject);
   private
     FFiltro: string;
     FIdSelecionado: Variant;
@@ -89,6 +90,13 @@ procedure TfrmPesquisaPadrao.cbNomeColunaChange(Sender: TObject);
 begin
   FNomeColuna := cbNomeColuna.Text;
   FTipoColuna := getTipoColuna;
+end;
+
+procedure TfrmPesquisaPadrao.DBGridDblClick(Sender: TObject);
+begin
+  FIdSelecionado := DBGrid.DataSource.DataSet.FieldByName('id').AsVariant;
+
+  ModalResult := mrOk;
 end;
 
 procedure TfrmPesquisaPadrao.edtFiltroKeyPress(Sender: TObject; var Key: Char);
