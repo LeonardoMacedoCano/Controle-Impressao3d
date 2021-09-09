@@ -22,6 +22,7 @@ type
     DBGrid: TDBGrid;
     qryMain: TFDQuery;
     dsMain: TDataSource;
+    procedure edtFiltroKeyPress(Sender: TObject; var Key: Char);
   private
     FFiltro: string;
     FIdSelecionado: Variant;
@@ -51,6 +52,17 @@ begin
             (TipoColuna = ftFloat) or
             (TipoColuna = ftCurrency) or
             (TipoColuna = ftAutoInc);
+end;
+
+procedure TfrmPesquisaPadrao.edtFiltroKeyPress(Sender: TObject; var Key: Char);
+begin
+  if campoSomenteNumeros then
+  begin
+    if not (CharInSet(key,['1','2','3','4','5','6','7','8','9','0',',', Chr(VK_BACK)])) then
+    begin
+      key := #0;
+    end;
+  end;
 end;
 
 end.

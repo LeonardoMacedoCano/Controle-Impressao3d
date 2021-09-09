@@ -139,6 +139,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Height = 21
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 2
+      OnKeyPress = edtFiltroKeyPress
     end
     object btnFiltrar: TButton
       Left = 454
