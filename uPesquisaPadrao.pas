@@ -23,9 +23,16 @@ type
     qryMain: TFDQuery;
     dsMain: TDataSource;
   private
-    { Private declarations }
+    FFiltro: string;
+    FIdSelecionado: Variant;
+    FNomeColuna: string;
+    FTipoColuna: TFieldType;
+    function campoSomenteNumeros: Boolean;
   public
-    { Public declarations }
+    property NomeColuna : string read FNomeColuna write FNomeColuna;
+    property Filtro : string read FFiltro write FFiltro;
+    property TipoColuna : TFieldType read FTipoColuna write FTipoColuna;
+    property IdSelecionado : Variant read FIdSelecionado write FIdSelecionado;
   end;
 
 var
@@ -34,5 +41,16 @@ var
 implementation
 
 {$R *.dfm}
+
+{ TfrmPesquisaPadrao }
+
+function TfrmPesquisaPadrao.campoSomenteNumeros: Boolean;
+begin
+  Result := (TipoColuna = ftSmallint) or
+            (TipoColuna = ftInteger) or
+            (TipoColuna = ftFloat) or
+            (TipoColuna = ftCurrency) or
+            (TipoColuna = ftAutoInc);
+end;
 
 end.
