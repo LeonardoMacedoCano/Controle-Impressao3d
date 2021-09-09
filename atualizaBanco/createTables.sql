@@ -1,5 +1,4 @@
--- Versão 2
-#
+-- Create Tables
 CREATE TABLE parametrogeral (
     id        INTEGER PRIMARY KEY AUTOINCREMENT
                       NOT NULL,
@@ -7,7 +6,7 @@ CREATE TABLE parametrogeral (
     valor     STRING,
     parametro STRING  NOT NULL
 )
-#
+
 CREATE TABLE tipofilamento (
     id        INTEGER PRIMARY KEY AUTOINCREMENT
                       NOT NULL,
@@ -16,11 +15,10 @@ CREATE TABLE tipofilamento (
     densidade DOUBLE  NOT NULL,
     diametro  DOUBLE  DEFAULT (1.75) 
 )
-#
+
 CREATE TABLE categoria (
     id        INTEGER PRIMARY KEY AUTOINCREMENT
                       NOT NULL,
     descricao STRING  NOT NULL
 )
-#
--- Fim
+-- End
