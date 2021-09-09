@@ -109,6 +109,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
         00000000000000000000000000000000005C000000E5000000E50000005B0000
         0000000000000000000000000000000000000000000000000000000000000000
         000000000000}
+      OnClick = btnLimparFiltroClick
     end
     object cbNomeColuna: TComboBox
       Left = 8

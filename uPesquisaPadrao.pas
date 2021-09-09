@@ -28,6 +28,7 @@ type
     procedure alimentarCBNomeColuna;
     procedure FormShow(Sender: TObject);
     procedure DBGridDblClick(Sender: TObject);
+    procedure btnLimparFiltroClick(Sender: TObject);
   private
     FFiltro: string;
     FIdSelecionado: Variant;
@@ -42,6 +43,7 @@ type
     property TipoColuna : TFieldType read FTipoColuna write FTipoColuna;
     property IdSelecionado : Variant read FIdSelecionado write FIdSelecionado;
     procedure filtrar;
+    procedure limparFiltro;
   end;
 
 var
@@ -75,6 +77,11 @@ end;
 procedure TfrmPesquisaPadrao.btnFiltrarClick(Sender: TObject);
 begin
   filtrar;
+end;
+
+procedure TfrmPesquisaPadrao.btnLimparFiltroClick(Sender: TObject);
+begin
+  limparFiltro;
 end;
 
 function TfrmPesquisaPadrao.campoSomenteNumeros: Boolean;
@@ -157,6 +164,18 @@ begin
       Result := dsMain.DataSet.Fields[i].DataType;
     end;
   end;
+end;
+
+procedure TfrmPesquisaPadrao.limparFiltro;
+begin
+  Filtro := EmptyStr;
+  listBoxFiltros.Clear;
+
+  qryMain.Close;
+  qryMain.Filtered := False;
+  qryMain.Filter   := Filtro;
+  qryMain.Filtered := True;
+  qryMain.Open;
 end;
 
 function TfrmPesquisaPadrao.novoFiltro(var Filtro_Descr: String): String;
