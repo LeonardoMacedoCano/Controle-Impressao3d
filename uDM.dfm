@@ -4,7 +4,9 @@ object dm: Tdm
   Width = 231
   object FDConnection: TFDConnection
     Params.Strings = (
-      'Database=D:\DelphiProjects\Controle-Impressao3d\dbImpressao3d.db'
+      
+        'Database=D:\DelphiProjects\Controle-Impressao3d-new\Controle-Imp' +
+        'ressao3d\dbImpressao3d.db'
       'LockingMode=Normal'
       'DriverID=SQLite')
     TxOptions.DisconnectAction = xdRollback
