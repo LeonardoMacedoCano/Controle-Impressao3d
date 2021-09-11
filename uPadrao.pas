@@ -9,7 +9,7 @@ uses
   Vcl.ExtCtrls, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, System.UITypes;
+  FireDAC.Comp.Client, System.UITypes, uPesquisaPadrao;
 
 type
   TfrmPadrao = class(TForm)
@@ -39,6 +39,7 @@ type
     procedure btnExcluirClick(Sender: TObject);
     procedure dsMainStateChange(Sender: TObject);
     procedure dsMainDataChange(Sender: TObject; Field: TField);
+    procedure btnConsultarClick(Sender: TObject);
   private
     function isModoEdicaoDsMain: Boolean;
     procedure atualizarBtnToolbarMain;
@@ -97,6 +98,18 @@ begin
   if msgPadraoConfirmacao(msgConfirmarCancelamento) then
   begin
     dsMain.DataSet.Cancel;
+  end;
+end;
+
+procedure TfrmPadrao.btnConsultarClick(Sender: TObject);
+begin
+  frmPesquisaPadrao.dsMain := dsMain;
+  frmPesquisaPadrao.qryMain.SQL := qryMain.SQL;
+  frmPesquisaPadrao.qryMain.Active := True;
+
+  if frmPesquisaPadrao.ShowModal = mrOk then
+  begin
+    dsMain.DataSet.Locate('id', frmPesquisaPadrao.IdSelecionado, []);
   end;
 end;
 

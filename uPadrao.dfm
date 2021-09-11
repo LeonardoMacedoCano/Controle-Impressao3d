@@ -103,6 +103,7 @@ object frmPadrao: TfrmPadrao
       Top = 0
       Caption = 'btnConsultar'
       ImageIndex = 6
+      OnClick = btnConsultarClick
     end
     object btnExcluir: TToolButton
       Left = 495
