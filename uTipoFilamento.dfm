@@ -93,6 +93,7 @@ inherited frmTipoFilamento: TfrmTipoFilamento
   inherited qryMain: TFDQuery
     Active = True
     SQL.Strings = (
-      'select * from tipoFilamento')
+      'select * from tipoFilamento'
+      'order by id')
   end
 end

@@ -45,6 +45,7 @@ inherited frmCategoria: TfrmCategoria
   inherited qryMain: TFDQuery
     Active = True
     SQL.Strings = (
-      'select * from categoria')
+      'select * from categoria'
+      'order by id')
   end
 end
