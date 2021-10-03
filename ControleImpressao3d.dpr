@@ -8,7 +8,8 @@ uses
   uPadrao in 'uPadrao.pas' {frmPadrao},
   uTipoFilamento in 'uTipoFilamento.pas' {frmTipoFilamento},
   uCategoria in 'uCategoria.pas' {frmCategoria},
-  uPesquisaPadrao in 'uPesquisaPadrao.pas' {frmPesquisaPadrao};
+  uPesquisaPadrao in 'uPesquisaPadrao.pas' {frmPesquisaPadrao},
+  uImpressao in 'uImpressao.pas' {frmImpressao};
 
 {$R *.res}
 
@@ -22,5 +23,6 @@ begin
   Application.CreateForm(TfrmTipoFilamento, frmTipoFilamento);
   Application.CreateForm(TfrmCategoria, frmCategoria);
   Application.CreateForm(TfrmPesquisaPadrao, frmPesquisaPadrao);
+  Application.CreateForm(TfrmImpressao, frmImpressao);
   Application.Run;
 end.
