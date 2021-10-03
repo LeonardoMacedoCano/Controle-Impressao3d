@@ -550,7 +550,7 @@ object frmSeletor: TfrmSeletor
       OnClick = btnConfiguracaoClick
       ExplicitLeft = 899
     end
-    object btnArquivo: TSpeedButton
+    object btnImpressao: TSpeedButton
       Left = 1
       Top = 1
       Width = 90
@@ -1073,6 +1073,7 @@ object frmSeletor: TfrmSeletor
         0000000000000000000000000000000000000000000000000000000000000000
         0000000000000000000000000000000000000000000000000000000000000000
         000000000000}
+      OnClick = btnImpressaoClick
     end
   end
   object pnlBottom: TPanel

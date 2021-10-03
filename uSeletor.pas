@@ -12,11 +12,13 @@ type
     pnlTop: TPanel;
     pnlBottom: TPanel;
     btnConfiguracao: TSpeedButton;
-    btnArquivo: TSpeedButton;
+    btnImpressao: TSpeedButton;
     Image1: TImage;
     procedure btnConfiguracaoClick(Sender: TObject);
+    procedure btnImpressaoClick(Sender: TObject);
   private
     procedure abrirTelaParametro;
+    procedure abrirTelaImpressao;
   public
     { Public declarations }
   end;
@@ -26,9 +28,19 @@ var
 
 implementation
 
-uses uParametro;
+uses uParametro, uImpressao;
 
 {$R *.dfm}
+
+procedure TfrmSeletor.abrirTelaImpressao;
+begin
+  try
+    frmImpressao := TfrmImpressao.Create(nil);
+    frmImpressao.ShowModal;
+  finally
+    frmImpressao.Free;
+  end;
+end;
 
 procedure TfrmSeletor.abrirTelaParametro;
 begin
@@ -38,6 +50,11 @@ begin
   finally
     frmParametro.Free;
   end;
+end;
+
+procedure TfrmSeletor.btnImpressaoClick(Sender: TObject);
+begin
+  abrirTelaImpressao;
 end;
 
 procedure TfrmSeletor.btnConfiguracaoClick(Sender: TObject);
