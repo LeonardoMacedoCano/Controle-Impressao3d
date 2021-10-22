@@ -36,6 +36,8 @@ type
     lblCustoEnergia: TLabel;
     edtCustoEnergia: TDBEdit;
     Panel1: TPanel;
+    dsArquivo: TDataSource;
+    qryArquivo: TFDQuery;
     procedure btnCategoriaClick(Sender: TObject);
     procedure btnTipoFilamentoClick(Sender: TObject);
     procedure FormShow(Sender: TObject);

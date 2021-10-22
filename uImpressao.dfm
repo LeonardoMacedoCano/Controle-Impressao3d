@@ -234,10 +234,6 @@ inherited frmImpressao: TfrmImpressao
     Color = 10658466
     ParentBackground = False
     TabOrder = 2
-    ExplicitLeft = 35
-    ExplicitTop = 328
-    ExplicitWidth = 185
-    ExplicitHeight = 41
   end
   inherited imgToolBar: TImageList
     Left = 8
@@ -280,5 +276,30 @@ inherited frmImpressao: TfrmImpressao
       'order by id')
     Left = 503
     Top = 156
+  end
+  object dsArquivo: TDataSource
+    DataSet = qryArquivo
+    OnStateChange = dsMainStateChange
+    OnDataChange = dsMainDataChange
+    Left = 464
+    Top = 264
+  end
+  object qryArquivo: TFDQuery
+    Active = True
+    Connection = dm.FDConnection
+    SQL.Strings = (
+      'select *'
+      'from arquivo'
+      'where idImpressao = :idImpressao'
+      'order by id')
+    Left = 503
+    Top = 264
+    ParamData = <
+      item
+        Name = 'IDIMPRESSAO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
   end
 end
