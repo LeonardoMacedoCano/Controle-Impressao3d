@@ -44,8 +44,13 @@ type
     procedure btnTipoFilamentoClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure dsMainDataChange(Sender: TObject; Field: TField);
+    procedure btnCancelarClick(Sender: TObject);
+    procedure btnConsultarClick(Sender: TObject);
+    procedure btnNovoClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
   private
     procedure atualizarLabels;
+    procedure atualizarArquivos;
     function getValueLabelCategoriaDescricao: string;
     function getValueLabelTipoFilamentoDescricao: string;
   public
@@ -59,6 +64,13 @@ implementation
 
 {$R *.dfm}
 
+procedure TfrmImpressao.atualizarArquivos;
+begin
+  qryArquivo.Active := False;
+  qryArquivo.Params.ParamByName('idImpressao').Value := qryMain.FieldByName('id').AsInteger;
+  qryArquivo.Active := True;
+end;
+
 procedure TfrmImpressao.atualizarLabels;
 begin
   if (qryMain.Active) and
@@ -68,6 +80,13 @@ begin
     edtCategoriaDescricao.Text     := getValueLabelCategoriaDescricao;
     edtTipoFilamentoDescricao.Text := getValueLabelTipoFilamentoDescricao;
   end;
+end;
+
+procedure TfrmImpressao.btnCancelarClick(Sender: TObject);
+begin
+  inherited;
+
+  atualizarArquivos;
 end;
 
 procedure TfrmImpressao.btnCategoriaClick(Sender: TObject);
@@ -90,6 +109,27 @@ begin
       end;
     end;
   end;
+end;
+
+procedure TfrmImpressao.btnConsultarClick(Sender: TObject);
+begin
+  inherited;
+
+  atualizarArquivos;
+end;
+
+procedure TfrmImpressao.btnExcluirClick(Sender: TObject);
+begin
+  inherited;
+
+  atualizarArquivos;
+end;
+
+procedure TfrmImpressao.btnNovoClick(Sender: TObject);
+begin
+  inherited;
+
+  atualizarArquivos;
 end;
 
 procedure TfrmImpressao.btnTipoFilamentoClick(Sender: TObject);
@@ -126,6 +166,7 @@ begin
   inherited;
 
   atualizarLabels;
+  atualizarArquivos;
 end;
 
 function TfrmImpressao.getValueLabelCategoriaDescricao: string;
