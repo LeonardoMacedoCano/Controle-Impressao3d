@@ -35,6 +35,7 @@ type
     edtCustoMaterial: TDBEdit;
     lblCustoEnergia: TLabel;
     edtCustoEnergia: TDBEdit;
+    Panel1: TPanel;
     procedure btnCategoriaClick(Sender: TObject);
     procedure btnTipoFilamentoClick(Sender: TObject);
     procedure FormShow(Sender: TObject);

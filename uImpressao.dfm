@@ -4,9 +4,12 @@ inherited frmImpressao: TfrmImpressao
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
+    Height = 203
+    Align = alTop
+    ExplicitHeight = 203
     object btnTipoFilamento: TSpeedButton
       Left = 146
-      Top = 148
+      Top = 132
       Width = 23
       Height = 23
       Glyph.Data = {
@@ -49,21 +52,21 @@ inherited frmImpressao: TfrmImpressao
     end
     object lblTipoFilamento: TLabel
       Left = 22
-      Top = 152
+      Top = 136
       Width = 69
       Height = 13
       Caption = 'Tipo Filamento'
     end
     object lblCategoria: TLabel
       Left = 44
-      Top = 124
+      Top = 108
       Width = 47
       Height = 13
       Caption = 'Categoria'
     end
     object btnCategoria: TSpeedButton
       Left = 146
-      Top = 120
+      Top = 104
       Width = 23
       Height = 23
       Glyph.Data = {
@@ -106,42 +109,42 @@ inherited frmImpressao: TfrmImpressao
     end
     object lblLink: TLabel
       Left = 73
-      Top = 97
+      Top = 81
       Width = 18
       Height = 13
       Caption = 'Link'
     end
     object lblDescricao: TLabel
       Left = 45
-      Top = 70
+      Top = 54
       Width = 46
       Height = 13
       Caption = 'Descri'#231#227'o'
     end
     object lblCodigo: TLabel
       Left = 58
-      Top = 43
+      Top = 27
       Width = 33
       Height = 13
       Caption = 'C'#243'digo'
     end
     object lblCustoMaterial: TLabel
       Left = 22
-      Top = 179
+      Top = 163
       Width = 69
       Height = 13
       Caption = 'Custo Material'
     end
     object lblCustoEnergia: TLabel
       Left = 362
-      Top = 179
+      Top = 163
       Width = 67
       Height = 13
       Caption = 'Custo Energia'
     end
     object edtTipoFilamento: TDBEdit
       Left = 97
-      Top = 149
+      Top = 133
       Width = 50
       Height = 21
       DataField = 'idtipofilamento'
@@ -150,7 +153,7 @@ inherited frmImpressao: TfrmImpressao
     end
     object edtCategoria: TDBEdit
       Left = 97
-      Top = 121
+      Top = 105
       Width = 50
       Height = 21
       DataField = 'idcategoria'
@@ -159,7 +162,7 @@ inherited frmImpressao: TfrmImpressao
     end
     object edtLink: TDBEdit
       Left = 97
-      Top = 94
+      Top = 78
       Width = 388
       Height = 21
       DataField = 'link'
@@ -168,7 +171,7 @@ inherited frmImpressao: TfrmImpressao
     end
     object edtDescricao: TDBEdit
       Left = 97
-      Top = 67
+      Top = 51
       Width = 388
       Height = 21
       DataField = 'descricao'
@@ -177,7 +180,7 @@ inherited frmImpressao: TfrmImpressao
     end
     object edtCodigo: TDBEdit
       Left = 97
-      Top = 40
+      Top = 24
       Width = 50
       Height = 21
       DataField = 'id'
@@ -187,7 +190,7 @@ inherited frmImpressao: TfrmImpressao
     end
     object edtCategoriaDescricao: TEdit
       Left = 168
-      Top = 121
+      Top = 105
       Width = 317
       Height = 21
       Enabled = False
@@ -195,7 +198,7 @@ inherited frmImpressao: TfrmImpressao
     end
     object edtTipoFilamentoDescricao: TEdit
       Left = 168
-      Top = 149
+      Top = 133
       Width = 317
       Height = 21
       Enabled = False
@@ -203,7 +206,7 @@ inherited frmImpressao: TfrmImpressao
     end
     object edtCustoMaterial: TDBEdit
       Left = 97
-      Top = 176
+      Top = 160
       Width = 50
       Height = 21
       DataField = 'customaterial'
@@ -213,7 +216,7 @@ inherited frmImpressao: TfrmImpressao
     end
     object edtCustoEnergia: TDBEdit
       Left = 435
-      Top = 176
+      Top = 160
       Width = 50
       Height = 21
       DataField = 'custoenergia'
@@ -221,6 +224,20 @@ inherited frmImpressao: TfrmImpressao
       Enabled = False
       TabOrder = 8
     end
+  end
+  object Panel1: TPanel [2]
+    Left = 0
+    Top = 257
+    Width = 550
+    Height = 168
+    Align = alClient
+    Color = 10658466
+    ParentBackground = False
+    TabOrder = 2
+    ExplicitLeft = 35
+    ExplicitTop = 328
+    ExplicitWidth = 185
+    ExplicitHeight = 41
   end
   inherited imgToolBar: TImageList
     Left = 8
