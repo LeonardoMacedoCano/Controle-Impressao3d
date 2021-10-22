@@ -31,6 +31,10 @@ type
     qryTipoFilamento: TFDQuery;
     edtCategoriaDescricao: TEdit;
     edtTipoFilamentoDescricao: TEdit;
+    lblCustoMaterial: TLabel;
+    edtCustoMaterial: TDBEdit;
+    lblCustoEnergia: TLabel;
+    edtCustoEnergia: TDBEdit;
     procedure btnCategoriaClick(Sender: TObject);
     procedure btnTipoFilamentoClick(Sender: TObject);
     procedure FormShow(Sender: TObject);

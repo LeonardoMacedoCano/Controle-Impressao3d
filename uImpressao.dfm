@@ -125,6 +125,20 @@ inherited frmImpressao: TfrmImpressao
       Height = 13
       Caption = 'C'#243'digo'
     end
+    object lblCustoMaterial: TLabel
+      Left = 22
+      Top = 179
+      Width = 69
+      Height = 13
+      Caption = 'Custo Material'
+    end
+    object lblCustoEnergia: TLabel
+      Left = 362
+      Top = 179
+      Width = 67
+      Height = 13
+      Caption = 'Custo Energia'
+    end
     object edtTipoFilamento: TDBEdit
       Left = 97
       Top = 149
@@ -187,6 +201,32 @@ inherited frmImpressao: TfrmImpressao
       Enabled = False
       TabOrder = 6
     end
+    object edtCustoMaterial: TDBEdit
+      Left = 97
+      Top = 176
+      Width = 50
+      Height = 21
+      DataField = 'customaterial'
+      DataSource = dsMain
+      Enabled = False
+      TabOrder = 7
+    end
+    object edtCustoEnergia: TDBEdit
+      Left = 435
+      Top = 176
+      Width = 50
+      Height = 21
+      DataField = 'custoenergia'
+      DataSource = dsMain
+      Enabled = False
+      TabOrder = 8
+    end
+  end
+  inherited imgToolBar: TImageList
+    Left = 8
+  end
+  inherited dsMain: TDataSource
+    Left = 464
   end
   inherited qryMain: TFDQuery
     Active = True
@@ -194,10 +234,11 @@ inherited frmImpressao: TfrmImpressao
       'select *'
       'from impressao'
       'order by id')
+    Left = 503
   end
   object dsCategoria: TDataSource
     DataSet = qryCategoria
-    Left = 424
+    Left = 464
     Top = 111
   end
   object qryCategoria: TFDQuery
@@ -206,12 +247,12 @@ inherited frmImpressao: TfrmImpressao
     SQL.Strings = (
       'select * from categoria'
       'order by id')
-    Left = 463
+    Left = 503
     Top = 110
   end
   object dsTipoFilamento: TDataSource
     DataSet = qryTipoFilamento
-    Left = 424
+    Left = 464
     Top = 157
   end
   object qryTipoFilamento: TFDQuery
@@ -220,7 +261,7 @@ inherited frmImpressao: TfrmImpressao
     SQL.Strings = (
       'select * from tipoFilamento'
       'order by id')
-    Left = 463
+    Left = 503
     Top = 156
   end
 end
