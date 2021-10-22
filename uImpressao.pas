@@ -9,7 +9,7 @@ uses
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, System.ImageList,
   Vcl.ImgList, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.ToolWin, Vcl.StdCtrls, Vcl.Mask,
-  Vcl.DBCtrls, Vcl.Buttons, uPesquisaPadrao;
+  Vcl.DBCtrls, Vcl.Buttons, uPesquisaPadrao, Vcl.Grids, Vcl.DBGrids;
 
 type
   TfrmImpressao = class(TfrmPadrao)
@@ -38,6 +38,8 @@ type
     Panel1: TPanel;
     dsArquivo: TDataSource;
     qryArquivo: TFDQuery;
+    lblArquivo: TLabel;
+    gridArquivo: TDBGrid;
     procedure btnCategoriaClick(Sender: TObject);
     procedure btnTipoFilamentoClick(Sender: TObject);
     procedure FormShow(Sender: TObject);

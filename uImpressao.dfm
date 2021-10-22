@@ -4,9 +4,9 @@ inherited frmImpressao: TfrmImpressao
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    Height = 203
+    Height = 205
     Align = alTop
-    ExplicitHeight = 203
+    ExplicitHeight = 205
     object btnTipoFilamento: TSpeedButton
       Left = 146
       Top = 132
@@ -142,6 +142,19 @@ inherited frmImpressao: TfrmImpressao
       Height = 13
       Caption = 'Custo Energia'
     end
+    object lblArquivo: TLabel
+      Left = 5
+      Top = 192
+      Width = 60
+      Height = 13
+      Caption = 'Arquivo(s)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
     object edtTipoFilamento: TDBEdit
       Left = 97
       Top = 133
@@ -227,13 +240,50 @@ inherited frmImpressao: TfrmImpressao
   end
   object Panel1: TPanel [2]
     Left = 0
-    Top = 257
+    Top = 259
     Width = 550
-    Height = 168
+    Height = 166
     Align = alClient
     Color = 10658466
     ParentBackground = False
     TabOrder = 2
+    ExplicitTop = 263
+    ExplicitHeight = 168
+    object gridArquivo: TDBGrid
+      Left = 1
+      Top = 1
+      Width = 548
+      Height = 164
+      Align = alClient
+      DataSource = dsArquivo
+      TabOrder = 0
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'descricao'
+          Title.Caption = 'Descri'#231#227'o'
+          Width = 200
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'customaterial'
+          Title.Caption = 'Custo Material'
+          Width = 75
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'custoenergia'
+          Title.Caption = 'Custo Energia'
+          Visible = True
+        end>
+    end
   end
   inherited imgToolBar: TImageList
     Left = 8
