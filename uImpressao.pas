@@ -48,6 +48,8 @@ type
     procedure btnConsultarClick(Sender: TObject);
     procedure btnNovoClick(Sender: TObject);
     procedure btnExcluirClick(Sender: TObject);
+    procedure btnAnteriorClick(Sender: TObject);
+    procedure btnProximoClick(Sender: TObject);
   private
     procedure atualizarLabels;
     procedure atualizarArquivos;
@@ -81,6 +83,13 @@ begin
     edtCategoriaDescricao.Text     := getValueLabelCategoriaDescricao;
     edtTipoFilamentoDescricao.Text := getValueLabelTipoFilamentoDescricao;
   end;
+end;
+
+procedure TfrmImpressao.btnAnteriorClick(Sender: TObject);
+begin
+  inherited;
+
+  atualizarArquivos;
 end;
 
 procedure TfrmImpressao.btnCancelarClick(Sender: TObject);
@@ -132,6 +141,13 @@ begin
 
   atualizarArquivos;
   zerarCustos;
+end;
+
+procedure TfrmImpressao.btnProximoClick(Sender: TObject);
+begin
+  inherited;
+
+  atualizarArquivos;
 end;
 
 procedure TfrmImpressao.btnTipoFilamentoClick(Sender: TObject);
