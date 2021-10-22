@@ -51,6 +51,7 @@ type
   private
     procedure atualizarLabels;
     procedure atualizarArquivos;
+    procedure zerarCustos;
     function getValueLabelCategoriaDescricao: string;
     function getValueLabelTipoFilamentoDescricao: string;
   public
@@ -130,6 +131,7 @@ begin
   inherited;
 
   atualizarArquivos;
+  zerarCustos;
 end;
 
 procedure TfrmImpressao.btnTipoFilamentoClick(Sender: TObject);
@@ -189,6 +191,12 @@ begin
     dsTipoFilamento.DataSet.Locate('id', qryMain.FieldByName('idTipoFilamento').AsInteger, []);
     Result := qryTipoFilamento.FieldByName('Descricao').AsString;
   end;
+end;
+
+procedure TfrmImpressao.zerarCustos;
+begin
+  qryMain.FieldByName('CustoMaterial').AsFloat := 0.00;
+  qryMain.FieldByName('CustoEnergia').AsFloat  := 0.00;
 end;
 
 end.
