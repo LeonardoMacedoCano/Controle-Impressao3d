@@ -45,12 +45,14 @@ type
     actExcluir: TAction;
     Excluir1: TMenuItem;
     pnlBottom: TPanel;
+    actSelecionar: TAction;
     procedure FormCreate(Sender: TObject);
     procedure actAdicionarExecute(Sender: TObject);
     procedure actEditarExecute(Sender: TObject);
     procedure actExcluirExecute(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
+    procedure actSelecionarExecute(Sender: TObject);
   private
     procedure activeQuerys;
     procedure abrirTelaModal(tela: TForm; dsParametro: TDataSet);
@@ -142,6 +144,26 @@ begin
   qryGeral.Active         := True;
   qryTipoFilamento.Active := True;
   qryCategoria.Active     := True;
+end;
+
+procedure TfrmParametro.actSelecionarExecute(Sender: TObject);
+begin
+  if PageControl.ActivePage = tsTipoFilamento then
+  begin
+    if not (dsTipoFilamento.DataSet.IsEmpty) then
+    begin
+      frmTipoFilamento.dsMain.DataSet := dsTipoFilamento.DataSet;
+      abrirTelaModal(frmTipoFilamento, dsTipoFilamento.DataSet);
+    end;
+  end
+  else if PageControl.ActivePage = tsCategoria then
+  begin
+  if not (dsCategoria.DataSet.IsEmpty) then
+    begin
+      frmCategoria.dsMain.DataSet := dsCategoria.DataSet;
+      abrirTelaModal(frmCategoria, dsCategoria.DataSet);
+    end;
+  end;
 end;
 
 procedure TfrmParametro.atualizarParametrosGeral(salvarParam: Boolean);

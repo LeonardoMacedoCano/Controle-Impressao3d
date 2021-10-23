@@ -26,12 +26,8 @@ object frmParametro: TfrmParametro
     Align = alClient
     PopupMenu = PopupMenu
     TabOrder = 0
-    ExplicitWidth = 395
-    ExplicitHeight = 305
     object tsGeral: TTabSheet
       Caption = 'Geral'
-      ExplicitWidth = 387
-      ExplicitHeight = 277
       object pnlGeral: TPanel
         Left = 0
         Top = 0
@@ -41,8 +37,6 @@ object frmParametro: TfrmParametro
         Color = 10658466
         ParentBackground = False
         TabOrder = 0
-        ExplicitWidth = 387
-        ExplicitHeight = 277
         object lblConsumoEnder3KWH: TLabel
           Left = 72
           Top = 102
@@ -106,8 +100,6 @@ object frmParametro: TfrmParametro
           Height = 38
           Align = alBottom
           TabOrder = 4
-          ExplicitTop = 238
-          ExplicitWidth = 385
           object btnCancelar: TButton
             Left = 1
             Top = 1
@@ -127,7 +119,6 @@ object frmParametro: TfrmParametro
             Caption = 'Salvar'
             TabOrder = 1
             OnClick = btnSalvarClick
-            ExplicitLeft = 284
           end
         end
       end
@@ -135,8 +126,6 @@ object frmParametro: TfrmParametro
     object tsTipoFilamento: TTabSheet
       Caption = 'Tipo Filamento'
       ImageIndex = 1
-      ExplicitWidth = 387
-      ExplicitHeight = 277
       object dgTipoFilamento: TDBGrid
         Left = 0
         Top = 0
@@ -151,6 +140,7 @@ object frmParametro: TfrmParametro
         TitleFont.Height = -11
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
+        OnDblClick = actSelecionarExecute
         Columns = <
           item
             Expanded = False
@@ -193,8 +183,6 @@ object frmParametro: TfrmParametro
     object tsCategoria: TTabSheet
       Caption = 'Categoria'
       ImageIndex = 2
-      ExplicitWidth = 387
-      ExplicitHeight = 277
       object dgCategoria: TDBGrid
         Left = 0
         Top = 0
@@ -208,6 +196,7 @@ object frmParametro: TfrmParametro
         TitleFont.Height = -11
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
+        OnDblClick = actSelecionarExecute
         Columns = <
           item
             Expanded = False
@@ -290,6 +279,10 @@ object frmParametro: TfrmParametro
     object actExcluir: TAction
       Caption = 'Excluir'
       OnExecute = actExcluirExecute
+    end
+    object actSelecionar: TAction
+      Caption = 'Selecionar'
+      OnExecute = actSelecionarExecute
     end
   end
 end
