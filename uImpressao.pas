@@ -50,10 +50,12 @@ type
     procedure btnExcluirClick(Sender: TObject);
     procedure btnAnteriorClick(Sender: TObject);
     procedure btnProximoClick(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
   private
     procedure atualizarLabels;
     procedure atualizarArquivos;
     procedure zerarCustos;
+    procedure verificarCamposObrigatorios;
     function getValueLabelCategoriaDescricao: string;
     function getValueLabelTipoFilamentoDescricao: string;
   public
@@ -150,6 +152,13 @@ begin
   atualizarArquivos;
 end;
 
+procedure TfrmImpressao.btnSalvarClick(Sender: TObject);
+begin
+  verificarCamposObrigatorios;
+
+  inherited;
+end;
+
 procedure TfrmImpressao.btnTipoFilamentoClick(Sender: TObject);
 begin
   if (dsMain.State in dsEditModes) then
@@ -207,6 +216,13 @@ begin
     dsTipoFilamento.DataSet.Locate('id', qryMain.FieldByName('idTipoFilamento').AsInteger, []);
     Result := qryTipoFilamento.FieldByName('Descricao').AsString;
   end;
+end;
+
+procedure TfrmImpressao.verificarCamposObrigatorios;
+begin
+  verificarCampoNuloOuVazio(edtDescricao.Field,     'Preencha a Descrição!');
+  verificarCampoNuloOuVazio(edtCategoria.Field,     'Preencha a Categoria!');
+  verificarCampoNuloOuVazio(edtTipoFilamento.Field, 'Preencha o Tipo Filamento!');
 end;
 
 procedure TfrmImpressao.zerarCustos;
