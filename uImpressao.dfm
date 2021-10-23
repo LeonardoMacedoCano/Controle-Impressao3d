@@ -162,7 +162,7 @@ inherited frmImpressao: TfrmImpressao
       Height = 21
       DataField = 'idtipofilamento'
       DataSource = dsMain
-      TabOrder = 0
+      TabOrder = 5
     end
     object edtCategoria: TDBEdit
       Left = 97
@@ -171,7 +171,7 @@ inherited frmImpressao: TfrmImpressao
       Height = 21
       DataField = 'idcategoria'
       DataSource = dsMain
-      TabOrder = 1
+      TabOrder = 3
     end
     object edtLink: TDBEdit
       Left = 97
@@ -189,7 +189,7 @@ inherited frmImpressao: TfrmImpressao
       Height = 21
       DataField = 'descricao'
       DataSource = dsMain
-      TabOrder = 3
+      TabOrder = 1
     end
     object edtCodigo: TDBEdit
       Left = 97
@@ -199,7 +199,7 @@ inherited frmImpressao: TfrmImpressao
       DataField = 'id'
       DataSource = dsMain
       Enabled = False
-      TabOrder = 4
+      TabOrder = 0
     end
     object edtCategoriaDescricao: TEdit
       Left = 168
@@ -207,7 +207,7 @@ inherited frmImpressao: TfrmImpressao
       Width = 317
       Height = 21
       Enabled = False
-      TabOrder = 5
+      TabOrder = 4
     end
     object edtTipoFilamentoDescricao: TEdit
       Left = 168
@@ -247,8 +247,6 @@ inherited frmImpressao: TfrmImpressao
     Color = 10658466
     ParentBackground = False
     TabOrder = 2
-    ExplicitTop = 263
-    ExplicitHeight = 168
     object gridArquivo: TDBGrid
       Left = 1
       Top = 1
