@@ -53,8 +53,10 @@ type
     procedure btnSalvarClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
     procedure actSelecionarExecute(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
     procedure activeQuerys;
+    procedure createTelasModal;
     procedure abrirTelaModal(tela: TForm; dsParametro: TDataSet);
     procedure atualizarParametrosGeral(salvarParam: Boolean);
   public
@@ -209,13 +211,26 @@ begin
   atualizarParametrosGeral(True);
 end;
 
+procedure TfrmParametro.createTelasModal;
+begin
+  frmTipoFilamento := TfrmTipoFilamento.Create(nil);
+  frmCategoria     := TfrmCategoria.Create(nil);
+end;
+
 procedure TfrmParametro.FormCreate(Sender: TObject);
 begin
   activeQuerys;
+  createTelasModal;
 
   PageControl.ActivePage := tsGeral;
 
   atualizarParametrosGeral(False);
+end;
+
+procedure TfrmParametro.FormDestroy(Sender: TObject);
+begin
+  frmTipoFilamento.Free;
+  frmCategoria.Free;
 end;
 
 end.

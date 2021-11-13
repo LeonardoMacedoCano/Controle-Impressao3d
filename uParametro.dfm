@@ -15,6 +15,7 @@ object frmParametro: TfrmParametro
   OldCreateOrder = False
   Position = poScreenCenter
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
   object PageControl: TPageControl
@@ -22,7 +23,7 @@ object frmParametro: TfrmParametro
     Top = 0
     Width = 405
     Height = 315
-    ActivePage = tsGeral
+    ActivePage = tsTipoFilamento
     Align = alClient
     PopupMenu = PopupMenu
     TabOrder = 0
@@ -222,6 +223,7 @@ object frmParametro: TfrmParametro
     Top = 2
   end
   object qryCategoria: TFDQuery
+    Active = True
     Connection = dm.FDConnection
     SQL.Strings = (
       'select * from categoria')
@@ -234,6 +236,7 @@ object frmParametro: TfrmParametro
     Top = 2
   end
   object qryTipoFilamento: TFDQuery
+    Active = True
     Connection = dm.FDConnection
     SQL.Strings = (
       'select * from tipofilamento')
@@ -241,6 +244,7 @@ object frmParametro: TfrmParametro
     Top = 2
   end
   object qryGeral: TFDQuery
+    Active = True
     Connection = dm.FDConnection
     SQL.Strings = (
       'select * from parametrogeral')
