@@ -22,6 +22,8 @@ object frmPadrao: TfrmPadrao
     Height = 54
     ButtonHeight = 54
     ButtonWidth = 55
+    DrawingStyle = dsGradient
+    GradientEndColor = 11104317
     Images = imgToolBar
     TabOrder = 0
     object btnNovo: TToolButton
@@ -119,7 +121,7 @@ object frmPadrao: TfrmPadrao
     Width = 550
     Height = 371
     Align = alClient
-    Color = 10658466
+    Color = 11104317
     ParentBackground = False
     TabOrder = 1
   end
