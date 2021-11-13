@@ -9,7 +9,8 @@ uses
   uTipoFilamento in 'uTipoFilamento.pas' {frmTipoFilamento},
   uCategoria in 'uCategoria.pas' {frmCategoria},
   uPesquisaPadrao in 'uPesquisaPadrao.pas' {frmPesquisaPadrao},
-  uImpressao in 'uImpressao.pas' {frmImpressao};
+  uImpressao in 'uImpressao.pas' {frmImpressao},
+  uPadraoHeranca in 'uPadraoHeranca.pas' {frmPadraoHeranca};
 
 {$R *.res}
 
@@ -18,11 +19,5 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmSeletor, frmSeletor);
   Application.CreateForm(Tdm, dm);
-  Application.CreateForm(TfrmParametro, frmParametro);
-  Application.CreateForm(TfrmPadrao, frmPadrao);
-  Application.CreateForm(TfrmTipoFilamento, frmTipoFilamento);
-  Application.CreateForm(TfrmCategoria, frmCategoria);
-  Application.CreateForm(TfrmPesquisaPadrao, frmPesquisaPadrao);
-  Application.CreateForm(TfrmImpressao, frmImpressao);
   Application.Run;
 end.
