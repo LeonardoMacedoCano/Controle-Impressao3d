@@ -4,6 +4,11 @@ inherited frmPadraoHeranca: TfrmPadraoHeranca
   ExplicitHeight = 517
   PixelsPerInch = 96
   TextHeight = 13
+  inherited ToolBar: TToolBar
+    inherited btnNovo: TToolButton
+      DragCursor = crHandPoint
+    end
+  end
   inherited pnlMain: TPanel
     Height = 251
     Align = alTop
@@ -16,29 +21,35 @@ inherited frmPadraoHeranca: TfrmPadraoHeranca
     Height = 42
     ButtonHeight = 42
     ButtonWidth = 43
+    DrawingStyle = dsGradient
+    GradientEndColor = 11104317
     Images = imgToolBarChild
     TabOrder = 2
     object btnNovoChild: TToolButton
       Left = 0
       Top = 0
+      Cursor = crHandPoint
       Caption = 'btnNovoChild'
       ImageIndex = 0
     end
     object btnEditarChild: TToolButton
       Left = 43
       Top = 0
+      Cursor = crHandPoint
       Caption = 'btnEditarChild'
       ImageIndex = 1
     end
     object btnSalvarChild: TToolButton
       Left = 86
       Top = 0
+      Cursor = crHandPoint
       Caption = 'btnSalvarChild'
       ImageIndex = 2
     end
     object btnCancelarChild: TToolButton
       Left = 129
       Top = 0
+      Cursor = crHandPoint
       Caption = 'btnCancelarChild'
       ImageIndex = 3
     end
@@ -61,12 +72,14 @@ inherited frmPadraoHeranca: TfrmPadraoHeranca
     object btnAnteriorChild: TToolButton
       Left = 275
       Top = 0
+      Cursor = crHandPoint
       Caption = 'btnAnteriorChild'
       ImageIndex = 4
     end
     object btnProximoChild: TToolButton
       Left = 318
       Top = 0
+      Cursor = crHandPoint
       Caption = 'btnProximoChild'
       ImageIndex = 5
     end
@@ -89,12 +102,14 @@ inherited frmPadraoHeranca: TfrmPadraoHeranca
     object btnConsultarChild: TToolButton
       Left = 464
       Top = 0
+      Cursor = crHandPoint
       Caption = 'btnConsultarChild'
       ImageIndex = 6
     end
     object btnExcluirChild: TToolButton
       Left = 507
       Top = 0
+      Cursor = crHandPoint
       Caption = 'btnExcluirChild'
       ImageIndex = 7
     end
@@ -105,7 +120,8 @@ inherited frmPadraoHeranca: TfrmPadraoHeranca
     Width = 550
     Height = 141
     Align = alClient
-    Color = 10658466
+    Color = 11104317
+    DragCursor = crHandPoint
     ParentBackground = False
     TabOrder = 3
   end
