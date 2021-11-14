@@ -29,6 +29,7 @@ object frmPadrao: TfrmPadrao
     object btnNovo: TToolButton
       Left = 0
       Top = 0
+      Cursor = crHandPoint
       Caption = 'btnNovo'
       ImageIndex = 0
       OnClick = btnNovoClick
@@ -36,6 +37,7 @@ object frmPadrao: TfrmPadrao
     object btnEditar: TToolButton
       Left = 55
       Top = 0
+      Cursor = crHandPoint
       Caption = 'btnEditar'
       ImageIndex = 1
       OnClick = btnEditarClick
@@ -43,6 +45,7 @@ object frmPadrao: TfrmPadrao
     object btnSalvar: TToolButton
       Left = 110
       Top = 0
+      Cursor = crHandPoint
       Caption = 'btnSalvar'
       ImageIndex = 2
       OnClick = btnSalvarClick
@@ -50,6 +53,7 @@ object frmPadrao: TfrmPadrao
     object btnCancelar: TToolButton
       Left = 165
       Top = 0
+      Cursor = crHandPoint
       Caption = 'btnCancelar'
       ImageIndex = 3
       OnClick = btnCancelarClick
@@ -73,6 +77,7 @@ object frmPadrao: TfrmPadrao
     object btnAnterior: TToolButton
       Left = 275
       Top = 0
+      Cursor = crHandPoint
       Caption = 'btnAnterior'
       ImageIndex = 4
       OnClick = btnAnteriorClick
@@ -80,6 +85,7 @@ object frmPadrao: TfrmPadrao
     object btnProximo: TToolButton
       Left = 330
       Top = 0
+      Cursor = crHandPoint
       Caption = 'btnProximo'
       ImageIndex = 5
       OnClick = btnProximoClick
@@ -103,6 +109,7 @@ object frmPadrao: TfrmPadrao
     object btnConsultar: TToolButton
       Left = 440
       Top = 0
+      Cursor = crHandPoint
       Caption = 'btnConsultar'
       ImageIndex = 6
       OnClick = btnConsultarClick
@@ -110,6 +117,7 @@ object frmPadrao: TfrmPadrao
     object btnExcluir: TToolButton
       Left = 495
       Top = 0
+      Cursor = crHandPoint
       Caption = 'btnExcluir'
       ImageIndex = 7
       OnClick = btnExcluirClick
