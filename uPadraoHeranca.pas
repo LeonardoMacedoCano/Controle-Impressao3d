@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, System.ImageList,
-  Vcl.ImgList, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.ToolWin;
+  Vcl.ImgList, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.ToolWin, Vcl.StdCtrls;
 
 type
   TfrmPadraoHeranca = class(TfrmPadrao)
@@ -20,13 +20,14 @@ type
     btnCancelarChild: TToolButton;
     EspacamentoChild1: TToolButton;
     EspacamentoChild2: TToolButton;
+    pnlChild: TPanel;
+    gbChild: TGroupBox;
     btnAnteriorChild: TToolButton;
     btnProximoChild: TToolButton;
     EspacamentoChild3: TToolButton;
     EspacamentoChild4: TToolButton;
     btnConsultarChild: TToolButton;
     btnExcluirChild: TToolButton;
-    Panel1: TPanel;
   private
     { Private declarations }
   public

@@ -14,116 +14,129 @@ inherited frmPadraoHeranca: TfrmPadraoHeranca
     Align = alTop
     ExplicitHeight = 251
   end
-  object ToolBarChild: TToolBar [2]
+  object gbChild: TGroupBox [2]
     Left = 0
     Top = 305
     Width = 550
-    Height = 42
-    ButtonHeight = 42
-    ButtonWidth = 43
-    DrawingStyle = dsGradient
-    GradientEndColor = 11104317
-    Images = imgToolBarChild
-    TabOrder = 2
-    object btnNovoChild: TToolButton
-      Left = 0
-      Top = 0
-      Cursor = crHandPoint
-      Caption = 'btnNovoChild'
-      ImageIndex = 0
-    end
-    object btnEditarChild: TToolButton
-      Left = 43
-      Top = 0
-      Cursor = crHandPoint
-      Caption = 'btnEditarChild'
-      ImageIndex = 1
-    end
-    object btnSalvarChild: TToolButton
-      Left = 86
-      Top = 0
-      Cursor = crHandPoint
-      Caption = 'btnSalvarChild'
-      ImageIndex = 2
-    end
-    object btnCancelarChild: TToolButton
-      Left = 129
-      Top = 0
-      Cursor = crHandPoint
-      Caption = 'btnCancelarChild'
-      ImageIndex = 3
-    end
-    object EspacamentoChild1: TToolButton
-      Left = 172
-      Top = 0
-      Width = 95
-      Caption = 'EspacamentoChild1'
-      ImageIndex = 4
-      Style = tbsSeparator
-    end
-    object EspacamentoChild2: TToolButton
-      Left = 267
-      Top = 0
-      Width = 8
-      Caption = 'EspacamentoChild2'
-      ImageIndex = 5
-      Style = tbsSeparator
-    end
-    object btnAnteriorChild: TToolButton
-      Left = 275
-      Top = 0
-      Cursor = crHandPoint
-      Caption = 'btnAnteriorChild'
-      ImageIndex = 4
-    end
-    object btnProximoChild: TToolButton
-      Left = 318
-      Top = 0
-      Cursor = crHandPoint
-      Caption = 'btnProximoChild'
-      ImageIndex = 5
-    end
-    object EspacamentoChild3: TToolButton
-      Left = 361
-      Top = 0
-      Width = 95
-      Caption = 'EspacamentoChild3'
-      ImageIndex = 6
-      Style = tbsSeparator
-    end
-    object EspacamentoChild4: TToolButton
-      Left = 456
-      Top = 0
-      Width = 8
-      Caption = 'EspacamentoChild4'
-      ImageIndex = 7
-      Style = tbsSeparator
-    end
-    object btnConsultarChild: TToolButton
-      Left = 464
-      Top = 0
-      Cursor = crHandPoint
-      Caption = 'btnConsultarChild'
-      ImageIndex = 6
-    end
-    object btnExcluirChild: TToolButton
-      Left = 507
-      Top = 0
-      Cursor = crHandPoint
-      Caption = 'btnExcluirChild'
-      ImageIndex = 7
-    end
-  end
-  object Panel1: TPanel [3]
-    Left = 0
-    Top = 347
-    Width = 550
-    Height = 141
+    Height = 183
     Align = alClient
-    Color = 11104317
-    DragCursor = crHandPoint
-    ParentBackground = False
-    TabOrder = 3
+    Caption = 'Child'
+    TabOrder = 2
+    ExplicitLeft = 144
+    ExplicitTop = 311
+    object ToolBarChild: TToolBar
+      Left = 2
+      Top = 15
+      Width = 546
+      Height = 42
+      ButtonHeight = 106
+      ButtonWidth = 43
+      DrawingStyle = dsGradient
+      GradientEndColor = 11104317
+      Images = imgToolBarChild
+      TabOrder = 0
+      ExplicitLeft = 3
+      ExplicitTop = 9
+      object btnNovoChild: TToolButton
+        Left = 0
+        Top = 0
+        Cursor = crHandPoint
+        Caption = 'btnNovoChild'
+        ImageIndex = 0
+      end
+      object btnEditarChild: TToolButton
+        Left = 43
+        Top = 0
+        Cursor = crHandPoint
+        Caption = 'btnEditarChild'
+        ImageIndex = 1
+      end
+      object btnSalvarChild: TToolButton
+        Left = 86
+        Top = 0
+        Cursor = crHandPoint
+        Caption = 'btnSalvarChild'
+        ImageIndex = 2
+      end
+      object btnCancelarChild: TToolButton
+        Left = 129
+        Top = 0
+        Cursor = crHandPoint
+        Caption = 'btnCancelarChild'
+        ImageIndex = 3
+      end
+      object EspacamentoChild1: TToolButton
+        Left = 172
+        Top = 0
+        Width = 92
+        Caption = 'EspacamentoChild1'
+        ImageIndex = 4
+        Style = tbsSeparator
+      end
+      object EspacamentoChild2: TToolButton
+        Left = 264
+        Top = 0
+        Width = 10
+        Caption = 'EspacamentoChild2'
+        ImageIndex = 6
+        Style = tbsSeparator
+      end
+      object btnAnteriorChild: TToolButton
+        Left = 274
+        Top = 0
+        Caption = 'btnAnteriorChild'
+        ImageIndex = 4
+      end
+      object btnProximoChild: TToolButton
+        Left = 317
+        Top = 0
+        Caption = 'btnProximoChild'
+        ImageIndex = 5
+      end
+      object EspacamentoChild3: TToolButton
+        Left = 360
+        Top = 0
+        Width = 92
+        Caption = 'EspacamentoChild3'
+        ImageIndex = 6
+        Style = tbsSeparator
+      end
+      object EspacamentoChild4: TToolButton
+        Left = 452
+        Top = 0
+        Width = 8
+        Caption = 'EspacamentoChild4'
+        ImageIndex = 7
+        Style = tbsSeparator
+      end
+      object btnConsultarChild: TToolButton
+        Left = 460
+        Top = 0
+        Caption = 'btnConsultarChild'
+        ImageIndex = 6
+      end
+      object btnExcluirChild: TToolButton
+        Left = 503
+        Top = 0
+        Caption = 'btnExcluirChild'
+        ImageIndex = 7
+      end
+    end
+    object pnlChild: TPanel
+      Left = 2
+      Top = 57
+      Width = 546
+      Height = 124
+      Align = alClient
+      Color = 11104317
+      DragCursor = crHandPoint
+      ParentBackground = False
+      TabOrder = 1
+      ExplicitLeft = 0
+      ExplicitTop = 305
+      ExplicitWidth = 550
+      ExplicitHeight = 183
+    end
   end
   object imgToolBarChild: TImageList
     Height = 36
