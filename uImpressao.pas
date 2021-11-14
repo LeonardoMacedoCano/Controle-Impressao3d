@@ -4,41 +4,39 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uPadrao, FireDAC.Stan.Intf,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uPadraoHeranca, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, System.ImageList,
-  Vcl.ImgList, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.ToolWin, Vcl.StdCtrls, Vcl.Mask,
-  Vcl.DBCtrls, Vcl.Buttons, uPesquisaPadrao, Vcl.Grids, Vcl.DBGrids;
+  Vcl.ImgList, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.ToolWin, Vcl.StdCtrls,
+  Vcl.Buttons, Vcl.Mask, Vcl.DBCtrls, uPesquisaPadrao, Vcl.Grids, Vcl.DBGrids;
 
 type
-  TfrmImpressao = class(TfrmPadrao)
-    btnTipoFilamento: TSpeedButton;
-    edtTipoFilamento: TDBEdit;
+  TfrmImpressao = class(TfrmPadraoHeranca)
+    lblCustoMaterial: TLabel;
     lblTipoFilamento: TLabel;
     lblCategoria: TLabel;
-    edtCategoria: TDBEdit;
-    btnCategoria: TSpeedButton;
-    edtLink: TDBEdit;
     lblLink: TLabel;
-    edtDescricao: TDBEdit;
     lblDescricao: TLabel;
     lblCodigo: TLabel;
     edtCodigo: TDBEdit;
-    dsCategoria: TDataSource;
-    qryCategoria: TFDQuery;
-    dsTipoFilamento: TDataSource;
-    qryTipoFilamento: TFDQuery;
+    edtDescricao: TDBEdit;
+    edtLink: TDBEdit;
+    edtCategoria: TDBEdit;
+    edtTipoFilamento: TDBEdit;
+    edtCustoMaterial: TDBEdit;
+    btnTipoFilamento: TSpeedButton;
+    btnCategoria: TSpeedButton;
     edtCategoriaDescricao: TEdit;
     edtTipoFilamentoDescricao: TEdit;
-    lblCustoMaterial: TLabel;
-    edtCustoMaterial: TDBEdit;
     lblCustoEnergia: TLabel;
     edtCustoEnergia: TDBEdit;
-    Panel1: TPanel;
+    dsCategoria: TDataSource;
+    qryCategoria: TFDQuery;
+    qryTipoFilamento: TFDQuery;
+    dsTipoFilamento: TDataSource;
     dsArquivo: TDataSource;
     qryArquivo: TFDQuery;
-    lblArquivo: TLabel;
     gridArquivo: TDBGrid;
     procedure btnCategoriaClick(Sender: TObject);
     procedure btnTipoFilamentoClick(Sender: TObject);
@@ -51,6 +49,8 @@ type
     procedure btnAnteriorClick(Sender: TObject);
     procedure btnProximoClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
     procedure atualizarLabels;
     procedure atualizarArquivos;
@@ -186,6 +186,20 @@ begin
   inherited;
 
   atualizarLabels;
+end;
+
+procedure TfrmImpressao.FormCreate(Sender: TObject);
+begin
+  inherited;
+
+  frmPesquisaPadrao := TfrmPesquisaPadrao.Create(nil);
+end;
+
+procedure TfrmImpressao.FormDestroy(Sender: TObject);
+begin
+  inherited;
+
+  frmPesquisaPadrao.Free;
 end;
 
 procedure TfrmImpressao.FormShow(Sender: TObject);

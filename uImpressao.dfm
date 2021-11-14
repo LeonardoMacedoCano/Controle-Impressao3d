@@ -1,12 +1,55 @@
 inherited frmImpressao: TfrmImpressao
   Caption = 'Impress'#227'o 3d'
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlMain: TPanel
-    Height = 205
-    Align = alTop
-    ExplicitHeight = 205
+    Height = 203
+    ExplicitHeight = 203
+    object lblCustoMaterial: TLabel
+      Left = 22
+      Top = 163
+      Width = 69
+      Height = 13
+      Caption = 'Custo Material'
+    end
+    object lblTipoFilamento: TLabel
+      Left = 22
+      Top = 136
+      Width = 69
+      Height = 13
+      Caption = 'Tipo Filamento'
+    end
+    object lblCategoria: TLabel
+      Left = 44
+      Top = 108
+      Width = 47
+      Height = 13
+      Caption = 'Categoria'
+    end
+    object lblLink: TLabel
+      Left = 73
+      Top = 81
+      Width = 18
+      Height = 13
+      Caption = 'Link'
+    end
+    object lblDescricao: TLabel
+      Left = 45
+      Top = 54
+      Width = 46
+      Height = 13
+      Caption = 'Descri'#231#227'o'
+    end
+    object lblCodigo: TLabel
+      Left = 58
+      Top = 27
+      Width = 33
+      Height = 13
+      Caption = 'C'#243'digo'
+    end
     object btnTipoFilamento: TSpeedButton
       Left = 146
       Top = 132
@@ -49,20 +92,6 @@ inherited frmImpressao: TfrmImpressao
         1DED1D1D1DB61C1C1C4A00000000000000000000000000000000000000000000
         000000000000}
       OnClick = btnTipoFilamentoClick
-    end
-    object lblTipoFilamento: TLabel
-      Left = 22
-      Top = 136
-      Width = 69
-      Height = 13
-      Caption = 'Tipo Filamento'
-    end
-    object lblCategoria: TLabel
-      Left = 44
-      Top = 108
-      Width = 47
-      Height = 13
-      Caption = 'Categoria'
     end
     object btnCategoria: TSpeedButton
       Left = 146
@@ -107,89 +136,12 @@ inherited frmImpressao: TfrmImpressao
         000000000000}
       OnClick = btnCategoriaClick
     end
-    object lblLink: TLabel
-      Left = 73
-      Top = 81
-      Width = 18
-      Height = 13
-      Caption = 'Link'
-    end
-    object lblDescricao: TLabel
-      Left = 45
-      Top = 54
-      Width = 46
-      Height = 13
-      Caption = 'Descri'#231#227'o'
-    end
-    object lblCodigo: TLabel
-      Left = 58
-      Top = 27
-      Width = 33
-      Height = 13
-      Caption = 'C'#243'digo'
-    end
-    object lblCustoMaterial: TLabel
-      Left = 22
-      Top = 163
-      Width = 69
-      Height = 13
-      Caption = 'Custo Material'
-    end
     object lblCustoEnergia: TLabel
       Left = 362
       Top = 163
       Width = 67
       Height = 13
       Caption = 'Custo Energia'
-    end
-    object lblArquivo: TLabel
-      Left = 5
-      Top = 192
-      Width = 60
-      Height = 13
-      Caption = 'Arquivo(s)'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
-      Font.Name = 'Tahoma'
-      Font.Style = [fsBold]
-      ParentFont = False
-    end
-    object edtTipoFilamento: TDBEdit
-      Left = 97
-      Top = 133
-      Width = 50
-      Height = 21
-      DataField = 'idtipofilamento'
-      DataSource = dsMain
-      TabOrder = 5
-    end
-    object edtCategoria: TDBEdit
-      Left = 97
-      Top = 105
-      Width = 50
-      Height = 21
-      DataField = 'idcategoria'
-      DataSource = dsMain
-      TabOrder = 3
-    end
-    object edtLink: TDBEdit
-      Left = 97
-      Top = 78
-      Width = 388
-      Height = 21
-      DataField = 'link'
-      DataSource = dsMain
-      TabOrder = 2
-    end
-    object edtDescricao: TDBEdit
-      Left = 97
-      Top = 51
-      Width = 388
-      Height = 21
-      DataField = 'descricao'
-      DataSource = dsMain
-      TabOrder = 1
     end
     object edtCodigo: TDBEdit
       Left = 97
@@ -201,21 +153,41 @@ inherited frmImpressao: TfrmImpressao
       Enabled = False
       TabOrder = 0
     end
-    object edtCategoriaDescricao: TEdit
-      Left = 168
-      Top = 105
-      Width = 317
+    object edtDescricao: TDBEdit
+      Left = 97
+      Top = 51
+      Width = 388
       Height = 21
-      Enabled = False
-      TabOrder = 4
+      DataField = 'descricao'
+      DataSource = dsMain
+      TabOrder = 1
     end
-    object edtTipoFilamentoDescricao: TEdit
-      Left = 168
-      Top = 133
-      Width = 317
+    object edtLink: TDBEdit
+      Left = 97
+      Top = 78
+      Width = 388
       Height = 21
-      Enabled = False
-      TabOrder = 6
+      DataField = 'link'
+      DataSource = dsMain
+      TabOrder = 2
+    end
+    object edtCategoria: TDBEdit
+      Left = 97
+      Top = 105
+      Width = 50
+      Height = 21
+      DataField = 'idcategoria'
+      DataSource = dsMain
+      TabOrder = 3
+    end
+    object edtTipoFilamento: TDBEdit
+      Left = 97
+      Top = 133
+      Width = 50
+      Height = 21
+      DataField = 'idtipofilamento'
+      DataSource = dsMain
+      TabOrder = 4
     end
     object edtCustoMaterial: TDBEdit
       Left = 97
@@ -224,6 +196,22 @@ inherited frmImpressao: TfrmImpressao
       Height = 21
       DataField = 'customaterial'
       DataSource = dsMain
+      Enabled = False
+      TabOrder = 5
+    end
+    object edtCategoriaDescricao: TEdit
+      Left = 168
+      Top = 105
+      Width = 317
+      Height = 21
+      Enabled = False
+      TabOrder = 6
+    end
+    object edtTipoFilamentoDescricao: TEdit
+      Left = 168
+      Top = 133
+      Width = 317
+      Height = 21
       Enabled = False
       TabOrder = 7
     end
@@ -238,56 +226,48 @@ inherited frmImpressao: TfrmImpressao
       TabOrder = 8
     end
   end
-  object Panel1: TPanel [2]
-    Left = 0
-    Top = 259
-    Width = 550
-    Height = 166
-    Align = alClient
-    Color = 10658466
-    ParentBackground = False
-    TabOrder = 2
-    object gridArquivo: TDBGrid
-      Left = 1
-      Top = 1
-      Width = 548
-      Height = 164
-      Align = alClient
-      DataSource = dsArquivo
-      TabOrder = 0
-      TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clWindowText
-      TitleFont.Height = -11
-      TitleFont.Name = 'Tahoma'
-      TitleFont.Style = []
-      Columns = <
-        item
-          Expanded = False
-          FieldName = 'descricao'
-          Title.Caption = 'Descri'#231#227'o'
-          Width = 200
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'customaterial'
-          Title.Caption = 'Custo Material'
-          Width = 75
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'custoenergia'
-          Title.Caption = 'Custo Energia'
-          Visible = True
-        end>
+  inherited gbChild: TGroupBox
+    Top = 257
+    Height = 231
+    Caption = 'Arquivo(s)'
+    inherited pnlChild: TPanel
+      Height = 172
+      object gridArquivo: TDBGrid
+        Left = 1
+        Top = 1
+        Width = 544
+        Height = 170
+        Align = alClient
+        DataSource = dsArquivo
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'descricao'
+            Title.Caption = 'Descri'#231#227'o'
+            Width = 200
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'customaterial'
+            Title.Caption = 'Custo Material'
+            Width = 75
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'custoenergia'
+            Title.Caption = 'Custo Energia'
+            Visible = True
+          end>
+      end
     end
-  end
-  inherited imgToolBar: TImageList
-    Left = 8
-  end
-  inherited dsMain: TDataSource
-    Left = 464
   end
   inherited qryMain: TFDQuery
     Active = True
@@ -295,11 +275,10 @@ inherited frmImpressao: TfrmImpressao
       'select *'
       'from impressao'
       'order by id')
-    Left = 503
   end
   object dsCategoria: TDataSource
     DataSet = qryCategoria
-    Left = 464
+    Left = 416
     Top = 111
   end
   object qryCategoria: TFDQuery
@@ -308,13 +287,8 @@ inherited frmImpressao: TfrmImpressao
     SQL.Strings = (
       'select * from categoria'
       'order by id')
-    Left = 503
+    Left = 455
     Top = 110
-  end
-  object dsTipoFilamento: TDataSource
-    DataSet = qryTipoFilamento
-    Left = 464
-    Top = 157
   end
   object qryTipoFilamento: TFDQuery
     Active = True
@@ -322,15 +296,20 @@ inherited frmImpressao: TfrmImpressao
     SQL.Strings = (
       'select * from tipoFilamento'
       'order by id')
-    Left = 503
+    Left = 455
     Top = 156
+  end
+  object dsTipoFilamento: TDataSource
+    DataSet = qryTipoFilamento
+    Left = 416
+    Top = 157
   end
   object dsArquivo: TDataSource
     DataSet = qryArquivo
     OnStateChange = dsMainStateChange
     OnDataChange = dsMainDataChange
-    Left = 464
-    Top = 264
+    Left = 472
+    Top = 296
   end
   object qryArquivo: TFDQuery
     Active = True
@@ -340,8 +319,8 @@ inherited frmImpressao: TfrmImpressao
       'from arquivo'
       'where idImpressao = :idImpressao'
       'order by id')
-    Left = 503
-    Top = 264
+    Left = 511
+    Top = 296
     ParamData = <
       item
         Name = 'IDIMPRESSAO'
