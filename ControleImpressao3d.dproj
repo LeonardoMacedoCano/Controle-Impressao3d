@@ -127,12 +127,12 @@
             <Form>frmPesquisaPadrao</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="uImpressao.pas">
-            <Form>frmImpressao</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="uPadraoHeranca.pas">
             <Form>frmPadraoHeranca</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="uImpressao.pas">
+            <Form>frmImpressao</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

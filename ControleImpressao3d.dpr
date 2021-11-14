@@ -9,8 +9,8 @@ uses
   uTipoFilamento in 'uTipoFilamento.pas' {frmTipoFilamento},
   uCategoria in 'uCategoria.pas' {frmCategoria},
   uPesquisaPadrao in 'uPesquisaPadrao.pas' {frmPesquisaPadrao},
-  uImpressao in 'uImpressao.pas' {frmImpressao},
-  uPadraoHeranca in 'uPadraoHeranca.pas' {frmPadraoHeranca};
+  uPadraoHeranca in 'uPadraoHeranca.pas' {frmPadraoHeranca},
+  uImpressao in 'uImpressao.pas' {frmImpressao};
 
 {$R *.res}
 
