@@ -21,9 +21,10 @@ inherited frmPadraoHeranca: TfrmPadraoHeranca
     Height = 183
     Align = alClient
     Caption = 'Child'
+    Color = 15258303
+    ParentBackground = False
+    ParentColor = False
     TabOrder = 2
-    ExplicitLeft = 144
-    ExplicitTop = 311
     object ToolBarChild: TToolBar
       Left = 2
       Top = 15
@@ -33,16 +34,16 @@ inherited frmPadraoHeranca: TfrmPadraoHeranca
       ButtonWidth = 43
       DrawingStyle = dsGradient
       GradientEndColor = 11104317
+      GradientStartColor = 15258303
       Images = imgToolBarChild
       TabOrder = 0
-      ExplicitLeft = 3
-      ExplicitTop = 9
       object btnNovoChild: TToolButton
         Left = 0
         Top = 0
         Cursor = crHandPoint
         Caption = 'btnNovoChild'
         ImageIndex = 0
+        OnClick = btnNovoChildClick
       end
       object btnEditarChild: TToolButton
         Left = 43
@@ -50,6 +51,7 @@ inherited frmPadraoHeranca: TfrmPadraoHeranca
         Cursor = crHandPoint
         Caption = 'btnEditarChild'
         ImageIndex = 1
+        OnClick = btnEditarChildClick
       end
       object btnSalvarChild: TToolButton
         Left = 86
@@ -57,6 +59,7 @@ inherited frmPadraoHeranca: TfrmPadraoHeranca
         Cursor = crHandPoint
         Caption = 'btnSalvarChild'
         ImageIndex = 2
+        OnClick = btnSalvarChildClick
       end
       object btnCancelarChild: TToolButton
         Left = 129
@@ -64,6 +67,7 @@ inherited frmPadraoHeranca: TfrmPadraoHeranca
         Cursor = crHandPoint
         Caption = 'btnCancelarChild'
         ImageIndex = 3
+        OnClick = btnCancelarChildClick
       end
       object EspacamentoChild1: TToolButton
         Left = 172
@@ -86,12 +90,14 @@ inherited frmPadraoHeranca: TfrmPadraoHeranca
         Top = 0
         Caption = 'btnAnteriorChild'
         ImageIndex = 4
+        OnClick = btnAnteriorChildClick
       end
       object btnProximoChild: TToolButton
         Left = 317
         Top = 0
         Caption = 'btnProximoChild'
         ImageIndex = 5
+        OnClick = btnProximoChildClick
       end
       object EspacamentoChild3: TToolButton
         Left = 360
@@ -120,6 +126,7 @@ inherited frmPadraoHeranca: TfrmPadraoHeranca
         Top = 0
         Caption = 'btnExcluirChild'
         ImageIndex = 7
+        OnClick = btnExcluirChildClick
       end
     end
     object pnlChild: TPanel
@@ -128,14 +135,10 @@ inherited frmPadraoHeranca: TfrmPadraoHeranca
       Width = 546
       Height = 124
       Align = alClient
-      Color = 11104317
+      Color = 15258303
       DragCursor = crHandPoint
       ParentBackground = False
       TabOrder = 1
-      ExplicitLeft = 0
-      ExplicitTop = 305
-      ExplicitWidth = 550
-      ExplicitHeight = 183
     end
   end
   object imgToolBarChild: TImageList
@@ -143,7 +146,7 @@ inherited frmPadraoHeranca: TfrmPadraoHeranca
     ImageType = itMask
     Width = 36
     Left = 512
-    Top = 110
+    Top = 118
     Bitmap = {
       494C010108001800040024002400FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000900000006C000000010020000000000000F3
@@ -2162,5 +2165,16 @@ inherited frmPadraoHeranca: TfrmPadraoHeranca
       007F0000FE00000FFFE00000FFFE00000FFFE00000FF0000FF80001FFFF80001
       FFFF80001FFFF80001FF0000FFF801FFFFFF801FFFFFF801FFFFFF801FFF0000
       00000000000000000000000000000000000000000000}
+  end
+  object dsChild: TDataSource
+    DataSet = qryChild
+    OnStateChange = dsChildStateChange
+    Left = 424
+    Top = 114
+  end
+  object qryChild: TFDQuery
+    Connection = dm.FDConnection
+    Left = 466
+    Top = 114
   end
 end
