@@ -35,8 +35,6 @@ type
     qryCategoria: TFDQuery;
     qryTipoFilamento: TFDQuery;
     dsTipoFilamento: TDataSource;
-    dsArquivo: TDataSource;
-    qryArquivo: TFDQuery;
     gridArquivo: TDBGrid;
     procedure btnCategoriaClick(Sender: TObject);
     procedure btnTipoFilamentoClick(Sender: TObject);
@@ -71,9 +69,9 @@ implementation
 
 procedure TfrmImpressao.atualizarArquivos;
 begin
-  qryArquivo.Active := False;
-  qryArquivo.Params.ParamByName('idImpressao').Value := qryMain.FieldByName('id').AsInteger;
-  qryArquivo.Active := True;
+  qryChild.Active := False;
+  qryChild.Params.ParamByName('idImpressao').Value := qryMain.FieldByName('id').AsInteger;
+  qryChild.Active := True;
 end;
 
 procedure TfrmImpressao.atualizarLabels;

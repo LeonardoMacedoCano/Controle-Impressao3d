@@ -230,15 +230,23 @@ inherited frmImpressao: TfrmImpressao
     Top = 257
     Height = 231
     Caption = 'Arquivo(s)'
+    ExplicitTop = 257
+    ExplicitHeight = 231
     inherited pnlChild: TPanel
       Height = 172
+      ExplicitHeight = 172
       object gridArquivo: TDBGrid
         Left = 1
         Top = 1
         Width = 544
         Height = 170
         Align = alClient
-        DataSource = dsArquivo
+        Color = 15258303
+        DataSource = dsChild
+        DrawingStyle = gdsClassic
+        FixedColor = 15258303
+        GradientEndColor = 15258303
+        GradientStartColor = 11104317
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
@@ -276,51 +284,45 @@ inherited frmImpressao: TfrmImpressao
       'from impressao'
       'order by id')
   end
-  object dsCategoria: TDataSource
+  object dsCategoria: TDataSource [7]
     DataSet = qryCategoria
-    Left = 416
-    Top = 111
+    Left = 424
+    Top = 151
   end
-  object qryCategoria: TFDQuery
+  object qryCategoria: TFDQuery [8]
     Active = True
     Connection = dm.FDConnection
     SQL.Strings = (
       'select * from categoria'
       'order by id')
-    Left = 455
-    Top = 110
+    Left = 467
+    Top = 150
   end
-  object qryTipoFilamento: TFDQuery
+  object qryTipoFilamento: TFDQuery [9]
     Active = True
     Connection = dm.FDConnection
     SQL.Strings = (
       'select * from tipoFilamento'
       'order by id')
-    Left = 455
-    Top = 156
+    Left = 467
+    Top = 195
   end
-  object dsTipoFilamento: TDataSource
+  object dsTipoFilamento: TDataSource [10]
     DataSet = qryTipoFilamento
-    Left = 416
-    Top = 157
+    Left = 425
+    Top = 197
   end
-  object dsArquivo: TDataSource
-    DataSet = qryArquivo
-    OnStateChange = dsMainStateChange
-    OnDataChange = dsMainDataChange
-    Left = 472
-    Top = 296
+  inherited dsChild: TDataSource
+    OnStateChange = nil
+    Top = 107
   end
-  object qryArquivo: TFDQuery
-    Active = True
-    Connection = dm.FDConnection
+  inherited qryChild: TFDQuery
     SQL.Strings = (
       'select *'
       'from arquivo'
       'where idImpressao = :idImpressao'
       'order by id')
-    Left = 511
-    Top = 296
+    Top = 107
     ParamData = <
       item
         Name = 'IDIMPRESSAO'
