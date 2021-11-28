@@ -23,7 +23,7 @@ object frmParametro: TfrmParametro
     Top = 0
     Width = 405
     Height = 315
-    ActivePage = tsTipoFilamento
+    ActivePage = tsGeral
     Align = alClient
     PopupMenu = PopupMenu
     TabOrder = 0
@@ -35,7 +35,7 @@ object frmParametro: TfrmParametro
         Width = 397
         Height = 287
         Align = alClient
-        Color = 10658466
+        Color = 15258303
         ParentBackground = False
         TabOrder = 0
         object lblConsumoEnder3KWH: TLabel
@@ -100,6 +100,8 @@ object frmParametro: TfrmParametro
           Width = 395
           Height = 38
           Align = alBottom
+          Color = 14664360
+          ParentBackground = False
           TabOrder = 4
           object btnCancelar: TButton
             Left = 1
@@ -133,7 +135,12 @@ object frmParametro: TfrmParametro
         Width = 397
         Height = 287
         Align = alClient
+        Color = 15258303
         DataSource = dsTipoFilamento
+        DrawingStyle = gdsClassic
+        FixedColor = 15258303
+        GradientEndColor = 15258303
+        GradientStartColor = 13475444
         PopupMenu = PopupMenu
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
@@ -190,7 +197,12 @@ object frmParametro: TfrmParametro
         Width = 397
         Height = 287
         Align = alClient
+        Color = 15258303
         DataSource = dsCategoria
+        DrawingStyle = gdsClassic
+        FixedColor = 15258303
+        GradientEndColor = 15258303
+        GradientStartColor = 13475444
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText

@@ -21,7 +21,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
     Width = 574
     Height = 130
     Align = alTop
-    Color = 10658466
+    Color = 11104317
     ParentBackground = False
     TabOrder = 0
     DesignSize = (
@@ -161,6 +161,7 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Width = 572
       Height = 81
       Align = alBottom
+      Color = 15258303
       ItemHeight = 13
       TabOrder = 4
     end
@@ -171,7 +172,12 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
     Width = 574
     Height = 247
     Align = alClient
+    Color = 15258303
     DataSource = dsMain
+    DrawingStyle = gdsClassic
+    FixedColor = 15258303
+    GradientEndColor = 15258303
+    GradientStartColor = 15258303
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText

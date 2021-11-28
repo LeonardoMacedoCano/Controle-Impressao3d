@@ -21,7 +21,7 @@ object frmSeletor: TfrmSeletor
     Width = 964
     Height = 92
     Align = alTop
-    Color = 10658466
+    Color = 11104317
     ParentBackground = False
     TabOrder = 0
     object btnConfiguracao: TSpeedButton
