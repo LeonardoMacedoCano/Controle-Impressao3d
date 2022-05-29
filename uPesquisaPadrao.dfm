@@ -161,9 +161,11 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
       Width = 572
       Height = 81
       Align = alBottom
-      Color = 15258303
+      Color = cl3DLight
       ItemHeight = 13
       TabOrder = 4
+      ExplicitLeft = 2
+      ExplicitTop = 44
     end
   end
   object DBGrid: TDBGrid
@@ -172,12 +174,12 @@ object frmPesquisaPadrao: TfrmPesquisaPadrao
     Width = 574
     Height = 247
     Align = alClient
-    Color = 15258303
+    Color = cl3DLight
     DataSource = dsMain
     DrawingStyle = gdsClassic
-    FixedColor = 15258303
-    GradientEndColor = 15258303
-    GradientStartColor = 15258303
+    FixedColor = cl3DLight
+    GradientEndColor = cl3DLight
+    GradientStartColor = cl3DLight
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText

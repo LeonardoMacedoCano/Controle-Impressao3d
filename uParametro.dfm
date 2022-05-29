@@ -35,7 +35,7 @@ object frmParametro: TfrmParametro
         Width = 397
         Height = 287
         Align = alClient
-        Color = 15258303
+        Color = cl3DLight
         ParentBackground = False
         TabOrder = 0
         object lblConsumoEnder3KWH: TLabel
@@ -100,7 +100,7 @@ object frmParametro: TfrmParametro
           Width = 395
           Height = 38
           Align = alBottom
-          Color = 14664360
+          Color = 13739646
           ParentBackground = False
           TabOrder = 4
           object btnCancelar: TButton
@@ -135,12 +135,12 @@ object frmParametro: TfrmParametro
         Width = 397
         Height = 287
         Align = alClient
-        Color = 15258303
+        Color = cl3DLight
         DataSource = dsTipoFilamento
         DrawingStyle = gdsClassic
-        FixedColor = 15258303
-        GradientEndColor = 15258303
-        GradientStartColor = 13475444
+        FixedColor = cl3DLight
+        GradientEndColor = cl3DLight
+        GradientStartColor = cl3DLight
         PopupMenu = PopupMenu
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
@@ -197,12 +197,12 @@ object frmParametro: TfrmParametro
         Width = 397
         Height = 287
         Align = alClient
-        Color = 15258303
+        Color = cl3DLight
         DataSource = dsCategoria
         DrawingStyle = gdsClassic
-        FixedColor = 15258303
-        GradientEndColor = 15258303
-        GradientStartColor = 13475444
+        FixedColor = cl3DLight
+        GradientEndColor = cl3DLight
+        GradientStartColor = cl3DLight
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
