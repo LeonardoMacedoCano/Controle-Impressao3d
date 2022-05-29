@@ -34,4 +34,15 @@ CREATE TABLE impressao (
     custoenergia    DOUBLE  NOT NULL
                             DEFAULT (0)
 )
+
+CREATE TABLE arquivo (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    descricao     STRING  NOT NULL,
+    caminho       STRING  NOT NULL,
+    idimpressao   INTEGER NOT NULL,
+    customaterial DOUBLE  NOT NULL
+                          DEFAULT (0),
+    custoenergia  DOUBLE  NOT NULL
+                          DEFAULT (0)
+)
 -- End
