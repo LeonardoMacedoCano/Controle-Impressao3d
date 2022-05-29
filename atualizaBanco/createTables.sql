@@ -21,4 +21,17 @@ CREATE TABLE categoria (
                       NOT NULL,
     descricao STRING  NOT NULL
 )
+
+CREATE TABLE impressao (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT
+                            NOT NULL,
+    descricao       STRING  NOT NULL,
+    idcategoria     INTEGER,
+    link            STRING,
+    idtipofilamento INTEGER NOT NULL,
+    customaterial   DOUBLE  NOT NULL
+                            DEFAULT (0),
+    custoenergia    DOUBLE  NOT NULL
+                            DEFAULT (0)
+)
 -- End
