@@ -49,6 +49,7 @@ type
     procedure btnSalvarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure btnConsultarChildClick(Sender: TObject);
   private
     procedure atualizarLabels;
     procedure atualizarArquivos;
@@ -118,6 +119,19 @@ begin
         edtCategoriaDescricao.Text                   := qryCategoria.FieldByName('Descricao').AsString;
       end;
     end;
+  end;
+end;
+
+procedure TfrmImpressao.btnConsultarChildClick(Sender: TObject);
+begin
+  frmPesquisaPadrao.dsMain := dsChild;
+  frmPesquisaPadrao.qryMain.SQL := qryChild.SQL;
+  frmPesquisaPadrao.qryMain.ParamByName('idImpressao').AsInteger := qryChild.ParamByName('idImpressao').AsInteger;
+  frmPesquisaPadrao.qryMain.Active := True;
+
+  if frmPesquisaPadrao.ShowModal = mrOk then
+  begin
+    dsChild.DataSet.Locate('id', frmPesquisaPadrao.IdSelecionado, []);
   end;
 end;
 

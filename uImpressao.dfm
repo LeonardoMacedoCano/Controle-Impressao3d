@@ -232,6 +232,11 @@ inherited frmImpressao: TfrmImpressao
     Caption = 'Arquivo(s)'
     ExplicitTop = 257
     ExplicitHeight = 231
+    inherited ToolBarChild: TToolBar
+      inherited btnConsultarChild: TToolButton
+        OnClick = btnConsultarChildClick
+      end
+    end
     inherited pnlChild: TPanel
       Height = 172
       ExplicitHeight = 172
