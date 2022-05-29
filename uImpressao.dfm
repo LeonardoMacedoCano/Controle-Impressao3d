@@ -241,12 +241,12 @@ inherited frmImpressao: TfrmImpressao
         Width = 544
         Height = 170
         Align = alClient
-        Color = 15258303
+        Color = cl3DLight
         DataSource = dsChild
         DrawingStyle = gdsClassic
-        FixedColor = 15258303
-        GradientEndColor = 15258303
-        GradientStartColor = 11104317
+        FixedColor = cl3DLight
+        GradientEndColor = cl3DLight
+        GradientStartColor = cl3DLight
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
