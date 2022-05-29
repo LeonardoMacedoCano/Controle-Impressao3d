@@ -10,7 +10,8 @@ uses
   uCategoria in 'uCategoria.pas' {frmCategoria},
   uPesquisaPadrao in 'uPesquisaPadrao.pas' {frmPesquisaPadrao},
   uPadraoHeranca in 'uPadraoHeranca.pas' {frmPadraoHeranca},
-  uImpressao in 'uImpressao.pas' {frmImpressao};
+  uImpressao in 'uImpressao.pas' {frmImpressao},
+  uArquivo in 'uArquivo.pas' {frmArquivo};
 
 {$R *.res}
 
