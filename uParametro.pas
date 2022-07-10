@@ -9,7 +9,7 @@ uses
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
   FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls, Vcl.Menus,
-  System.Actions, Vcl.ActnList, uPadrao;
+  System.Actions, Vcl.ActnList, uPadrao, Vcl.Buttons;
 
 type
   TfrmParametro = class(TForm)
@@ -18,8 +18,6 @@ type
     tsTipoFilamento: TTabSheet;
     tsCategoria: TTabSheet;
     pnlGeral: TPanel;
-    btnSalvar: TButton;
-    btnCancelar: TButton;
     dsCategoria: TDataSource;
     qryCategoria: TFDQuery;
     dgCategoria: TDBGrid;
@@ -46,6 +44,8 @@ type
     Excluir1: TMenuItem;
     pnlBottom: TPanel;
     actSelecionar: TAction;
+    btnSalvar: TSpeedButton;
+    btnCancelar: TSpeedButton;
     procedure FormCreate(Sender: TObject);
     procedure actAdicionarExecute(Sender: TObject);
     procedure actEditarExecute(Sender: TObject);
