@@ -9,7 +9,8 @@ uses
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, System.ImageList,
   Vcl.ImgList, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.ToolWin, Vcl.StdCtrls,
-  Vcl.Buttons, Vcl.Mask, Vcl.DBCtrls, uPesquisaPadrao, Vcl.Grids, Vcl.DBGrids;
+  Vcl.Buttons, Vcl.Mask, Vcl.DBCtrls, uPesquisaPadrao, Vcl.Grids, Vcl.DBGrids,
+  System.Actions, Vcl.ActnList;
 
 type
   TfrmImpressao = class(TfrmPadraoHeranca)
@@ -36,6 +37,9 @@ type
     qryTipoFilamento: TFDQuery;
     dsTipoFilamento: TDataSource;
     gridArquivo: TDBGrid;
+    ActionList: TActionList;
+    actAdicionarArquivo: TAction;
+    actEditarArquivo: TAction;
     procedure btnCategoriaClick(Sender: TObject);
     procedure btnTipoFilamentoClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -51,6 +55,10 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure btnConsultarChildClick(Sender: TObject);
     procedure gridArquivoDblClick(Sender: TObject);
+    procedure actAdicionarArquivoExecute(Sender: TObject);
+    procedure btnNovoChildClick(Sender: TObject);
+    procedure actEditarArquivoExecute(Sender: TObject);
+    procedure btnEditarChildClick(Sender: TObject);
   private
     procedure atualizarLabels;
     procedure atualizarArquivos;
@@ -71,6 +79,20 @@ implementation
 uses uArquivo;
 
 {$R *.dfm}
+
+procedure TfrmImpressao.actAdicionarArquivoExecute(Sender: TObject);
+begin
+  inherited;
+
+  abrirTelaArquivos(dsInsert);
+end;
+
+procedure TfrmImpressao.actEditarArquivoExecute(Sender: TObject);
+begin
+  inherited;
+
+  abrirTelaArquivos(dsEdit);
+end;
 
 procedure TfrmImpressao.atualizarArquivos;
 begin
@@ -146,11 +168,25 @@ begin
   atualizarArquivos;
 end;
 
+procedure TfrmImpressao.btnEditarChildClick(Sender: TObject);
+begin
+  inherited;
+
+  actEditarArquivo.Execute;
+end;
+
 procedure TfrmImpressao.btnExcluirClick(Sender: TObject);
 begin
   inherited;
 
   atualizarArquivos;
+end;
+
+procedure TfrmImpressao.btnNovoChildClick(Sender: TObject);
+begin
+  inherited;
+
+  actAdicionarArquivo.Execute;
 end;
 
 procedure TfrmImpressao.btnNovoClick(Sender: TObject);

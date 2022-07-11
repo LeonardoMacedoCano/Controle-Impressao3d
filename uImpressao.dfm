@@ -337,4 +337,16 @@ inherited frmImpressao: TfrmImpressao
         Value = Null
       end>
   end
+  object ActionList: TActionList
+    Left = 512
+    Top = 160
+    object actAdicionarArquivo: TAction
+      Caption = 'Adicionar Arquivo'
+      OnExecute = actAdicionarArquivoExecute
+    end
+    object actEditarArquivo: TAction
+      Caption = 'Editar Arquivo'
+      OnExecute = actEditarArquivoExecute
+    end
+  end
 end
