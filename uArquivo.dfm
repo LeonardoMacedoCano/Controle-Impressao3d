@@ -1,6 +1,7 @@
 inherited frmArquivo: TfrmArquivo
   Caption = 'Arquivo'
   ClientHeight = 203
+  OnClose = FormClose
   ExplicitHeight = 232
   PixelsPerInch = 96
   TextHeight = 13

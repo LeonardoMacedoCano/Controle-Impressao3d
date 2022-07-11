@@ -172,7 +172,10 @@ procedure TfrmImpressao.btnEditarChildClick(Sender: TObject);
 begin
   inherited;
 
-  actEditarArquivo.Execute;
+  if not (dsChild.DataSet.IsEmpty) then
+  begin
+    actEditarArquivo.Execute;
+  end;
 end;
 
 procedure TfrmImpressao.btnExcluirClick(Sender: TObject);
@@ -290,7 +293,10 @@ procedure TfrmImpressao.gridArquivoDblClick(Sender: TObject);
 begin
   inherited;
 
-  abrirTelaArquivos(dsBrowse);
+  if not (dsChild.DataSet.IsEmpty) then
+  begin
+    abrirTelaArquivos(dsBrowse);
+  end;
 end;
 
 procedure TfrmImpressao.verificarCamposObrigatorios;

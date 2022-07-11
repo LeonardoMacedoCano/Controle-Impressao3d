@@ -24,6 +24,7 @@ type
     lblCustoEnergia: TLabel;
     edtCustoEnergia: TDBEdit;
     procedure btnSalvarClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     FIdImpressao: Integer;
   public
@@ -45,6 +46,13 @@ begin
 
   inherited;
 
+end;
+
+procedure TfrmArquivo.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  inherited;
+
+  ModalResult := mrOk;
 end;
 
 end.

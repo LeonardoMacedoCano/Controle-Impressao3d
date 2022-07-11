@@ -319,7 +319,6 @@ inherited frmImpressao: TfrmImpressao
     Top = 197
   end
   inherited dsChild: TDataSource
-    OnStateChange = nil
     Top = 107
   end
   inherited qryChild: TFDQuery

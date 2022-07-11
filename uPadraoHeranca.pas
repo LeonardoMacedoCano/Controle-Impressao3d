@@ -126,7 +126,7 @@ end;
 
 procedure TfrmPadraoHeranca.btnExcluirClick(Sender: TObject);
 begin
-if not (dsMain.DataSet.IsEmpty) and msgPadraoConfirmacao(msgConfirmarExclucao) then
+  if not (dsMain.DataSet.IsEmpty) and msgPadraoConfirmacao(msgConfirmarExclucao) then
   begin
     if not (dsChild.DataSet.IsEmpty) then
     begin
@@ -170,7 +170,7 @@ end;
 
 procedure TfrmPadraoHeranca.dsChildStateChange(Sender: TObject);
 begin
-if (dsChild.State in dsEditModes) and
+  if (dsChild.State in dsEditModes) and
      (not (dm.FDConnection.InTransaction)) then
   begin
     dm.FDConnection.StartTransaction;
