@@ -258,6 +258,7 @@ inherited frmImpressao: TfrmImpressao
         TitleFont.Height = -11
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
+        OnDblClick = gridArquivoDblClick
         Columns = <
           item
             Expanded = False

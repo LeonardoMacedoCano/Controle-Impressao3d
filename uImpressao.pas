@@ -50,11 +50,13 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure btnConsultarChildClick(Sender: TObject);
+    procedure gridArquivoDblClick(Sender: TObject);
   private
     procedure atualizarLabels;
     procedure atualizarArquivos;
     procedure zerarCustos;
     procedure verificarCamposObrigatorios;
+    procedure abrirTelaArquivos(AModoEstado: TDataSetState);
     function getValueLabelCategoriaDescricao: string;
     function getValueLabelTipoFilamentoDescricao: string;
   public
@@ -65,6 +67,8 @@ var
   frmImpressao: TfrmImpressao;
 
 implementation
+
+uses uArquivo;
 
 {$R *.dfm}
 
@@ -205,6 +209,7 @@ begin
   inherited;
 
   frmPesquisaPadrao := TfrmPesquisaPadrao.Create(nil);
+  frmArquivo := tfrmArquivo.Create(nil);
 end;
 
 procedure TfrmImpressao.FormDestroy(Sender: TObject);
@@ -212,6 +217,7 @@ begin
   inherited;
 
   frmPesquisaPadrao.Free;
+  frmArquivo.Free;
 end;
 
 procedure TfrmImpressao.FormShow(Sender: TObject);
@@ -244,6 +250,13 @@ begin
   end;
 end;
 
+procedure TfrmImpressao.gridArquivoDblClick(Sender: TObject);
+begin
+  inherited;
+
+  abrirTelaArquivos(dsBrowse);
+end;
+
 procedure TfrmImpressao.verificarCamposObrigatorios;
 begin
   verificarCampoNuloOuVazio(edtDescricao.Field,     'Preencha a Descrição!');
@@ -255,6 +268,26 @@ procedure TfrmImpressao.zerarCustos;
 begin
   qryMain.FieldByName('CustoMaterial').AsFloat := 0.00;
   qryMain.FieldByName('CustoEnergia').AsFloat  := 0.00;
+end;
+
+procedure TfrmImpressao.abrirTelaArquivos(AModoEstado: TDataSetState);
+begin
+  frmArquivo.dsMain.DataSet := dsChild.DataSet;
+
+  if (AModoEstado = dsInsert) then
+  begin
+    dsChild.DataSet.Append;
+  end
+  else if (AModoEstado = dsEdit) then
+  begin
+    dsChild.DataSet.Edit;
+  end;
+
+  if frmArquivo.ShowModal = mrOk then
+  begin
+    atualizarDataSet(dsChild.DataSet);
+  end;
+
 end;
 
 end.
