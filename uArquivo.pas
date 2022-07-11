@@ -8,14 +8,28 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, System.ImageList,
-  Vcl.ImgList, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.ToolWin;
+  Vcl.ImgList, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.ToolWin, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.DBCtrls;
 
 type
   TfrmArquivo = class(TfrmPadrao)
+    lblCodigo: TLabel;
+    edtCodigo: TDBEdit;
+    lblDescricao: TLabel;
+    edtDescricao: TDBEdit;
+    lblCaminho: TLabel;
+    edtCaminho: TDBEdit;
+    lblCustoMaterial: TLabel;
+    edtCustoMaterial: TDBEdit;
+    lblCustoEnergia: TLabel;
+    edtCustoEnergia: TDBEdit;
+    procedure btnSalvarClick(Sender: TObject);
   private
-    { Private declarations }
+    FIdImpressao: Integer;
   public
     { Public declarations }
+  published
+    property IdImpressao: Integer read FIdImpressao write FIdImpressao;
   end;
 
 var
@@ -24,5 +38,13 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TfrmArquivo.btnSalvarClick(Sender: TObject);
+begin
+  dsMain.DataSet.FieldByName('IdImpressao').AsInteger := FIdImpressao;
+
+  inherited;
+
+end;
 
 end.
