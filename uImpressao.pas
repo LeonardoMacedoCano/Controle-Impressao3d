@@ -315,6 +315,7 @@ end;
 procedure TfrmImpressao.abrirTelaArquivos(AModoEstado: TDataSetState);
 begin
   frmArquivo.dsMain.DataSet := dsChild.DataSet;
+  frmArquivo.qryMain := qryChild;
   frmArquivo.IdImpressao := qryMain.FieldByName('Id').AsInteger;
 
   if (AModoEstado = dsInsert) then

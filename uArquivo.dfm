@@ -7,7 +7,7 @@ inherited frmArquivo: TfrmArquivo
   TextHeight = 13
   inherited pnlMain: TPanel
     Height = 149
-    ExplicitHeight = 155
+    ExplicitHeight = 149
     object lblCodigo: TLabel
       Left = 58
       Top = 27
@@ -89,5 +89,11 @@ inherited frmArquivo: TfrmArquivo
       DataSource = dsMain
       TabOrder = 4
     end
+  end
+  inherited qryMain: TFDQuery
+    SQL.Strings = (
+      'select *'
+      'from arquivo'
+      'order by id')
   end
 end
