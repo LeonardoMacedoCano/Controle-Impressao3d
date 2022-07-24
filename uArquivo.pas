@@ -23,6 +23,12 @@ type
     edtCustoMaterial: TDBEdit;
     lblCustoEnergia: TLabel;
     edtCustoEnergia: TDBEdit;
+    edtComprimentoFilamento: TDBEdit;
+    lblComprimentoFilamento: TLabel;
+    edtTempoImpressao: TDBEdit;
+    lblTempoImpressao: TLabel;
+    edtPeso: TDBEdit;
+    lblPeso: TLabel;
     procedure btnSalvarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
