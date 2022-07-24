@@ -36,13 +36,19 @@ CREATE TABLE impressao (
 )
 
 CREATE TABLE arquivo (
-    id            INTEGER PRIMARY KEY AUTOINCREMENT,
-    descricao     STRING  NOT NULL,
-    caminho       STRING  NOT NULL,
-    idimpressao   INTEGER NOT NULL,
-    customaterial DOUBLE  NOT NULL
-                          DEFAULT (0),
-    custoenergia  DOUBLE  NOT NULL
-                          DEFAULT (0)
+    id                   INTEGER PRIMARY KEY AUTOINCREMENT,
+    descricao            STRING  NOT NULL,
+    caminho              STRING  NOT NULL,
+    idimpressao          INTEGER NOT NULL,
+    customaterial        DOUBLE  NOT NULL
+                                 DEFAULT (0),
+    custoenergia         DOUBLE  NOT NULL
+                                 DEFAULT (0),
+    tempoimpressao       DOUBLE  NOT NULL
+                                 DEFAULT (0),
+    peso                 DOUBLE  NOT NULL
+                                 DEFAULT (0),
+    comprimentofilamento DOUBLE  NOT NULL
+                                 DEFAULT (0)
 )
 -- End
