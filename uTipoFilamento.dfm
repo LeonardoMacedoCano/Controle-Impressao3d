@@ -9,42 +9,42 @@ inherited frmTipoFilamento: TfrmTipoFilamento
     Height = 157
     ExplicitHeight = 157
     object Label1: TLabel
-      Left = 58
+      Left = 68
       Top = 43
       Width = 33
       Height = 13
       Caption = 'C'#243'digo'
     end
     object Label2: TLabel
-      Left = 45
+      Left = 55
       Top = 70
       Width = 46
       Height = 13
       Caption = 'Descri'#231#227'o'
     end
     object Label3: TLabel
-      Left = 27
+      Left = 13
       Top = 97
-      Width = 64
+      Width = 88
       Height = 13
-      Caption = 'Valor do quilo'
+      Caption = 'Valor do quilo (R$)'
     end
     object Label4: TLabel
-      Left = 215
+      Left = 183
       Top = 97
-      Width = 50
+      Width = 89
       Height = 13
-      Caption = 'Densidade'
+      Caption = 'Densidade (g/cm'#179')'
     end
     object Label5: TLabel
-      Left = 386
+      Left = 359
       Top = 97
-      Width = 43
+      Width = 70
       Height = 13
-      Caption = 'Di'#226'metro'
+      Caption = 'Di'#226'metro (mm)'
     end
     object edtCodigo: TDBEdit
-      Left = 97
+      Left = 107
       Top = 40
       Width = 50
       Height = 21
@@ -54,16 +54,16 @@ inherited frmTipoFilamento: TfrmTipoFilamento
       TabOrder = 0
     end
     object edtDescricao: TDBEdit
-      Left = 97
+      Left = 107
       Top = 67
-      Width = 388
+      Width = 378
       Height = 21
       DataField = 'descricao'
       DataSource = dsMain
       TabOrder = 1
     end
     object edtValor: TDBEdit
-      Left = 97
+      Left = 107
       Top = 94
       Width = 50
       Height = 21
@@ -72,7 +72,7 @@ inherited frmTipoFilamento: TfrmTipoFilamento
       TabOrder = 2
     end
     object edtDensidade: TDBEdit
-      Left = 271
+      Left = 278
       Top = 94
       Width = 50
       Height = 21
