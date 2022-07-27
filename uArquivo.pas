@@ -35,6 +35,7 @@ type
     FIdImpressao: Integer;
     function GetSQLBuscaValorTipoFilamento: string;
     function GetValorTipoFilamento: Double;
+    procedure CalcularCustoMaterial;
   public
     { Public declarations }
   published
@@ -58,7 +59,8 @@ begin
 end;
 
 function TfrmArquivo.GetValorTipoFilamento: Double;
-var qry: TFDQuery;
+var
+  qry: TFDQuery;
 begin
   qry := TFDQuery.Create(nil);
   try
@@ -73,12 +75,33 @@ begin
   end;
 end;
 
+procedure TfrmArquivo.CalcularCustoMaterial;
+var
+  vPeso,
+  vValorQuiloFilamento,
+  vValorCustoMaterial: Double;
+
+begin
+  vPeso := StrToFloat(edtPeso.Text);
+  vValorQuiloFilamento := GetValorTipoFilamento;
+  vValorCustoMaterial := 0.00;
+
+  if (vPeso > 0.00) and (vValorQuiloFilamento > 0.00) then
+  begin
+    vValorCustoMaterial := (vValorQuiloFilamento / 1000) * vPeso;
+  end;
+
+  dsMain.DataSet.FieldByName('CustoMaterial').AsFloat := vValorCustoMaterial;
+end;
+
 procedure TfrmArquivo.btnSalvarClick(Sender: TObject);
+var teste: Double;
 begin
   dsMain.DataSet.FieldByName('IdImpressao').AsInteger := FIdImpressao;
 
-  inherited;
+  CalcularCustoMaterial;
 
+  inherited;
 end;
 
 procedure TfrmArquivo.FormClose(Sender: TObject; var Action: TCloseAction);
