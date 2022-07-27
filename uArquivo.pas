@@ -9,7 +9,7 @@ uses
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, System.ImageList,
   Vcl.ImgList, Vcl.ExtCtrls, Vcl.ComCtrls, Vcl.ToolWin, Vcl.StdCtrls, Vcl.Mask,
-  Vcl.DBCtrls;
+  Vcl.DBCtrls, uDM;
 
 type
   TfrmArquivo = class(TfrmPadrao)
@@ -33,6 +33,8 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     FIdImpressao: Integer;
+    function GetSQLBuscaValorTipoFilamento: string;
+    function GetValorTipoFilamento: Double;
   public
     { Public declarations }
   published
@@ -45,6 +47,31 @@ var
 implementation
 
 {$R *.dfm}
+
+function TfrmArquivo.GetSQLBuscaValorTipoFilamento;
+begin
+  Result := 'select Valor from TipoFilamento ' +
+            ' where ID = ( ' +
+            '   select IDTipoFilamento from Impressao ' +
+            '     where ID = :IdImpressao ' +
+            '   )';
+end;
+
+function TfrmArquivo.GetValorTipoFilamento: Double;
+var qry: TFDQuery;
+begin
+  qry := TFDQuery.Create(nil);
+  try
+    qry.Connection := dm.FDConnection;
+    qry.SQL.Text := GetSQLBuscaValorTipoFilamento;
+    qry.Params.ParamByName('IdImpressao').AsInteger := FIdImpressao;
+    qry.Open;
+
+    Result := qry.FieldByName('Valor').AsFloat;
+  finally
+    qry.Free;
+  end;
+end;
 
 procedure TfrmArquivo.btnSalvarClick(Sender: TObject);
 begin
