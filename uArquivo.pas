@@ -80,7 +80,6 @@ var
   vPeso,
   vValorQuiloFilamento,
   vValorCustoMaterial: Double;
-
 begin
   vPeso := StrToFloat(edtPeso.Text);
   vValorQuiloFilamento := GetValorTipoFilamento;
@@ -95,7 +94,6 @@ begin
 end;
 
 procedure TfrmArquivo.btnSalvarClick(Sender: TObject);
-var teste: Double;
 begin
   dsMain.DataSet.FieldByName('IdImpressao').AsInteger := FIdImpressao;
 
