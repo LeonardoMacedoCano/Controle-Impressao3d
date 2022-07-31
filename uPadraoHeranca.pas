@@ -77,7 +77,7 @@ procedure TfrmPadraoHeranca.btnCancelarChildClick(Sender: TObject);
 begin
   inherited;
 
-  if msgPadraoConfirmacao(msgConfirmarCancelamento) then
+  if MsgPadraoConfirmacao(msgConfirmarCancelamento) then
   begin
     dsChild.DataSet.Cancel;
   end;
@@ -85,7 +85,7 @@ end;
 
 procedure TfrmPadraoHeranca.btnCancelarClick(Sender: TObject);
 begin
-  if msgPadraoConfirmacao(msgConfirmarCancelamento) then
+  if MsgPadraoConfirmacao(msgConfirmarCancelamento) then
   begin
     dsChild.DataSet.Cancel;
     dsMain.DataSet.Cancel;
@@ -117,7 +117,7 @@ procedure TfrmPadraoHeranca.btnExcluirChildClick(Sender: TObject);
 begin
   inherited;
 
-  if not (dsChild.DataSet.IsEmpty) and msgPadraoConfirmacao(msgConfirmarExclucao) then
+  if not (dsChild.DataSet.IsEmpty) and MsgPadraoConfirmacao(msgConfirmarExclucao) then
   begin
     dsMain.DataSet.Edit;
     dsChild.DataSet.Delete;
@@ -126,7 +126,7 @@ end;
 
 procedure TfrmPadraoHeranca.btnExcluirClick(Sender: TObject);
 begin
-  if not (dsMain.DataSet.IsEmpty) and msgPadraoConfirmacao(msgConfirmarExclucao) then
+  if not (dsMain.DataSet.IsEmpty) and MsgPadraoConfirmacao(msgConfirmarExclucao) then
   begin
     if not (dsChild.DataSet.IsEmpty) then
     begin

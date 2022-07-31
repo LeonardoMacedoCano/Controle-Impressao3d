@@ -41,14 +41,14 @@ type
     procedure dsMainDataChange(Sender: TObject; Field: TField);
     procedure btnConsultarClick(Sender: TObject);
   private
-    function isModoEdicaoDsMain: Boolean;
-    procedure atualizarBtnToolbarMain;
-    procedure atualizarSetasToolbarMain;
+    function IsModoEdicaoDsMain: Boolean;
+    procedure AtualizarBtnToolbarMain;
+    procedure AtualizarSetasToolbarMain;
   public
-    function msgPadraoConfirmacao(msg: String): Boolean;
-    function somenteNumero(snum : String): String;
-    procedure verificarCampoNuloOuVazio(campo: TField; msgErro: string);
-    procedure atualizarDataSet(ds: TDataSet);
+    function MsgPadraoConfirmacao(AMensagem: String): Boolean;
+    function FormatarSomenteNumero(AString: String): String;
+    procedure VerificarCampoNuloOuVazio(ACampo: TField; AMensagemErro: string);
+    procedure AtualizarDataSet(ADataSet: TDataSet);
     function FormatarValorMoeda(AValor: Double): string;
   end;
 
@@ -65,25 +65,25 @@ uses uDm;
 
 {$R *.dfm}
 
-procedure TfrmPadrao.atualizarBtnToolbarMain;
+procedure TfrmPadrao.AtualizarBtnToolbarMain;
 begin
-  btnSalvar.Enabled    := isModoEdicaoDsMain;
-  btnCancelar.Enabled  := isModoEdicaoDsMain;
-  btnNovo.Enabled      := not isModoEdicaoDsMain;
-  btnEditar.Enabled    := not isModoEdicaoDsMain;
-  btnAnterior.Enabled  := not isModoEdicaoDsMain;
-  btnProximo.Enabled   := not isModoEdicaoDsMain;
-  btnConsultar.Enabled := not isModoEdicaoDsMain;
-  btnExcluir.Enabled   := not isModoEdicaoDsMain;
+  btnSalvar.Enabled    := IsModoEdicaoDsMain;
+  btnCancelar.Enabled  := IsModoEdicaoDsMain;
+  btnNovo.Enabled      := not IsModoEdicaoDsMain;
+  btnEditar.Enabled    := not IsModoEdicaoDsMain;
+  btnAnterior.Enabled  := not IsModoEdicaoDsMain;
+  btnProximo.Enabled   := not IsModoEdicaoDsMain;
+  btnConsultar.Enabled := not IsModoEdicaoDsMain;
+  btnExcluir.Enabled   := not IsModoEdicaoDsMain;
 end;
 
-procedure TfrmPadrao.atualizarDataSet(ds: TDataSet);
+procedure TfrmPadrao.AtualizarDataSet(ADataSet: TDataSet);
 begin
-  ds.Active := False;
-  ds.Active := True;
+  ADataSet.Active := False;
+  ADataSet.Active := True;
 end;
 
-procedure TfrmPadrao.atualizarSetasToolbarMain;
+procedure TfrmPadrao.AtualizarSetasToolbarMain;
 begin
   btnAnterior.Enabled := not (dsMain.DataSet.Bof);
   btnProximo.Enabled  := not (dsMain.DataSet.Eof);
@@ -146,45 +146,45 @@ procedure TfrmPadrao.dsMainDataChange(Sender: TObject; Field: TField);
 begin
   if not (dsMain.State in dsEditModes) then
   begin
-    atualizarSetasToolbarMain;
+    AtualizarSetasToolbarMain;
   end;
 end;
 
 procedure TfrmPadrao.dsMainStateChange(Sender: TObject);
 begin
-  atualizarBtnToolbarMain;
+  AtualizarBtnToolbarMain;
 end;
 
-function TfrmPadrao.isModoEdicaoDsMain: Boolean;
+function TfrmPadrao.IsModoEdicaoDsMain: Boolean;
 begin
   Result := (dsMain.State in dsEditModes);
 end;
 
-function TfrmPadrao.msgPadraoConfirmacao(msg: String): Boolean;
+function TfrmPadrao.msgPadraoConfirmacao(AMensagem: String): Boolean;
 begin
-  Result := MessageDlg(msg, mtConfirmation, [mbYes, mbNo],0) = mrYes;
+  Result := MessageDlg(AMensagem, mtConfirmation, [mbYes, mbNo],0) = mrYes;
 end;
 
-function TfrmPadrao.somenteNumero(snum: String): String;
-var i: Integer;
+function TfrmPadrao.FormatarSomenteNumero(AString: String): String;
+var
+  i: Integer;
 begin
-  Result := '';
+  Result := EmptyStr;
 
-  for i := 1 to Length(snum) do
+  for i := 1 to Length(AString) do
   begin
-    if CharInSet(snum[i],['0'..'9']) then
+    if CharInSet(AString[i],['0'..'9']) then
     begin
-      Result := Result + snum[i];
+      Result := Result + AString[i];
     end;
   end;
 end;
 
-procedure TfrmPadrao.verificarCampoNuloOuVazio(campo: TField; msgErro: string);
+procedure TfrmPadrao.VerificarCampoNuloOuVazio(ACampo: TField; AMensagemErro: string);
 begin
-  if (campo.IsNull) or
-     (Trim(campo.AsString) = EmptyStr) then
+  if (ACampo.IsNull) or (Trim(ACampo.AsString) = EmptyStr) then
   begin
-    raise Exception.Create(msgErro);
+    raise Exception.Create(AMensagemErro);
   end;
 end;
 

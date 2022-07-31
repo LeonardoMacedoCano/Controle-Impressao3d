@@ -55,10 +55,10 @@ end;
 
 procedure TfrmTipoFilamento.verificarCamposObrigatorios;
 begin
-  verificarCampoNuloOuVazio(edtDescricao.Field, 'Preencha a Descrição do filamento!');
-  verificarCampoNuloOuVazio(edtValor.Field,     'Preencha o Valor do quilo do filamento!');
-  verificarCampoNuloOuVazio(edtDensidade.Field, 'Preencha a Densidade do filamento!');
-  verificarCampoNuloOuVazio(edtDiametro.Field,  'Preencha o Diâmetro do filamento!');
+  VerificarCampoNuloOuVazio(edtDescricao.Field, 'Preencha a Descrição do filamento!');
+  VerificarCampoNuloOuVazio(edtValor.Field,     'Preencha o Valor do quilo do filamento!');
+  VerificarCampoNuloOuVazio(edtDensidade.Field, 'Preencha a Densidade do filamento!');
+  VerificarCampoNuloOuVazio(edtDiametro.Field,  'Preencha o Diâmetro do filamento!');
 end;
 
 end.

@@ -121,7 +121,7 @@ procedure TfrmParametro.actExcluirExecute(Sender: TObject);
 begin
   if PageControl.ActivePage = tsTipoFilamento then
   begin
-    if not (dsTipoFilamento.DataSet.IsEmpty) and frmPadrao.msgPadraoConfirmacao(msgConfirmarExclucao) then
+    if not (dsTipoFilamento.DataSet.IsEmpty) and frmPadrao.MsgPadraoConfirmacao(msgConfirmarExclucao) then
     begin
       frmTipoFilamento.dsMain.DataSet := dsTipoFilamento.DataSet;
       dsTipoFilamento.DataSet.Delete;
@@ -131,7 +131,7 @@ begin
   end
   else if PageControl.ActivePage = tsCategoria then
   begin
-    if not (dsCategoria.DataSet.IsEmpty) and frmPadrao.msgPadraoConfirmacao(msgConfirmarExclucao) then
+    if not (dsCategoria.DataSet.IsEmpty) and frmPadrao.MsgPadraoConfirmacao(msgConfirmarExclucao) then
     begin
       frmCategoria.dsMain.DataSet := dsCategoria.DataSet;
       dsCategoria.DataSet.Delete;

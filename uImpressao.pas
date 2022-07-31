@@ -301,9 +301,9 @@ end;
 
 procedure TfrmImpressao.verificarCamposObrigatorios;
 begin
-  verificarCampoNuloOuVazio(edtDescricao.Field,     'Preencha a Descrição!');
-  verificarCampoNuloOuVazio(edtCategoria.Field,     'Preencha a Categoria!');
-  verificarCampoNuloOuVazio(edtTipoFilamento.Field, 'Preencha o Tipo Filamento!');
+  VerificarCampoNuloOuVazio(edtDescricao.Field,     'Preencha a Descrição!');
+  VerificarCampoNuloOuVazio(edtCategoria.Field,     'Preencha a Categoria!');
+  VerificarCampoNuloOuVazio(edtTipoFilamento.Field, 'Preencha o Tipo Filamento!');
 end;
 
 procedure TfrmImpressao.zerarCustos;
@@ -329,7 +329,7 @@ begin
 
   if frmArquivo.ShowModal = mrOk then
   begin
-    atualizarDataSet(dsChild.DataSet);
+    AtualizarDataSet(dsChild.DataSet);
   end;
 end;
 
