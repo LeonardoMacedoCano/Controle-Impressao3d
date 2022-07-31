@@ -43,8 +43,8 @@ type
     procedure btnAnteriorChildClick(Sender: TObject);
     procedure btnProximoChildClick(Sender: TObject);
   private
-    function isModoEdicaoDsChild: Boolean;
-    procedure atualizarToolbarChild;
+    function IsModoEdicaoDsChild: Boolean;
+    procedure AtualizarToolbarChild;
   public
     { Public declarations }
   end;
@@ -56,14 +56,14 @@ implementation
 
 {$R *.dfm}
 
-procedure TfrmPadraoHeranca.atualizarToolbarChild;
+procedure TfrmPadraoHeranca.AtualizarToolbarChild;
 begin
-  btnSalvarChild.Enabled    := isModoEdicaoDsChild;
-  btnCancelarChild.Enabled  := isModoEdicaoDsChild;
-  btnExcluirChild.Enabled   := not isModoEdicaoDsChild;
-  btnNovoChild.Enabled      := not isModoEdicaoDsChild;
-  btnEditarChild.Enabled    := not isModoEdicaoDsChild;
-  btnConsultarChild.Enabled := not isModoEdicaoDsChild;
+  btnSalvarChild.Enabled    := IsModoEdicaoDsChild;
+  btnCancelarChild.Enabled  := IsModoEdicaoDsChild;
+  btnExcluirChild.Enabled   := not IsModoEdicaoDsChild;
+  btnNovoChild.Enabled      := not IsModoEdicaoDsChild;
+  btnEditarChild.Enabled    := not IsModoEdicaoDsChild;
+  btnConsultarChild.Enabled := not IsModoEdicaoDsChild;
 end;
 
 procedure TfrmPadraoHeranca.btnAnteriorChildClick(Sender: TObject);
@@ -184,7 +184,7 @@ begin
     dsMain.Edit;
   end;
 
-  atualizarToolbarChild;
+  AtualizarToolbarChild;
 end;
 
 procedure TfrmPadraoHeranca.dsMainStateChange(Sender: TObject);
@@ -199,7 +199,7 @@ begin
 
 end;
 
-function TfrmPadraoHeranca.isModoEdicaoDsChild: Boolean;
+function TfrmPadraoHeranca.IsModoEdicaoDsChild: Boolean;
 begin
   Result := (dsChild.State in dsEditModes);
 end;
