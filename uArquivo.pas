@@ -90,7 +90,7 @@ begin
     vValorCustoMaterial := (vValorQuiloFilamento / 1000) * vPeso;
   end;
 
-  dsMain.DataSet.FieldByName('CustoMaterial').AsFloat := vValorCustoMaterial;
+  dsMain.DataSet.FieldByName('CustoMaterial').AsString := FormatarValorMoeda(vValorCustoMaterial);
 end;
 
 procedure TfrmArquivo.btnSalvarClick(Sender: TObject);
