@@ -108,7 +108,7 @@ inherited frmArquivo: TfrmArquivo
       DataField = 'customaterial'
       DataSource = dsMain
       Enabled = False
-      TabOrder = 3
+      TabOrder = 6
     end
     object edtCustoEnergia: TDBEdit
       Left = 487
@@ -118,7 +118,7 @@ inherited frmArquivo: TfrmArquivo
       DataField = 'custoenergia'
       DataSource = dsMain
       Enabled = False
-      TabOrder = 4
+      TabOrder = 7
     end
     object edtComprimentoFilamento: TDBEdit
       Left = 312
@@ -127,7 +127,7 @@ inherited frmArquivo: TfrmArquivo
       Height = 21
       DataField = 'comprimentofilamento'
       DataSource = dsMain
-      TabOrder = 5
+      TabOrder = 4
     end
     object edtTempoImpressao: TDBEdit
       Left = 113
@@ -136,7 +136,7 @@ inherited frmArquivo: TfrmArquivo
       Height = 21
       DataField = 'tempoimpressao'
       DataSource = dsMain
-      TabOrder = 6
+      TabOrder = 3
     end
     object edtPeso: TDBEdit
       Left = 487
@@ -145,7 +145,7 @@ inherited frmArquivo: TfrmArquivo
       Height = 21
       DataField = 'peso'
       DataSource = dsMain
-      TabOrder = 7
+      TabOrder = 5
     end
   end
   inherited qryMain: TFDQuery

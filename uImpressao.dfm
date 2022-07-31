@@ -187,7 +187,7 @@ inherited frmImpressao: TfrmImpressao
       Height = 21
       DataField = 'idtipofilamento'
       DataSource = dsMain
-      TabOrder = 4
+      TabOrder = 5
     end
     object edtCustoMaterial: TDBEdit
       Left = 97
@@ -197,7 +197,7 @@ inherited frmImpressao: TfrmImpressao
       DataField = 'customaterial'
       DataSource = dsMain
       Enabled = False
-      TabOrder = 5
+      TabOrder = 7
     end
     object edtCategoriaDescricao: TEdit
       Left = 168
@@ -205,7 +205,7 @@ inherited frmImpressao: TfrmImpressao
       Width = 317
       Height = 21
       Enabled = False
-      TabOrder = 6
+      TabOrder = 4
     end
     object edtTipoFilamentoDescricao: TEdit
       Left = 168
@@ -213,7 +213,7 @@ inherited frmImpressao: TfrmImpressao
       Width = 317
       Height = 21
       Enabled = False
-      TabOrder = 7
+      TabOrder = 6
     end
     object edtCustoEnergia: TDBEdit
       Left = 435
