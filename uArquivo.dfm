@@ -9,11 +9,13 @@ inherited frmArquivo: TfrmArquivo
   TextHeight = 13
   inherited ToolBar: TToolBar
     Width = 575
+    ExplicitWidth = 575
   end
   inherited pnlMain: TPanel
     Width = 575
     Height = 174
-    ExplicitHeight = 149
+    ExplicitWidth = 575
+    ExplicitHeight = 174
     object lblCodigo: TLabel
       Left = 74
       Top = 27
@@ -147,6 +149,7 @@ inherited frmArquivo: TfrmArquivo
     end
   end
   inherited qryMain: TFDQuery
+    FormatOptions.AssignedValues = [fvFmtDisplayNumeric, fvFmtEditNumeric]
     SQL.Strings = (
       'select *'
       'from arquivo'
