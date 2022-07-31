@@ -49,6 +49,7 @@ type
     function somenteNumero(snum : String): String;
     procedure verificarCampoNuloOuVazio(campo: TField; msgErro: string);
     procedure atualizarDataSet(ds: TDataSet);
+    function FormatarValorMoeda(AValor: Double): string;
   end;
 
 var
@@ -185,6 +186,11 @@ begin
   begin
     raise Exception.Create(msgErro);
   end;
+end;
+
+function TfrmPadrao.FormatarValorMoeda(AValor: Double): string;
+begin
+  Result := FormatFloat(',0.00', AValor);
 end;
 
 end.
