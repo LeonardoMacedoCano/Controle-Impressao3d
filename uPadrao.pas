@@ -48,6 +48,8 @@ type
     function MsgPadraoConfirmacao(AMensagem: String): Boolean;
     function FormatarSomenteNumero(AString: String): String;
     function FormatarValorMoeda(AValor: Double): string;
+    function GetSQLValorParametroGeral: string;
+    function GetValorParametroGeral(AParametro: string): string;
     procedure VerificarCampoNuloOuVazio(ACampo: TField; AMensagemErro: string);
     procedure AtualizarDataSet(ADataSet: TDataSet);
     procedure LocalizarIDSelecionado(ADataSource: TDataSource);
@@ -192,6 +194,29 @@ end;
 function TfrmPadrao.FormatarValorMoeda(AValor: Double): string;
 begin
   Result := FormatFloat(',0.00', AValor);
+end;
+
+function TfrmPadrao.GetSQLValorParametroGeral: string;
+begin
+  Result := 'Select Valor from ParametroGeral ' +
+            'Where Parametro = :Parametro';
+end;
+
+function TfrmPadrao.GetValorParametroGeral(AParametro: string): string;
+var
+  qry: TFDQuery;
+begin
+  qry := TFDQuery.Create(nil);
+  try
+    qry.Connection := dm.FDConnection;
+    qry.SQL.Text := GetSQLValorParametroGeral;
+    qry.Params.ParamByName('Parametro').AsString := AParametro;
+    qry.Open;
+
+    Result := qry.FieldByName('Valor').AsString;
+  finally
+    qry.Free;
+  end;
 end;
 
 procedure TfrmPadrao.LocalizarIDSelecionado(ADataSource: TDataSource);
