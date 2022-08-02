@@ -60,6 +60,9 @@ type
     procedure actEditarArquivoExecute(Sender: TObject);
     procedure btnEditarChildClick(Sender: TObject);
   private
+    procedure PreencherCategoria(AID: Integer; ADescricao: String);
+    procedure PreencherTipoFilamento(AID: Integer; ADescricao: String);
+    procedure CarregarPesquisa(ADataSource: TDataSource; AQuery: TFDQuery);
     procedure atualizarLabels;
     procedure atualizarArquivos;
     procedure zerarCustos;
@@ -92,6 +95,52 @@ begin
   inherited;
 
   abrirTelaArquivos(dsEdit);
+end;
+
+procedure TfrmImpressao.PreencherCategoria(AID: Integer; ADescricao: string);
+begin
+  if not(dsMain.State in dsEditModes) then
+  begin
+    qryMain.Edit;
+  end;
+
+  qryMain.FieldByName('IDCategoria').AsInteger := AID;
+  edtCategoriaDescricao.Text := ADescricao;
+end;
+
+procedure TfrmImpressao.PreencherTipoFilamento(AID: Integer; ADescricao: string);
+begin
+  if not(dsMain.State in dsEditModes) then
+  begin
+    qryMain.Edit;
+  end;
+
+  qryMain.FieldByName('IDTipoFilamento').AsInteger := AID;
+  edtTipoFilamentoDescricao.Text := ADescricao;
+end;
+
+procedure TfrmImpressao.CarregarPesquisa(ADataSource: TDataSource; AQuery: TFDQuery);
+begin
+  frmPesquisaPadrao.dsMain := ADataSource;
+  frmPesquisaPadrao.qryMain.SQL := AQuery.SQL;
+  frmPesquisaPadrao.qryMain.Active := True;
+
+  if frmPesquisaPadrao.ShowModal = mrOk then
+  begin
+    LocalizarIDSelecionado(ADataSource);
+
+    if ADataSource.DataSet.FieldByName('ID').AsInteger > 0 then
+    begin
+      if (ADataSource = dsCategoria) then
+      begin
+        PreencherCategoria(ADataSource.DataSet.FieldByName('ID').AsInteger, ADataSource.DataSet.FieldByName('Descricao').AsString);
+      end
+      else if (ADataSource = dsTipoFilamento) then
+      begin
+        PreencherTipoFilamento(ADataSource.DataSet.FieldByName('ID').AsInteger, ADataSource.DataSet.FieldByName('Descricao').AsString);
+      end;
+    end;
+  end;
 end;
 
 procedure TfrmImpressao.atualizarArquivos;
@@ -130,21 +179,7 @@ procedure TfrmImpressao.btnCategoriaClick(Sender: TObject);
 begin
   if (dsMain.State in dsEditModes) then
   begin
-    frmPesquisaPadrao.dsMain := dsCategoria;
-    frmPesquisaPadrao.qryMain.SQL := qryCategoria.SQL;
-    frmPesquisaPadrao.qryMain.Active := True;
-
-    if frmPesquisaPadrao.ShowModal = mrOk then
-    begin
-      dsCategoria.DataSet.Locate('id', frmPesquisaPadrao.IdSelecionado, []);
-
-      if qryCategoria.FieldByName('id').AsInteger > 0 then
-      begin
-        qryMain.Edit;
-        qryMain.FieldByName('idCategoria').AsInteger := qryCategoria.FieldByName('id').AsInteger;
-        edtCategoriaDescricao.Text                   := qryCategoria.FieldByName('Descricao').AsString;
-      end;
-    end;
+    CarregarPesquisa(dsCategoria, qryCategoria);
   end;
 end;
 
@@ -218,21 +253,7 @@ procedure TfrmImpressao.btnTipoFilamentoClick(Sender: TObject);
 begin
   if (dsMain.State in dsEditModes) then
   begin
-    frmPesquisaPadrao.dsMain := dsTipoFilamento;
-    frmPesquisaPadrao.qryMain.SQL := qryTipoFilamento.SQL;
-    frmPesquisaPadrao.qryMain.Active := True;
-
-    if frmPesquisaPadrao.ShowModal = mrOk then
-    begin
-      dsTipoFilamento.DataSet.Locate('id', frmPesquisaPadrao.IdSelecionado, []);
-
-      if qryTipoFilamento.FieldByName('id').AsInteger > 0 then
-      begin
-        qryMain.Edit;
-        qryMain.FieldByName('idTipoFilamento').AsInteger := qryTipoFilamento.FieldByName('id').AsInteger;
-        edtTipoFilamentoDescricao.Text                   := qryTipoFilamento.FieldByName('Descricao').AsString;
-      end;
-    end;
+    CarregarPesquisa(dsTipoFilamento, qryTipoFilamento);
   end;
 end;
 
