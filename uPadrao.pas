@@ -47,9 +47,10 @@ type
   public
     function MsgPadraoConfirmacao(AMensagem: String): Boolean;
     function FormatarSomenteNumero(AString: String): String;
+    function FormatarValorMoeda(AValor: Double): string;
     procedure VerificarCampoNuloOuVazio(ACampo: TField; AMensagemErro: string);
     procedure AtualizarDataSet(ADataSet: TDataSet);
-    function FormatarValorMoeda(AValor: Double): string;
+    procedure LocalizarIDSelecionado(ADataSource: TDataSource);
   end;
 
 var
@@ -191,6 +192,16 @@ end;
 function TfrmPadrao.FormatarValorMoeda(AValor: Double): string;
 begin
   Result := FormatFloat(',0.00', AValor);
+end;
+
+procedure TfrmPadrao.LocalizarIDSelecionado(ADataSource: TDataSource);
+begin
+  if not(ADataSource.DataSet.Active) then
+  begin
+    ADataSource.DataSet.Active := True;
+  end;
+
+  ADataSource.DataSet.Locate('ID', frmPesquisaPadrao.IdSelecionado, []);
 end;
 
 end.
