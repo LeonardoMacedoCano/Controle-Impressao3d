@@ -36,6 +36,7 @@ type
     function GetSQLBuscaValorTipoFilamento: string;
     function GetValorTipoFilamento: Double;
     procedure CalcularCustoMaterial;
+    procedure CalcularCustoEnergia;
   public
     { Public declarations }
   published
@@ -93,11 +94,28 @@ begin
   dsMain.DataSet.FieldByName('CustoMaterial').AsString := FormatarValorMoeda(vValorCustoMaterial);
 end;
 
+procedure TfrmArquivo.CalcularCustoEnergia;
+var
+  vCustoEnergiaKWH: Double;
+  vConsumoEnder3KWH: Double;
+  vTempoImpressao: Integer;
+  vValorCustoEnergia: Double;
+begin
+  vCustoEnergiaKWH := StrToFloat(GetValorParametroGeral('CustoEnergiaKWH'));
+  vConsumoEnder3KWH := StrToFloat(GetValorParametroGeral('ConsumoEnder3KWH'));
+  vTempoImpressao := qryMain.FieldByName('TempoImpressao').AsInteger;
+
+  vValorCustoEnergia := (vCustoEnergiaKWH / 1000 * vConsumoEnder3KWH) * (vTempoImpressao / 60);
+
+  dsMain.DataSet.FieldByName('CustoMaterial').AsString := FormatarValorMoeda(vValorCustoEnergia);
+end;
+
 procedure TfrmArquivo.btnSalvarClick(Sender: TObject);
 begin
   dsMain.DataSet.FieldByName('IdImpressao').AsInteger := FIdImpressao;
 
   CalcularCustoMaterial;
+  //CalcularCustoEnergia;
 
   inherited;
 end;
